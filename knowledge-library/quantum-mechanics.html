@@ -1,0 +1,720 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Quantum mechanics &#8212; The Elara Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'knowledge-library/quantum-mechanics';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Design Philosophy" href="../developer-hub/design-philosophy.html" />
+    <link rel="prev" title="Complex numbers" href="complex-analysis.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/elara-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/elara-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Elara Handbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About Project Elara</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/open-philosophy.html">Open Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/guiding-principles.html">Guiding Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/docs-organization.html">Docs layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/using-handbook.html">Using the Handbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knowledge Library</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monovariable-calculus.html">Monovariable Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multivariable-calculus.html">Multivariable calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-equations.html">Differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-1.html">Classical mechanics, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-2.html">Classical mechanics, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-geometry.html">Tensor Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special-relativity.html">Special Relativity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-1.html">General Relativity, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-2.html">General Relativity, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-3.html">General Relativity, Part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alcubierre-metric-intro.html">The Alcubierre Metric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-analysis.html">Complex numbers</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Quantum mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer-hub/design-philosophy.html">Design Philosophy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/guide-to-governance.html">Guide to governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/covenant.html">Covenant of Project Elara</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/community-vision.html">Vision of the community</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook/issues/new?title=Issue%20on%20page%20%2Fknowledge-library/quantum-mechanics.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/knowledge-library/quantum-mechanics.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Quantum mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization-and-wavefunctions">Quantization and wavefunctions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation">The Schrödinger equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observables">Observables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-uncertainty-principle">The uncertainty principle</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="quantum-mechanics">
+<h1>Quantum mechanics<a class="headerlink" href="#quantum-mechanics" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>“When you change the way you look at things, the things you look at change.”</p>
+<p><strong>Max Plank</strong></p>
+</div></blockquote>
+<p>Up to this point, we’ve explored physics that obeyed the principles of predictability and certainty. We took it for granted that particles moved on definite paths, that if we knew everything about the system we could predict everything about how it would evolve. All of those assumptions completely break down in quantum mechanics, when we take a look at the world near the scale of atoms. We’ll explore this fascinating new world - and in time, hopefully realize that “the quantum world is not spooky or incomprehensible - it’s just way different”.</p>
+<section id="quantization-and-wavefunctions">
+<h2>Quantization and wavefunctions<a class="headerlink" href="#quantization-and-wavefunctions" title="Permalink to this heading">#</a></h2>
+<p>When we speak of observable properties of a macroscopic object, such as its speed, momentum, and energy, we expect that these properties can take on <em>any</em> value. For instance, we can have a speed of 5.34 m/s, or 100,000 m/s, or 0.0015 m/s. These are called <strong>continuous</strong> properties.</p>
+<p>But in the quantum world, every property of a microscopic particle has to be made of indivisible unit values. One way to think about it is to imagine you have several basketballs - it would make sense to have 0 basketballs, or 50 basketballs, or 12 basketballs, but it wouldn’t make sense to have <span class="math notranslate nohighlight">\(\pi\)</span> basketballs or 1.513 basketballs. The indivisible unit, in our case, is one basketball, and in quantum mechanics we call the unit a <strong>quantum</strong> (plural <em>quanta</em>). For example, the quantum of charge is the elementary charge constant <span class="math notranslate nohighlight">\(e = 1.602 \times 10^{-19}\)</span> Coulombs. This means that you can only have a charge of <span class="math notranslate nohighlight">\(2e\)</span> or <span class="math notranslate nohighlight">\(5e\)</span> or <span class="math notranslate nohighlight">\(17e\)</span>, never <span class="math notranslate nohighlight">\(1.352e\)</span>. The quantum of energy (for visible light) is approximately <span class="math notranslate nohighlight">\(2.605 \times 10^{-19}\)</span> joules. We call properties that are composed of quanta <strong>quantized</strong>.</p>
+<p>Energy is important, because it was Einstein who first discovered that the energy of light is quantized, and in particular that the quantum of light energy is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+E_p = hf
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(h\)</span> is Plank’s constant, approximately <span class="math notranslate nohighlight">\(6.626 \times 10^{−34}\)</span>, and <span class="math notranslate nohighlight">\(f\)</span> is the frequency of the wave. <span class="math notranslate nohighlight">\(\hbar\)</span> is equal to <span class="math notranslate nohighlight">\(\frac{h}{2\pi}\)</span>.</p>
+</div>
+<p>This means that if you measure the energy of any light, it must be <span class="math notranslate nohighlight">\(0E_p\)</span> or <span class="math notranslate nohighlight">\(1E_p\)</span> or <span class="math notranslate nohighlight">\(5E_p\)</span> or <span class="math notranslate nohighlight">\(1000E_p\)</span>, not <span class="math notranslate nohighlight">\(1.5E_p\)</span>. Light can’t just take any energy it wants; the energy must strictly be <span class="math notranslate nohighlight">\(N\cdot E_p\)</span>, where <span class="math notranslate nohighlight">\(N\)</span> is the number of photons in the measured light.</p>
+<p>Einstein recognized that the quantization of light isn’t just a mathematical idea of integer multiples of a value, but that quanta of light are actually physical particles that we call <strong>photons</strong>. But isn’t light a wave? Wasn’t that what Maxwell’s equations said? Physicists recognized that in fact, light was a particle <em>and</em> a wave.</p>
+<p>However, we hit one more roadblock. If light is a particle, why can’t we just measure its observable properties (such as position) and know how it behaves? Through experimentation, scientists tried, and failed, to do exactly this. They concluded that quantum particles cannot be found exactly. We can only measure probabilities by using a <strong>wavefunction</strong> that describes the state of a quantum system. The wavefunction is oftentimes a complex function, and has no direct physical meaning (which makes sense; all physical quantities are real numbers, not complex numbers!) However, it turns out that if you integrate the square of the wavefunction, you find the <strong>probability</strong> of a particle being at a particular position at a particular time.</p>
+<div class="math notranslate nohighlight">
+\[
+P(x, t) = \int  |\Psi(x, t)^2 | dx
+\]</div>
+<p>Note that we can generalize this to multiple dimensions:</p>
+<div class="math notranslate nohighlight">
+\[
+P(x, t) = \int | \Psi(x, y, z, t)^2 | \, dx \, dy \, dz
+\]</div>
+<p>And integrating over all space gives a probability of 1, that is, 100% probability:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \limits_{-\infty}^\infty | \Psi(x, y, z, t)^2 |~dx~dy~dz = 1
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We typically use an uppercase <span class="math notranslate nohighlight">\(\Psi\)</span> for time-dependent wavefunctions and a lowercase <span class="math notranslate nohighlight">\(\psi\)</span> for time-independent wavefunctions.</p>
+</div>
+</section>
+<section id="the-schrodinger-equation">
+<h2>The Schrödinger equation<a class="headerlink" href="#the-schrodinger-equation" title="Permalink to this heading">#</a></h2>
+<p>The key equation of quantum mechanics is the Schrödinger equation, which describes how the wavefunction evolves through space and time. It is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+i \hbar \frac{\partial \Psi}{\partial t} = 
+\left(-\frac{\hbar^2}{2m} \nabla^2 + V(x) \right)
+\Psi
+\]</div>
+<p>Just as the geodesic equation was a generalization of Newton’s laws to relativity, the Schrödinger equation was a generalization of Newton’s laws to quantum mechanics. Solving this partial differential equation yields the wavefunction, which can then be used to find the probability of a particle being at a certain position.</p>
+<p>While the Schrödinger equation is separable, the process of separation of variables is so tedious that the “method of inspired guessing” is often the faster method. Consider, for example, a constant potential <span class="math notranslate nohighlight">\(V(x) = 0\)</span>, and using the 1D Schrödinger equation. We can guess that the solution likely involves a complex exponential function, since wavefunctions are oftentimes complex. Let’s try:</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(x, t) = e^{i(x - t)}
+\]</div>
+<p>We first take the derivatives of our guess solution for time and space:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \Psi}{\partial t} = -i e^{i(x - t)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial^2 \Psi}{\partial x^2} = i^2 e^{i(x - t)} = -e^{i(x - t)}
+\]</div>
+<p>Plugging these into the equation gives:</p>
+<div class="math notranslate nohighlight">
+\[
+i \hbar (-i e^{i(x - t)}) = -\frac{\hbar^2}{2m} (-e^{i(x - t)})
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\hbar e^{i(x - t)} = -\frac{\hbar^2}{2m} e^{i(x - t)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\hbar = -\frac{\hbar}{2m}
+\]</div>
+<p>Hmmm…maybe that guess wasn’t quite right, but we can now refine our solution for it to satisfy Schrödinger’s equation. Perhaps a better guess would be:</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(x, t) = e^{i(x - t)/\hbar}
+\]</div>
+<p>Upon simplification, this leads to:</p>
+<div class="math notranslate nohighlight">
+\[
+1 = \frac{1}{2m}
+\]</div>
+<p>Not quite right either, but we’re getting there. Let’s try one more guess:</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(x, t) = e^{i\left(x - \frac{t}{2m}\right)/\hbar}
+\]</div>
+<p>This does actually work! And as the Schrödinger equation is linear, we can append two scaling factors <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> to make for a general solution:</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(x, t) = e^{i\left(kx - \frac{\omega t}{2m}\right)/\hbar}
+\]</div>
+<p>So using the method of inspired guessing, we have officially solved the 1D Schrödinger equation!</p>
+<p>However, clearly, this method is not foolproof, and getting to a correct solution is not easy. Thus, Schrödinger’s equation is usually solved numerically, using either the finite volume method or finite element method, discussed in the differential equations chapter.</p>
+</section>
+<section id="observables">
+<h2>Observables<a class="headerlink" href="#observables" title="Permalink to this heading">#</a></h2>
+<p>Just like how we explored the quantization of energy for photons, other measurable quantities, such as momentum, charge, and angular momentum of quantum particles, are also quantized. We call these measurable quantities <strong>observables</strong>. Observables have defined real values, but those values are discrete values, not continuous functions. Therefore, since observables are discrete numbers, then momentum, charge, energy, and angular momentum cannot be represented by functions, as functions have continuous outputs.</p>
+<p>But we know of one different mathematical representation that can work to give discrete numbers - <em>eigenfunctions and eigenvalues</em>. Indeed, in quantum mechanics, an observable <span class="math notranslate nohighlight">\(a\)</span> is an eigenvalue of an eigenfunction <span class="math notranslate nohighlight">\(\psi\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat A \psi = a \psi
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\hat A\)</span> is a linear operator acting on <span class="math notranslate nohighlight">\(\psi\)</span>. The most common type of linear operator for eigenfunctions are derivative operators. For instance, the momentum operator is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat p = -i\hbar \frac{\partial}{\partial x}
+\]</div>
+<p>So if we wanted to find the measured value of the momentum <span class="math notranslate nohighlight">\(p\)</span>, we would need to solve the equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat p \psi = p \psi
+\]</div>
+<p>Or, plugging in the value of the momentum operator:</p>
+<div class="math notranslate nohighlight">
+\[
+-i\hbar \frac{\partial \psi}{\partial x} = p \psi
+\]</div>
+<p>This ensures that the observable - in this case, the measured value of momentum - has to be a discrete number, rather than a continuous function. In a similar way, the kinetic energy and total energy operators are (given in order):</p>
+<div class="math notranslate nohighlight">
+\[
+\hat K = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\hat E = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V(x)
+\]</div>
+<p>So, the eigenfunction-eigenvalue equations for kinetic energy and total energy are given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat K \psi = -\frac{\hbar^2}{2m} \frac{\partial^2 \psi}{\partial x^2} = K \psi
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\hat E \psi = -\frac{\hbar^2}{2m} \frac{\partial^2 \psi}{\partial x^2} + V(x) \psi = E \psi
+\]</div>
+<p>Notice the energy operator is identical to the Hamiltonian <span class="math notranslate nohighlight">\(\hat H\)</span>, as it is the sum of the kinetic energy operator and the potential energy. Therefore, we often rewrite the eigenfunction-eigenvalue equation for energy as:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat H \psi = E \psi
+\]</div>
+<p>This is the <strong>time-independent Schrödinger equation</strong>.</p>
+</section>
+<section id="the-uncertainty-principle">
+<h2>The uncertainty principle<a class="headerlink" href="#the-uncertainty-principle" title="Permalink to this heading">#</a></h2>
+<p>Knowing more about a particular observable in general means that we know less about another observable. This is the <strong>uncertainy principle</strong> - when we express the certainty of an observable in terms of its standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_x \sigma_p \geq \frac{\hbar}{2}
+\]</div>
+<p>To derive this, let’s consider the position and momentum operators. They are given respectively by:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat x = x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\hat p = -i\hbar \frac{\partial}{\partial x}
+\]</div>
+<p>Now, it is important to recognize that these two operators do not commute - if we switch the order we apply these operations, we get different results. That is:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat x \hat p \psi \neq \hat p \hat x \psi
+\]</div>
+<p>We call the difference between applying these two operators in either order the <strong>commutator</strong>, denoted by square brackets:</p>
+<div class="math notranslate nohighlight">
+\[
+[\hat x, \hat p] = \hat x \hat p - \hat p \hat x
+\]</div>
+<p>If we compute this commutator by substituting the operators in, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+[\hat x, \hat p] = i \hbar
+\]</div>
+<p>We can now make use of a statistical theorem:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_a \sigma_b \geq \frac{1}{2i} [\hat a, \hat b]
+\]</div>
+<p>Plugging in our result, we get the uncertainty principle:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_x \sigma_p \geq \frac{\hbar}{2}
+\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./knowledge-library"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="complex-analysis.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Complex numbers</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../developer-hub/design-philosophy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Design Philosophy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization-and-wavefunctions">Quantization and wavefunctions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-schrodinger-equation">The Schrödinger equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observables">Observables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-uncertainty-principle">The uncertainty principle</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Project Elära contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

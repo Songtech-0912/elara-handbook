@@ -1,0 +1,1101 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Classical mechanics, Part 1 &#8212; The Elara Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'knowledge-library/classical-mechanics-1';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Classical mechanics, Part 2" href="classical-mechanics-2.html" />
+    <link rel="prev" title="Differential equations" href="differential-equations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/elara-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/elara-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Elara Handbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About Project Elara</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/open-philosophy.html">Open Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/guiding-principles.html">Guiding Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/docs-organization.html">Docs layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/using-handbook.html">Using the Handbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knowledge Library</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monovariable-calculus.html">Monovariable Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multivariable-calculus.html">Multivariable calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-equations.html">Differential equations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classical mechanics, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-2.html">Classical mechanics, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-geometry.html">Tensor Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special-relativity.html">Special Relativity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-1.html">General Relativity, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-2.html">General Relativity, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-3.html">General Relativity, Part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alcubierre-metric-intro.html">The Alcubierre Metric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-analysis.html">Complex numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-mechanics.html">Quantum mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer-hub/design-philosophy.html">Design Philosophy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/guide-to-governance.html">Guide to governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/covenant.html">Covenant of Project Elara</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/community-vision.html">Vision of the community</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook/issues/new?title=Issue%20on%20page%20%2Fknowledge-library/classical-mechanics-1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/knowledge-library/classical-mechanics-1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Classical mechanics, Part 1</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinematics">Kinematics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-projectile-motion">1D projectile motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2D projectile motion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-s-laws">Newton’s Laws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-energy-and-power">Work, Energy, and Power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum">Momentum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields">Fields</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="classical-mechanics-part-1">
+<h1>Classical mechanics, Part 1<a class="headerlink" href="#classical-mechanics-part-1" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>“The important thing is to never stop questioning.”</p>
+<p><strong>Albert Einstein</strong></p>
+</div></blockquote>
+<p>For over 200 years, before the advent of 20th century relativistic and quantum physics, our view of the world was dominated by classical mechanics. From the foundation laid by Newton to the work of Lagrange and Euler and the masterminds of Faraday and Maxwell, classical mechanics set out to describe the world around us through concrete, physical laws, and still does so brilliantly. This guide aims to explain classical mechanics in as simple and elegant a way as possible, hopefully allowing you to soon have a working knowledge of mechanics with which to do physics.</p>
+<section id="kinematics">
+<h2>Kinematics<a class="headerlink" href="#kinematics" title="Permalink to this heading">#</a></h2>
+<p>We can describe the location of a point through what is known as a position function. The position function <span class="math notranslate nohighlight">\(s(t)\)</span> describes the location of an object through space at any given time. For example, imagine a position function as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+s(t) = 3t^{3}-5t+1
+\]</div>
+<p>We adopt the convention in physics that positive numbers are used for positions to the top or right, and negative numbers are used for positions to the left or bottom.</p>
+<p>At <span class="math notranslate nohighlight">\(t = 0\)</span>, <span class="math notranslate nohighlight">\(s(t) = 1\)</span>, which means that the object is 1 meter to the right of the origin at that time. At <span class="math notranslate nohighlight">\(t = 1\)</span>, <span class="math notranslate nohighlight">\(s(t) = -1\)</span>, which means the object is 1 meter to the left of the origin. At <span class="math notranslate nohighlight">\(t = 2\)</span>, <span class="math notranslate nohighlight">\(s(t) = 15\)</span>, which means the object is 15 meters to the right of the origin.</p>
+<p>Sometimes, we like to specify that <span class="math notranslate nohighlight">\(s(t)\)</span> is moving along the x-direction, so we call it <span class="math notranslate nohighlight">\(x(t)\)</span> instead. We can also specify that <span class="math notranslate nohighlight">\(s(t)\)</span> is moving along the y-direction by calling it <span class="math notranslate nohighlight">\(y(t)\)</span>. The position function remains the same, just the direction of travel becomes different.</p>
+<p><strong>Velocity</strong> is the derivative of position with respect to time. That is:</p>
+<div class="math notranslate nohighlight">
+\[
+v = \frac{ds}{dt}
+\]</div>
+<p>For example, given that <span class="math notranslate nohighlight">\(s(t) = 3t^3 - 5t + 1\)</span>, <span class="math notranslate nohighlight">\(v(t) = 9t^2 - 5\)</span>, as it is the derivative of <span class="math notranslate nohighlight">\(s(t)\)</span>.</p>
+<p><strong>Acceleration</strong> is the derivative of velocity, which is the second derivative of position. That is:</p>
+<div class="math notranslate nohighlight">
+\[
+a = \frac{dv}{dt} = \frac{d^2 s}{dt^2}
+\]</div>
+<p>From the same definitions, velocity is the integral of acceleration, and position is the integral of velocity:</p>
+<div class="math notranslate nohighlight">
+\[
+v = \int a dt
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+s = \int v dt
+\]</div>
+<p>Lastly, <strong>displacement</strong>, denoted by <span class="math notranslate nohighlight">\(\Delta s\)</span> (or <span class="math notranslate nohighlight">\(\Delta x\)</span> or <span class="math notranslate nohighlight">\(\Delta y\)</span>) is the change in position between 2 times:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta s = s(b) - s(a)
+\]</div>
+<section id="d-projectile-motion">
+<h3>1D projectile motion<a class="headerlink" href="#d-projectile-motion" title="Permalink to this heading">#</a></h3>
+<p>The <strong>kinematic equations</strong> describe the motion of objects under constant acceleration. They are given as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+v = v_0 + at
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Delta s = \left(\frac{v + v_0}{2}\right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Delta s = v_0 t + \frac{1}{2} at^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v^2 = (v_0)^2 + 2a \Delta x
+\]</div>
+<p>The kinematic equations are especially helpful when analyzing objects in free-fall, as all objects in free-fall - called projectiles - have a constant acceleration of <span class="math notranslate nohighlight">\(|g| = 9.81\ \mathrm{m/s^2}\)</span>. For example, suppose that a rock was thrown off a cliff from rest and took 5 seconds to hit the ground. We can write:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta y = v_0 (5) + \frac{1}{2} a(5^2)
+\]</div>
+<p>We know that the rock was thrown from rest, so <span class="math notranslate nohighlight">\(v_0 = 0\)</span>, allowing us to simplify to:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta y = \frac{1}{2} a (25)
+\]</div>
+<p>We know that the acceleration is <span class="math notranslate nohighlight">\(g = 9.81\ \mathrm{m/s^2}\)</span>, and as the acceleration is downwards, we write it as negative:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta y = - \frac{1}{2} (9.81)(25)
+\]</div>
+<p>Which gives <span class="math notranslate nohighlight">\(\Delta y = -122.625\mathrm{\ m}\)</span>, meaning that the rock dropped in the downwards direction 122 meters, so the cliff’s height is also 122 meters.</p>
+</section>
+<section id="id1">
+<h3>2D projectile motion<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>To analyze projectile motion in two dimensions, we analyze the components of vertical and horizontal motion separately. To do this, we write the velocity as a 2D vector:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec v = \begin{bmatrix}
+v_x \\
+v_y
+\end{bmatrix}
+\end{split}\]</div>
+<p>Using basic trigonometry, we can find that:</p>
+<div class="math notranslate nohighlight">
+\[
+v_x = \vec v \cos \theta
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_y = \vec v \sin \theta
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle of the vector from the horizontal.</p>
+<p>For a 2D projectile, one unique fact is that its horizontal velocity will always be the same as its initial horizontal velcity. That is:</p>
+<div class="math notranslate nohighlight">
+\[
+v_x = v_{0_x}
+\]</div>
+<p>Meanwhile, its vertical velocity follows the kinematic equation of freefall, with constant acceleration <span class="math notranslate nohighlight">\(g\)</span>. This means that:</p>
+<div class="math notranslate nohighlight">
+\[
+v_y = v_{0_y} t + \frac{1}{2} at^2
+\]</div>
+<p>And as <span class="math notranslate nohighlight">\(g\)</span> is acting in the negative direction, we can write it as:</p>
+<div class="math notranslate nohighlight">
+\[
+v_y = v_{0_y} t - \frac{1}{2} gt^2
+\]</div>
+<p>Lastly, remember that we can rewrite <span class="math notranslate nohighlight">\(v_x\)</span> and <span class="math notranslate nohighlight">\(v_y\)</span> in terms of <span class="math notranslate nohighlight">\(\vec v\)</span> using trigonometry. Thus, the general equation of projectile motion of an object launched at angle <span class="math notranslate nohighlight">\(\theta_0\)</span> and initial velocity <span class="math notranslate nohighlight">\(\vec v_0\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = \vec v_0 \cos \theta_0 t
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y(t) = \vec v_0 \sin \theta_0 t - \frac{1}{2} gt^2
+\]</div>
+<p>A plot of the equation shows that it is correct:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LinearSegmentedColormap</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">theta0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span> <span class="c1"># 45 degrees</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta0</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta0</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">9.81</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Projectile 2D motion&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0c1769de0695ba8744b2cf69a3d0c7fd94cd8637a50c1816d3f505220cf4f1c6.png" src="../_images/0c1769de0695ba8744b2cf69a3d0c7fd94cd8637a50c1816d3f505220cf4f1c6.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="newton-s-laws">
+<h2>Newton’s Laws<a class="headerlink" href="#newton-s-laws" title="Permalink to this heading">#</a></h2>
+<p>In the late-1600s, Isaac Newton came up with a series of 3 laws to describe a more general set of moving objects, not limited to objects in freefall. These form the foundation of Newtonian physics.</p>
+<p><strong>Newton’s 1st law</strong> states that objects in constant motion remain in motion unless acted on by a net force. A net force occurs when the forces acting on an object are not balanced. This means that objects in constant motion can have forces acting on them, but no <em>net</em> force, because all the forces are balanced.</p>
+<p><strong>Newton’s 2nd law</strong> states that a net force acts on an object to accelerate it, or mathematically:</p>
+<div class="math notranslate nohighlight">
+\[
+F_{net} = \sum F = ma
+\]</div>
+<p>Newton’s 2nd law is often called the <strong>equation of motion</strong> for an object. To see why, notice that the law can be rewritten as:</p>
+<div class="math notranslate nohighlight">
+\[
+a = \frac{F_{net}}{m}
+\]</div>
+<p>And since acceleration is the second derivative of position, this can be written:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 x}{dt^2} = \frac{F_{net}}{m}
+\]</div>
+<p>Thus, solving for Newton’s second law gives the function <span class="math notranslate nohighlight">\(x(t)\)</span> that describes the motion of an object through space and time.</p>
+<p><strong>Newton’s 3rd law</strong> states that for every action force, there is an equal and opposite reaction force opposing it.</p>
+<p>Of all of Newton’s laws, it is the second that is the most typically helpful.</p>
+<p>To utilize Newton’s 2nd law, we often like to draw free-body diagrams to illustrate all the forces on an object. Forces that are in the positive direction (usually up and right) are positive, and forces in the negative direction (usually down and left) are negative. For instance, consider a free-falling object, influenced only by the downward force of gravity:</p>
+<a class="reference internal image-reference" href="../_images/fbd-gravity.png"><img alt="Free body diagram single force" class="align-center" src="../_images/fbd-gravity.png" style="width: 400px;" /></a>
+<p>To apply Newton’s 2nd law, we first sum all the forces to find the net force:</p>
+<div class="math notranslate nohighlight">
+\[
+F_{net} = \sum F = 0 + (-F_g) = -F_g
+\]</div>
+<p>Then, we equate the net force to <span class="math notranslate nohighlight">\(ma\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+F_{net} = ma
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+-F_g = ma
+\]</div>
+<p>Given that the force of gravity close to Earth is given by <span class="math notranslate nohighlight">\(F_g = mg\)</span>, we can rewrite the last equation as:</p>
+<div class="math notranslate nohighlight">
+\[
+-mg = ma
+\]</div>
+<p>Which we can simplify to:</p>
+<div class="math notranslate nohighlight">
+\[
+-g = a
+\]</div>
+<p>To find the motion of the object, we need to recall that the acceleration is the second derivative of position, so:</p>
+<div class="math notranslate nohighlight">
+\[
+-g = \frac{d^2 s}{dt^2}
+\]</div>
+<p>We can solve this differential equation by integrating both sides twice, to get:</p>
+<div class="math notranslate nohighlight">
+\[
+s(t) = v_0 t - \frac{1}{2}gt^2 + h_0
+\]</div>
+<p>A more difficult example is with the following system, where <span class="math notranslate nohighlight">\(F_T\)</span> is the tension force, transmitted by the rope:</p>
+<p>Here, to draw a free-body diagram, we “unwrap” and stretch out the system, then draw 2 separate free-body diagrams for each sub-system:</p>
+<a class="reference internal image-reference" href="../_images/fbd-atwoods.png"><img alt="Free body diagram muliple force" class="align-center" src="../_images/fbd-atwoods.png" style="width: 400px;" /></a>
+<p>From there we can apply the 2nd law individually to each system. For the first system:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum F = F_T + (-F_{g_1}) = m_1 a
+\]</div>
+<p>Which we simplify to:</p>
+<div class="math notranslate nohighlight">
+\[
+F_T - F_{g_1} = m_1 a
+\]</div>
+<p>And recalling <span class="math notranslate nohighlight">\(F_g = mg\)</span>, we can further simplify with:</p>
+<div class="math notranslate nohighlight">
+\[
+F_T - m_1 g = m_1 a
+\]</div>
+<p>And for the second system:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum F = F_{g_2} + (-F_T) = m_2 a
+\]</div>
+<p>Which we can simplify to:</p>
+<div class="math notranslate nohighlight">
+\[
+F_{g_2} -F_T = m_2 a
+\]</div>
+<p>Again, we can use <span class="math notranslate nohighlight">\(F_g = mg\)</span> to further simplify with:</p>
+<div class="math notranslate nohighlight">
+\[
+m_2 g - F_T = m_2 a
+\]</div>
+<p>We now have a simultaneous series of equations:</p>
+<div class="math notranslate nohighlight">
+\[
+F_T - m_1 g = m_1 a
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+m_2 g - F_T = m_2 a
+\]</div>
+<p>Solving them allows us to find the net acceleration of both systems:</p>
+<div class="math notranslate nohighlight">
+\[
+m_2 g - F_T = m_2 a
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+m_2 g = F_T + m_2 a
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+F_T = m_2 g - m_2 a
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+F_T = m_1 a + m_1 g
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+m_2 g - m_2 a = m_1 a + m_1 g
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+m_2 g - m_1 g = m_1 a + m_2 a
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+g(m_2 - m_1) = a(m_1 + m_2)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+a = \frac{g(m_2 - m_1)}{m_1 + m_2}
+\]</div>
+<p>We can also use the same equations to derive a value of the tension force:</p>
+<div class="math notranslate nohighlight">
+\[
+F_T = \frac{2 m_1 m_2 g}{m_1 + m_2}
+\]</div>
+<p>And the equation of motion for the entire system can be found by solving the differential equation, which is in turn found by substituting <span class="math notranslate nohighlight">\(a\)</span> for the second derivative of position:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 s}{dt^2} = \frac{g(m_2 - m_1)}{m_1 + m_2}
+\]</div>
+<p>Using Newton’s laws usually results in a second-order differential equation for a system - one typically not easily solved, and usually only solvable via computer.</p>
+<p>Finally, it is worth mentioning <strong>Newton’s law of universal gravitation</strong>, which states the gravitational force between two <em>arbitrary</em> distant masses (as opposed to close to Earth for <span class="math notranslate nohighlight">\(F_g = mg\)</span>) is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+F_g = -\frac{G Mm}{r^2}
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(G\)</span> is the universal gravitational constant, and <span class="math notranslate nohighlight">\(G \approx 6.67 \times 10^{-11}\)</span></p>
+</section>
+<section id="work-energy-and-power">
+<h2>Work, Energy, and Power<a class="headerlink" href="#work-energy-and-power" title="Permalink to this heading">#</a></h2>
+<p>Analyzing forces is one very good approach to finding the equations of motion for a system, but it has its drawbacks - the vector equation <span class="math notranslate nohighlight">\(F_{net} = ma\)</span> is often long and tedious to solve for. Another approach - the work-energy approach - is often much easier and more helpful for arriving at a solution when analyzing a given system.</p>
+<p>At its simplest, <strong>work</strong> is simply force exerted over a distance:</p>
+<div class="math notranslate nohighlight">
+\[
+W = \int_{x_1}^{x_2} F dx
+\]</div>
+<p>Kinetic energy <span class="math notranslate nohighlight">\(K\)</span>, the energy of moving objects, is equal to the work done to accelerate an object from rest to a velocity <span class="math notranslate nohighlight">\(v\)</span>. That is:</p>
+<div class="math notranslate nohighlight">
+\[
+K = \int_{x_1}^{x_2} F dx = \int_{x_1}^{x_2} ma dx = 
+\int_{x_1}^{x_2} m \frac{dv}{dt} dx
+\]</div>
+<p>Using the chain rule to expand out <span class="math notranslate nohighlight">\(\frac{dv}{dt} = \frac{dv}{dx} \frac{dx}{dt}\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{x_1}^{x_2} m \frac{dv}{dx}\frac{dx}{dt} dx
+\]</div>
+<p>If we move around the terms and rewrite <span class="math notranslate nohighlight">\(\frac{dx}{dt} = v\)</span>, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{x_1}^{x_2} m v \frac{dv}{dx} dx
+\]</div>
+<p>The two <span class="math notranslate nohighlight">\(dx\)</span>’s cancel and as part of our substitution we replace our endpoints in <span class="math notranslate nohighlight">\(x\)</span> with endpoints in <span class="math notranslate nohighlight">\(v\)</span> to get:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^v mv dv = \frac{1}{2} mv^2
+\]</div>
+<p>So:</p>
+<div class="math notranslate nohighlight">
+\[
+K = \frac{1}{2} mv^2
+\]</div>
+<p>For instance, a 1 kg object moving at <span class="math notranslate nohighlight">\(10 \mathrm{\ m/s}\)</span> will have a kinetic energy of 50 Joules.</p>
+<p>Potential energy <span class="math notranslate nohighlight">\(U\)</span>, the energy possessed by objects due to their position or configuration, is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+U(x) = -W = -\int F dx
+\]</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Note that the second equation (the integral of force with respect to position) only holds true for <strong>conservative forces</strong> in the single-variable case, where the work done is independent of the path taken.</p>
+</div>
+<p>For gravity, this results in:</p>
+<div class="math notranslate nohighlight">
+\[
+U_g (r) = -\int - \frac{G m_1 m_2}{r^2} dr = -\frac{G Mm}{r}
+\]</div>
+<p>Note that an approximation for gravitational potential energy is <span class="math notranslate nohighlight">\(U_g = mgh\)</span>, which works close to Earth.</p>
+<p>For springs, where the elastic force is given by <span class="math notranslate nohighlight">\(F = -kx\)</span>, this results in:</p>
+<div class="math notranslate nohighlight">
+\[
+U_s(x) = -\int -kx dx = \frac{1}{2} kx^2
+\]</div>
+<p>For electrostatics, where the electrostatic force is given by <span class="math notranslate nohighlight">\(F = \frac{kq_1 q_2}{r^2}\)</span>, this results in:</p>
+<div class="math notranslate nohighlight">
+\[
+U_e (r) = -\int \frac{kq_1 q_2}{r^2} dr = \frac{kq_1 q_2}{r}
+\]</div>
+<p>The potential energy, when expressed as a quantity, is always taken <em>relative some reference point</em>. For a falling object, a common reference point is the surface of the Earth. This means that on the Earth’s surface, an object has zero potential energy, while far from the Earth’s surface, the object has maximal potential energy.</p>
+<p>The <strong>conservation of energy</strong> states that the sum of potential and kinetic energy is constant - that is, the sum of inital potential and kinetic energy is equal to the sum of final kinetic potential and kinetic energy:</p>
+<div class="math notranslate nohighlight">
+\[
+K_i + U_i = K_f + U_f
+\]</div>
+<p>For example, let’s use the same cliff example as earlier, with the only difference being that we know that the final velocity of the falling object is <span class="math notranslate nohighlight">\(48.9\mathrm{\ m/s}\)</span>.</p>
+<p>Using the conservation of energy, we know that <span class="math notranslate nohighlight">\(K_i = 0\)</span> (as the object is thrown from rest), and <span class="math notranslate nohighlight">\(U_f = 0\)</span> (as the object is on the surface of the Earth, our reference point). So:</p>
+<div class="math notranslate nohighlight">
+\[
+U_i = K_f
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+mgh = \frac{1}{2} m (v_f)^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+h = \frac{1}{2} \frac{m(v_f)^2}{g}
+\]</div>
+<p>Plugging in the values, this gives us the same answer of the height of the cliff: 122 meters! However, note that we didn’t need to use any kinematic formulas, just an understanding of work and energy!</p>
+</section>
+<section id="momentum">
+<h2>Momentum<a class="headerlink" href="#momentum" title="Permalink to this heading">#</a></h2>
+<p><strong>Momentum</strong> is the product of mass and velocity:</p>
+<div class="math notranslate nohighlight">
+\[
+p = mv
+\]</div>
+<p>Which also makes the derivative of the momentum force:</p>
+<div class="math notranslate nohighlight">
+\[
+F = \frac{dp}{dt}
+\]</div>
+<p>And the (time) integral of force momentum:</p>
+<div class="math notranslate nohighlight">
+\[
+p = \int F dt
+\]</div>
+<p>Do not confuse this with potential energy, which is the position integral of force!</p>
+<p>Momentum cannot be created nor destroyed; it can only be transferred between objects. This is the principle of the <strong>conservation of momentum</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{A_i} + P_{B_i} = P_{A_i} + P_{B_f}
+\]</div>
+<p>Or more generally:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum P_i = \sum P_f
+\]</div>
+<p><strong>Impulse</strong> is the change in momentum:</p>
+<div class="math notranslate nohighlight">
+\[
+J = \Delta P = \int_{t_1}^{t_2} F dt
+\]</div>
+</section>
+<section id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this heading">#</a></h2>
+<p>A vector field is an object that spans all of space and assigns a value to each point in space. For example, take the gravitational field, which gives each point a vector that is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec g(r) = \frac{GM}{r^2}
+\]</div>
+<p>Here is a visualization of the gravitational field <span class="math notranslate nohighlight">\(\vec g(r)\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_gfield</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot vector field of gravity in polar coordinates</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">radii</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">thetas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="n">theta</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">thetas</span><span class="p">,</span> <span class="n">radii</span><span class="p">)</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">G</span> <span class="o">*</span> <span class="n">M</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">polar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">R</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">R</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Gravitational vector field&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_gfield</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a090ec3291032738f0854d96225ffeb53e4154ddc165fe7b06d17963e395849c.png" src="../_images/a090ec3291032738f0854d96225ffeb53e4154ddc165fe7b06d17963e395849c.png" />
+</div>
+</div>
+<p>The gravitational field is related to the gravitational force by:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec g = \frac{F}{m}
+\]</div>
+<p>That means that at each point in the field, an object of mass <span class="math notranslate nohighlight">\(m\)</span> will feel a force of <span class="math notranslate nohighlight">\(\vec g m\)</span>.</p>
+<p>A potential field, similar to a vector field, is an object that spans all of space and assigns a scalar to each point in space. Potentials have the special property that their slopes are equal to another vector field. For example, the gravitational (vector) field <span class="math notranslate nohighlight">\(\vec g\)</span> is related to the gravitational potential <span class="math notranslate nohighlight">\(\phi\)</span> by:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec g = - \nabla \phi = -\left( \frac{\partial \phi}{\partial x}, \frac{\partial \phi}{\partial y}, 
+\frac{\partial \phi}{\partial z} \right)
+\]</div>
+<p>From this, we can derive that the gravitational potential is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\phi = \frac{GM}{r}
+\]</div>
+<p>A visualization of the gravitational potential is shown below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calc_div_grav</span><span class="p">():</span>
+    <span class="o">%</span><span class="k">matplotlib</span> inline
+    <span class="n">G</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">radii</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">thetas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">R</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">radii</span><span class="p">,</span> <span class="n">thetas</span><span class="p">)</span>
+    <span class="n">Phi</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">G</span> <span class="o">*</span> <span class="n">M</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+    
+    <span class="c1"># convert r, theta coordinates to</span>
+    <span class="c1"># cartesian x, y coordinates</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">T</span><span class="p">),</span> <span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    
+    <span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>
+    <span class="c1"># Set the angle of the camera</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    
+    <span class="c1"># Colormap</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;#D54C90&quot;</span><span class="p">,</span> <span class="s2">&quot;#A37DF8&quot;</span><span class="p">,</span> <span class="s2">&quot;#B3E6FF&quot;</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Phi</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.1</span> <span class="p">,</span>
+                    <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+                    <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                    <span class="n">cstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                    <span class="n">rstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                    <span class="n">edgecolors</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Gravitational potential field $\Phi$&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.autolayout&quot;</span><span class="p">]</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calc_div_grav</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7906d6d6a5b556f0cb376102ad3fa3d0ef7887d22a783b61957946144b50c0c1.png" src="../_images/7906d6d6a5b556f0cb376102ad3fa3d0ef7887d22a783b61957946144b50c0c1.png" />
+</div>
+</div>
+<p>The gravitational potential is related to the gravitational potential energy by:</p>
+<div class="math notranslate nohighlight">
+\[
+\phi = \frac{U}{m}
+\]</div>
+<p>That means that at each point in the potential field, an object of mass <span class="math notranslate nohighlight">\(m\)</span> will have a gravitational potential energy of <span class="math notranslate nohighlight">\(\phi m\)</span> relative to infinity.</p>
+<p>The divergence of the gravitational field is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \cdot \vec g = -4\pi G \rho
+\]</div>
+<p>Combining the two equations, we can find the gravitational potential in terms of its mass density:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec g = - \nabla \Phi
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\nabla \cdot - \nabla \Phi = \nabla^2 \Phi = 4 \pi G \rho
+\]</div>
+<p>This is <strong>Poisson’s equation</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \Phi = 4 \pi G \rho
+\]</div>
+<p>In empty space, the equation reduces to:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \Phi = 0
+\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./knowledge-library"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="differential-equations.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Differential equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="classical-mechanics-2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Classical mechanics, Part 2</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinematics">Kinematics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-projectile-motion">1D projectile motion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2D projectile motion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newton-s-laws">Newton’s Laws</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-energy-and-power">Work, Energy, and Power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum">Momentum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fields">Fields</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Project Elära contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

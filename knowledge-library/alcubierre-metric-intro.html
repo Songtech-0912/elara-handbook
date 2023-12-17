@@ -1,0 +1,824 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>The Alcubierre Metric &#8212; The Elara Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'knowledge-library/alcubierre-metric-intro';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Complex numbers" href="complex-analysis.html" />
+    <link rel="prev" title="General Relativity, Part 3" href="general-relativity-3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/elara-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/elara-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Elara Handbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About Project Elara</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/open-philosophy.html">Open Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/guiding-principles.html">Guiding Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/docs-organization.html">Docs layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/using-handbook.html">Using the Handbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knowledge Library</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monovariable-calculus.html">Monovariable Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multivariable-calculus.html">Multivariable calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-equations.html">Differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-1.html">Classical mechanics, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-2.html">Classical mechanics, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-geometry.html">Tensor Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special-relativity.html">Special Relativity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-1.html">General Relativity, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-2.html">General Relativity, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-3.html">General Relativity, Part 3</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Alcubierre Metric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-analysis.html">Complex numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-mechanics.html">Quantum mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer-hub/design-philosophy.html">Design Philosophy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/guide-to-governance.html">Guide to governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/covenant.html">Covenant of Project Elara</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/community-vision.html">Vision of the community</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook/issues/new?title=Issue%20on%20page%20%2Fknowledge-library/alcubierre-metric-intro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/knowledge-library/alcubierre-metric-intro.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Alcubierre Metric</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-alcubierre-metric">Derivation of the Alcubierre Metric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-using-the-alcubierre-metric">Calculations using the Alcubierre metric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#york-time-and-energy-density">York Time and Energy Density</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-alcubierre-metric">
+<h1>The Alcubierre Metric<a class="headerlink" href="#the-alcubierre-metric" title="Permalink to this heading">#</a></h1>
+<p>The Alcubierre metric is the crucial spacetime metric on which Project Elära’s research builds on. At the highest level, it is a spacetime metric that allows for the possibility of faster-than-light interstellar travel. By causing the expansion of spacetime in front of, and the contraction of spacetime behind, an isolated “shell region” of spacetime, the metric allows the “shell region” to move at an arbritrary speed.</p>
+<section id="derivation-of-the-alcubierre-metric">
+<h2>Derivation of the Alcubierre Metric<a class="headerlink" href="#derivation-of-the-alcubierre-metric" title="Permalink to this heading">#</a></h2>
+<p>It is important to note here that this derivation is not a “derivation” in the strictest sense. This is because the Alcubierre Metric is more so a constructed rather than derived metric found by solving the Einstein Field Equations for a specific stress-energy tensor.</p>
+<p>Alcubierre constructed his metric from the general form of all metrics in the ADM formalism:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = -(\alpha^2 - \beta_i\beta^i)dt^2 + 2\beta_i dx^i dt + \gamma_{ij}dx^i dx^j
+\]</div>
+<p>Then, by choosing <span class="math notranslate nohighlight">\(\alpha = 1\)</span>, <span class="math notranslate nohighlight">\(\beta^x = -v_s f(r_s)\)</span>, where <span class="math notranslate nohighlight">\(v_s\)</span> is the ship speed, <span class="math notranslate nohighlight">\(\beta^y = \beta^z = 0\)</span>, and setting <span class="math notranslate nohighlight">\(\gamma_{ij}\)</span> to the Euclidean metric tensor <span class="math notranslate nohighlight">\(\delta_{ij}\)</span>, we arrive at:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = -dt^2 + (dx - v_s f(r_s) dt)^2 + dy^2 + dz^2
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(x_s(t)\)</span> is a function of the spacecraft’s position over time, and <span class="math notranslate nohighlight">\(f (r_s(t))\)</span> is a “top hat” shaping function to modify the metric such that it would vanish where <span class="math notranslate nohighlight">\(r_s &gt; R\)</span>, and “push” the spacecraft forward:</p>
+<div class="math notranslate nohighlight">
+\[
+f (r_s(t)) = \frac{\tanh \sigma(r_s(t) + R) - \tanh \sigma(r_s(t) - R)}{2 \tanh \sigma R}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+r_s(t) = \sqrt{(x - x_s(t))^2 + y^2 + z^2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_s(t) = \frac{dx_s (t)}{dt}
+\]</div>
+</section>
+<section id="calculations-using-the-alcubierre-metric">
+<h2>Calculations using the Alcubierre metric<a class="headerlink" href="#calculations-using-the-alcubierre-metric" title="Permalink to this heading">#</a></h2>
+<p>We start with the general form of the Alcubierre metric, as it is typically presented in papers:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = -dt^2 + (dx - v_s f(r_s) dt)^2 + dy^2 + dz^2
+\]</div>
+<p>If we expand out the second term, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = -dt^2 + dx^2 - 2v_s f(r_s) dxdt + (v^2 f(r_s)^2) dt^2 + dy^2 + dz^2
+\]</div>
+<p>We can rearrange to find:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = (-dt^2 + v^2 f(r_s)^2 dt^2) - 2v_s f(r_s) dxdt + dx^2 + dy^2 + dz^2
+\]</div>
+<p>Now, we can factor the first term to get:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = -(1 - v^2 f(r_s)^2)dt^2 - 2v_s f(r_s) dxdt + dx^2 + dy^2 + dz^2
+\]</div>
+<p>But how do we write this in matrix form? Remember that the line element is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = g_{\mu \nu} dx^\mu dx^\nu
+\]</div>
+<p>Expanding the 16 terms of the summation for a 4D spacetime metric, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = g_{tt} dt dt + g_{tx} dt dx + g_{ty} dy dt + \dots + g_{xx} dx dx + g_{xt} dx dt + \dots g_{yy} dy dy + \dots g_{zz} dz dz
+\]</div>
+<p>We can group the terms that have products of the same differentials together, using <span class="math notranslate nohighlight">\(dq^2 = dq dq\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = g_{tt} dt^2 + g_{tx} dt dx + g_{ty} dy dt + \dots + g_{xx} dx^2 + g_{xt} dx dt + \dots g_{yy} dy^2 + \dots g_{zz} dz^2
+\]</div>
+<p>As the metric is symmetric, <span class="math notranslate nohighlight">\(g_{tx} = g_{xt}\)</span>, and naturally <span class="math notranslate nohighlight">\(dtdx = dxdt\)</span>, we can say that <span class="math notranslate nohighlight">\(g_{tx} dt dx + g_{xt} dx dt = 2g_{xt} dxdt\)</span>, so our sum simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = g_{tt} dt^2 + 2 g_{xt} dx dt + \dots + g_{xx} dx^2 + \dots + g_{yy} dy^2 + \dots + g_{zz} dz^2
+\]</div>
+<p>Finally, as the Alcubierre metric has no other terms other than the ones shown explictly in the sum, we can set all other terms in the sum to zero, so:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = g_{tt} dt^2 + 2 g_{xt} dx dt + g_{xx} dx^2 + g_{yy} dy^2 + g_{zz} dz^2
+\]</div>
+<p>Note how this perfectly corresponds term by term with:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = -(1 - v^2 f(r_s)^2)dt^2 - 2v_s f(r_s) dxdt + dx^2 + dy^2 + dz^2
+\]</div>
+<p>So from there, we can determine that:</p>
+<div class="math notranslate nohighlight">
+\[
+g_{tt} = -(1 - v^2 f(r_s)^2)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+g_{xt} = g_{tx} = -v_s f(r_s)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+g_{xx} = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+g_{yy} = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+g_{zz} = 1
+\]</div>
+<p>Which results in the following matrix form of the metric:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+g_{\mu \nu} = 
+\begin{bmatrix}
+-(1 - v^2 f(r_s)^2) &amp; -v_s f(r_s) &amp; 0 &amp; 0 \\
+-v_s f(r_s) &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<p>From there, we can do our necessary calculations.</p>
+</section>
+<section id="york-time-and-energy-density">
+<h2>York Time and Energy Density<a class="headerlink" href="#york-time-and-energy-density" title="Permalink to this heading">#</a></h2>
+<p>Here, we’ll derive the the spacetime expansion/contraction and energy density associated with the (original) Alcubierre metric. The magnitude of the expansion and contraction of space resultant from the metric is called the <strong>York Time</strong>. We can derive the York Time from the extrinsic curvature tensor, which is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+K_{ij} = \frac{1}{2} \left(\partial_i X_j + \partial_j X_i \right)
+\]</div>
+<p>The York Time is the trace (another word for contraction contraction) of the extrinsic curvature tensor <span class="math notranslate nohighlight">\(K_{ij}\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+K = K^i{}_i = \partial_i X^i
+\]</div>
+<p>For the Alcubierre metric, this would be:</p>
+<div class="math notranslate nohighlight">
+\[
+K = v_s \frac{x_s}{r_s} \frac{df(r_s)}{dr_s}
+\]</div>
+<p>The above expression for the York Time gives the magnitude of the spacetime expansion and contraction, and we will refer to it with <span class="math notranslate nohighlight">\(\theta\)</span> from this point on:</p>
+<div class="math notranslate nohighlight">
+\[
+\theta = v_s \frac{x_s}{r_s} \frac{df(r_s)}{dr_s}
+\]</div>
+<p>Below, a plot of the York time with <span class="math notranslate nohighlight">\(v_s = c\)</span>, <span class="math notranslate nohighlight">\(\sigma = 8\)</span> and a 2-meter radius warp shell is shown:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_rs</span><span class="p">(</span><span class="n">r_s</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">r_s</span> <span class="o">+</span> <span class="n">R</span><span class="p">))</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">r_s</span> <span class="o">-</span> <span class="n">R</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="n">R</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">df_rs</span><span class="p">(</span><span class="n">r_s</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">R</span> <span class="o">-</span> <span class="n">r_s</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">R</span> <span class="o">+</span> <span class="n">r_s</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">sigma</span> <span class="o">*</span> <span class="n">R</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">d_rs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">x_s</span><span class="o">=</span><span class="mf">2.5</span><span class="p">):</span>
+    <span class="c1"># rho is y and z &quot;squashed together&quot;</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x_s</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">rho</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">theta</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">x_s</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">v_s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">drs</span> <span class="o">=</span> <span class="n">d_rs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">x_s</span><span class="p">)</span>
+    <span class="n">dfrs</span> <span class="o">=</span> <span class="n">df_rs</span><span class="p">(</span><span class="n">drs</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">v_s</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x_s</span><span class="p">)</span> <span class="o">/</span> <span class="n">drs</span><span class="p">)</span> <span class="o">*</span> <span class="n">dfrs</span>
+
+<span class="k">def</span> <span class="nf">alcubierre_plt</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="mi">160</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">samples</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">samples</span><span class="p">)</span>
+
+    <span class="c1"># Generate coordinate matrices from coordinate vectors.</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+
+    <span class="c1"># Get york time</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">theta</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">x_s</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+    
+    <span class="c1"># Create the Figure.</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Set the angle of the camera</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">)</span>
+
+    <span class="c1"># Add latex math labels.</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\rho$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\theta$&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Set the axis limits</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">4.2</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">)</span>
+    
+    <span class="c1"># Plot the Surface.</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot_wireframe</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">antialiased</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alcubierre_plt</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0a552be2211250ef4643072015de89736240a0c365d859d36b5904d3d70d2486.png" src="../_images/0a552be2211250ef4643072015de89736240a0c365d859d36b5904d3d70d2486.png" />
+</div>
+</div>
+<p>Here, we can see that the metric induces a contraction of spacetime in front and an expansion of spacetime behind the spacecraft.</p>
+<p>Now, we can calculate the energy density. Returning to the metric, we know that we can calculate the stress-energy tensor from the metric. Taking the first component of the stress-energy tensor - that is, <span class="math notranslate nohighlight">\(T_{00}\)</span> - yields the energy density:</p>
+<div class="math notranslate nohighlight">
+\[
+T_{00} = \frac{1}{8\pi} G_{00}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here <span class="math notranslate nohighlight">\(G = c = 1\)</span>, which is the standard when using the ADM formalism. Thus <span class="math notranslate nohighlight">\(\frac{c^4}{8\pi G} \Rightarrow \frac{1}{8\pi}\)</span>.</p>
+</div>
+<p>Doing the tedious calculations of the metric to find the Einstein tensor, from which we can find the stress-energy tensor, will result in:</p>
+<div class="math notranslate nohighlight">
+\[
+T_{00} = -\frac{1}{8\pi} \frac{(v_s)^2 (y^2 + z^2)}{4 (r_s)^2} \left(\frac{df(r_s)}{dr_s}\right)^2
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to the verbosity of calculations such as this for complex metrics such as the Alcubierre metric, this is a task best left for a computer to do. Recommended software libraries for computing tensors in General Relativity include <a class="reference external" href="https://einsteinpy.org/">EinsteinPy</a> and <a class="reference external" href="https://github.com/wojciechczaja/GraviPy">GraviPy</a></p>
+</div>
+<p>The energy density distribution is orthogonal to the direction of the spacecraft’s movement, as shown in the plot below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">energy_density</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">x_s</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">v_s</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">r_s</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x_s</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">rho</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">drs</span> <span class="o">=</span> <span class="n">d_rs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">x_s</span><span class="p">)</span>
+    <span class="n">dfrs</span> <span class="o">=</span> <span class="n">df_rs</span><span class="p">(</span><span class="n">drs</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">*</span> <span class="p">((</span><span class="n">v_s</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">rho</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">r_s</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="p">((</span><span class="n">dfrs</span> <span class="o">/</span> <span class="n">drs</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">energy_density_plt</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="mi">160</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">samples</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">samples</span><span class="p">)</span>
+
+    <span class="c1"># Generate coordinate matrices from coordinate vectors.</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+
+    <span class="c1"># Get york time</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">energy_density</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">x_s</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+    
+    <span class="c1"># Create the Figure.</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Set the angle of the camera</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">)</span>
+
+    <span class="c1"># Add latex math labels.</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\rho$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$T_</span><span class="si">{00}</span><span class="s1">$&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Set the axis limits</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    
+    <span class="c1"># Plot the Surface.</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">rstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">coolwarm</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_density_plt</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">samples</span><span class="o">=</span><span class="mi">320</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2fdd9745d2918821eef67d71c1b94c216f0cdb8cebf34c3c61f06ac4a513634f.png" src="../_images/2fdd9745d2918821eef67d71c1b94c216f0cdb8cebf34c3c61f06ac4a513634f.png" />
+</div>
+</div>
+<p>The energy density graph, unfortunately, disguises perhaps <em>the</em> most important issue with the Alcubierre metric: energy requirements. I will spare a full calculation of the energy requirements, but past research has shown that a 100-meter radius warp shell would require a total negative energy of:</p>
+<div class="math notranslate nohighlight">
+\[
+E \approx -6.2 \times 10^{62} \mathrm{\ kg}
+\]</div>
+<p>For perspective, let’s consider an idealized version of the Casimir effect of quantum mechanics, which has been shown to produce negative energy densities in an experimental setting.</p>
+<p>Given that <span class="math notranslate nohighlight">\(a\)</span> is the distance between the plates, we may calculate the force caused by the Casimir effect with:</p>
+<div class="math notranslate nohighlight">
+\[
+F = -\frac{\hbar c \pi^2}{240} \frac{1}{a^4}
+\]</div>
+<p>While the Casimir effect is measured in <span class="math notranslate nohighlight">\(\mathrm{N/m^2}\)</span>, this is equivalent to <span class="math notranslate nohighlight">\(\mathrm{J/m^3}\)</span>, so the negative energy density <span class="math notranslate nohighlight">\(e_{\rho-}\)</span> of two plates separated by a distance of 1 micrometer would be approximately equal to:</p>
+<div class="math notranslate nohighlight">
+\[
+e_{\rho-} = -1.299 \times 10^{-3} \mathrm{\ kg}
+\]</div>
+<p>Thus, a 60+ order-of-magnitude reduction is necessary to allow a functioning Alcubierre warp shell to be built, even assuming a large number of Casimir cavities arrayed together on the spacecraft.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./knowledge-library"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="general-relativity-3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">General Relativity, Part 3</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="complex-analysis.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Complex numbers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-alcubierre-metric">Derivation of the Alcubierre Metric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations-using-the-alcubierre-metric">Calculations using the Alcubierre metric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#york-time-and-energy-density">York Time and Energy Density</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Project Elära contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

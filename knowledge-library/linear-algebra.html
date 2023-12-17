@@ -1,0 +1,1071 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Linear Algebra &#8212; The Elara Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'knowledge-library/linear-algebra';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Multivariable calculus" href="multivariable-calculus.html" />
+    <link rel="prev" title="Monovariable Calculus" href="monovariable-calculus.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/elara-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/elara-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Elara Handbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About Project Elara</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/open-philosophy.html">Open Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/guiding-principles.html">Guiding Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/docs-organization.html">Docs layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/using-handbook.html">Using the Handbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knowledge Library</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monovariable-calculus.html">Monovariable Calculus</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multivariable-calculus.html">Multivariable calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-equations.html">Differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-1.html">Classical mechanics, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-2.html">Classical mechanics, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-geometry.html">Tensor Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special-relativity.html">Special Relativity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-1.html">General Relativity, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-2.html">General Relativity, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-3.html">General Relativity, Part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alcubierre-metric-intro.html">The Alcubierre Metric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-analysis.html">Complex numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-mechanics.html">Quantum mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer-hub/design-philosophy.html">Design Philosophy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/guide-to-governance.html">Guide to governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/covenant.html">Covenant of Project Elara</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/community-vision.html">Vision of the community</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook/issues/new?title=Issue%20on%20page%20%2Fknowledge-library/linear-algebra.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/knowledge-library/linear-algebra.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linear Algebra</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-operations">Matrix Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-matrices-to-transform-vectors">Using matrices to transform vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">Linearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-the-point">What’s the point?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-motivation-for-tensors">Extra: motivation for tensors</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra">
+<h1>Linear Algebra<a class="headerlink" href="#linear-algebra" title="Permalink to this heading">#</a></h1>
+<p>A vector is a list of items (usually numbers), which represent coordinates in a certain coordinate system. For example, the vector <span class="math notranslate nohighlight">\((4, 2)\)</span> is a line that moves 4 in the x-direction, and 2 in the y-direction. We draw vectors as arrows in space.</p>
+<p>A scalar is a number that “scales” (that is, shrinks or stretches) a vector. More generally, a scalar is any singular number.</p>
+<p>To write a vector (say, <span class="math notranslate nohighlight">\(\vec a\)</span>), we have several notations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec a = (4, 2) = \begin{bmatrix} 4 \\ 2 \end{bmatrix} = 4 \hat i + 2 \hat j
+\end{split}\]</div>
+<p>The first (point notation) is used for both points and vectors and is the simplest method. The second (matrix notation) is the same thing, just written out vertically in a column. The third (basis vector notation) is slightly different. It defines a vector as a sum of transformed basis vectors, where:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat i = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},
+\hat j = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix},
+\hat k = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+<p>The basis vectors are then used to “construct” a vector like this:</p>
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/3D_Vector.svg/300px-3D_Vector.svg.png"><img alt="3D vectors on the coordinate grid" class="align-center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/3D_Vector.svg/300px-3D_Vector.svg.png" style="width: 300px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A basis vector can be thought of as a vector with a “tail” at the origin and  a “head” at 1 unit from the origin along one of the axes.</p>
+</div>
+<p>We can then express any vector as a linear combination of the basis vectors:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec a = s_1 \hat i + s_2 \hat j + s_3 \hat k
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A linear combination of basis vectors simply means that we stretch or shrink each basis vector by a certain factor (<span class="math notranslate nohighlight">\(s\)</span> being that factor), and then add those stretched/shrinked vectors together to form the final vector.</p>
+</div>
+<p>We use the basis vectors <span class="math notranslate nohighlight">\(\hat i, \hat j, \hat k\)</span> in 2D and 3D space, but for nth-dimensional spaces, we use the more general basis vectors <span class="math notranslate nohighlight">\(e_1, e_2, e_3, \dots e_n\)</span>, so linear combinations work like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec a = s_1 \vec e_1 + s_2 \vec e_2 + s_3 \vec e_3 + \dots + s_n \vec e_n
+\]</div>
+<p>Which we often write as:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec a = \sum_{i = 1}^n s_i \vec e_i
+\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Remember this notation! This will be very important later on.</p>
+</div>
+<p>To add vectors of any dimension, we add their corresponding components:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+a_1 \\ a_2 \\ a_3
+\end{bmatrix}
++
+\begin{bmatrix}
+b_1 \\ b_2 \\ b_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+a_1 + b_1 \\ a_2 + b_2 \\ a_3 + b_3
+\end{bmatrix}
+\end{split}\]</div>
+<p>To multiply a vector by a scalar, we multiply the scalar by each of the components:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+k
+\begin{bmatrix}
+a_1 \\ a_2 \\ a_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+k (a_1) \\ k (a_2) \\ k (a_3)
+\end{bmatrix}
+\end{split}\]</div>
+<p>To find the length of a vector, we take its magnitude, like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\operatorname{magn}(\vec a)
+\]</div>
+<div class="admonition-a-note-on-notation admonition">
+<p class="admonition-title">A note on notation</p>
+<p>You will also see the magnitude of a vector written as <span class="math notranslate nohighlight">\(||\vec a||\)</span> but I highly recommend <em>not</em> using this alternate notation, because it is so easily confused with the absolute value symbol.</p>
+</div>
+<p>The magnitude of a vector can be found using the Pythagorean theorem, so the magnitude is the square of the sum of each component:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\operatorname{magn} \:
+\begin{bmatrix}
+a_1 \\ a_2 \\ a_3 \\ \dots \\ a_n
+\end{bmatrix}
+= \sqrt{(a_1)^2 + (a_2)^2 + (a_3)^2 + \dots + (a_n)^2}
+\end{split}\]</div>
+<p>The <strong>dot product</strong> (or inner product) between vectors tells us how much 2 vectors point in the same direction. The dot product is usually defined like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec a \cdot \vec b = 
+\operatorname{magn}(\vec a) \operatorname{magn}(\vec b) \cos (\theta)
+\]</div>
+<p>The more two vectors point in the same direction, the larger the dot product, and vice-versa. If the dot product is zero, that means the vectors are perpendicular to each other, and if the dot product is negative, that means the vectors are pointing in opposite directions.</p>
+<p>The dot product returns a <strong>scalar</strong>, and there is a simpler formula for computing it:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+a_1 \\ a_2 \\ a_3
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+b_1 \\ b_2 \\ b_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+a_1 \cdot b_1 \\ a_2 \cdot b_2 \\ a_3 \cdot b_3
+\end{bmatrix}
+\end{split}\]</div>
+<p>The <strong>cross product</strong> between vectors returns a new vector perpendicular to both vectors with a magnitude proportional to how far apart the two vectors are pointing. The cross product is usually written like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec a \times \vec b
+\]</div>
+<p>And the magnitude of the cross product is this:</p>
+<div class="math notranslate nohighlight">
+\[
+\operatorname{mag} (\vec a \times \vec b) = 
+\operatorname{magn}(\vec a) \operatorname{magn}(\vec b)
+\sin (\theta)
+\]</div>
+<p>The cross product can be calculated by writing a special matrix that looks like this:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+\hat i &amp; \hat j &amp; \hat k \\
+a_1 &amp; a_2 &amp; a_3 \\
+b_1 &amp; b_2 &amp; b_3
+\end{vmatrix}
+\end{split}\]</div>
+<p>Now, we compute each component of the cross product vector by blocking out the column under that component’s basis vector in that matrix. For example, for <span class="math notranslate nohighlight">\(\hat i\)</span>, we block out the first column under it:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+\hat i &amp; \hat j &amp; \hat k \\
+\Box &amp; a_2 &amp; a_3 \\
+\Box &amp; b_2 &amp; b_3
+\end{vmatrix}
+\end{split}\]</div>
+<p>This leaves us with a square matrix underneath the basis vectors. We just need to compute a special value called the determinant of that matrix, which is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+a &amp; b \\
+c &amp; d
+\end{vmatrix}
+= ad - bc
+\end{split}\]</div>
+<p>In our case, we have:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{vmatrix}
+a_2 &amp; a_3 \\
+b_2 &amp; b_3
+\end{vmatrix} = a_2 b_3 - a_3 b_2
+\end{split}\]</div>
+<p>We do the same for all three basis vectors, which gives us this:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec a \times \vec b = 
+\begin{vmatrix}
+\hat i &amp; \hat j &amp; \hat k \\
+\Box &amp; a_2 &amp; a_3 \\
+\Box &amp; b_2 &amp; b_3
+\end{vmatrix} -
+\begin{vmatrix}
+\hat i &amp; \hat j &amp; \hat k \\
+a_1 &amp; \Box &amp; a_3 \\
+b_1 &amp; \Box &amp; b_3
+\end{vmatrix} +
+\begin{vmatrix}
+\hat i &amp; \hat j &amp; \hat k \\
+a_1 &amp; a_2 &amp; \Box \\
+b_1 &amp; b_2 &amp; \Box
+\end{vmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec a \times \vec b = 
+\begin{vmatrix}
+a_2 &amp; a_3 \\
+b_2 &amp; b_3
+\end{vmatrix} \hat i -
+\begin{vmatrix}
+a_1 &amp; a_3 \\
+b_1 &amp; b_3
+\end{vmatrix} \hat j +
+\begin{vmatrix}
+a_1 &amp; a_2 \\
+b_1 &amp; b_2
+\end{vmatrix} \hat k
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec a \times \vec b = 
+(a_2 b_3 - a_3 b_2)\hat i -
+(a_1 b_3 - a_3 b_1)\hat j +
+(a_1 b_2 - a_2 b_1)\hat k
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be careful, remember that it is the first determinant times <span class="math notranslate nohighlight">\(\hat i\)</span>, then <strong>minus</strong> the second determinant times <span class="math notranslate nohighlight">\(\hat j\)</span>, and then plus the third determinant times <span class="math notranslate nohighlight">\(\hat k\)</span>.</p>
+</div>
+<p>A <strong>matrix</strong> is an array of items (usually numbers), arranged in rows and columns. The dimension of a matrix is how many rows and columns it has. A two-by-three <span class="math notranslate nohighlight">\((2 \times 3)\)</span> matrix, for example, has two rows and 3 columns, like this:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =
+\begin{pmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 2 &amp; 1
+\end{pmatrix}
+\end{split}\]</div>
+<p>We denote the rows of the matrix typically with the letter <span class="math notranslate nohighlight">\(i\)</span>, and the columns with the letter <span class="math notranslate nohighlight">\(j\)</span>, and we can refer to the entries of a matrix with their column and row number. For example, <span class="math notranslate nohighlight">\(A_{2 3}\)</span> is the entry on the 2nd row, 3rd column of the matrix <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>A matrix can be n-dimensional. A higher-dimensional matrix with <span class="math notranslate nohighlight">\(i\)</span> rows and <span class="math notranslate nohighlight">\(j\)</span> columns would be written like this:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =
+\begin{pmatrix}
+A_{11} &amp; A_{12} &amp; A_{13} &amp; \dots &amp; A_{1j} \\
+A_{21} &amp; A_{22} &amp; A_{23} &amp; \dots &amp; A_{2j} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+A_{i1} &amp; A_{i2} &amp; A_{i3} &amp; \dots &amp; A_{ij} \\
+\end{pmatrix}
+\end{split}\]</div>
+<p>The transpose of a matrix is the matrix with its rows and columns switched, such that:</p>
+<div class="math notranslate nohighlight">
+\[
+(A_{ij})^T = A_{ji}
+\]</div>
+<p>We can write out a vector as a row vector or column vector, which are respectively matrices with just one row or column:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec a =
+\begin{bmatrix}
+a_1 &amp; a_2 &amp; a_3
+\end{bmatrix}^T =
+\begin{bmatrix}
+a_1 \\ a_2 \\ a_3
+\end{bmatrix}
+\end{split}\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Note that while a vector can be arbitrarily written as a row or column vector, a row vector is <strong>not</strong> the same thing as a column vector!</p>
+</div>
+<p>A matrix is a description of a <em>linear transformation</em> of the grid. To understand what this means, let’s go back to our basis vectors for a moment. Remember that (in 2D space), the basis vectors <span class="math notranslate nohighlight">\(\hat i\)</span> and <span class="math notranslate nohighlight">\(\hat j\)</span> are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat i = \begin{bmatrix} 1 \\ 0 \end{bmatrix},
+\hat j = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+<p>Now, suppose we had a matrix <span class="math notranslate nohighlight">\(A\)</span>, as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =
+\begin{bmatrix}
+2 &amp; 1 \\
+5 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<p>This matrix tells us to move the basis vectors <span class="math notranslate nohighlight">\(\hat i\)</span> and <span class="math notranslate nohighlight">\(\hat j\)</span> like this:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat i: 
+\begin{bmatrix} 1 \\ 0 \end{bmatrix}
+\rightarrow
+\begin{bmatrix} 2 \\ 5 \end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat j: 
+\begin{bmatrix} 0 \\ 1 \end{bmatrix}
+\rightarrow
+\begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\end{split}\]</div>
+<p>By moving the basis vectors, every other point on our original grid moves too, so every vector on the original grid moves with it. So, a matrix is a way to <em>transform</em> vectors into new positions by changing the entire grid.</p>
+<section id="matrix-operations">
+<h2>Matrix Operations<a class="headerlink" href="#matrix-operations" title="Permalink to this heading">#</a></h2>
+<p>We can add matrices together if they have the <em>same</em> dimensions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+A_{11} &amp; A_{12} \\
+A_{21} &amp; A_{22}
+\end{bmatrix}
++
+\begin{bmatrix}
+B_{11} &amp; B_{12} \\
+B_{21} &amp; B_{22}
+\end{bmatrix}
+=
+\begin{bmatrix}
+A_{11} + B_{11} &amp; A_{12} + B_{12} \\
+A_{21} + B_{21} &amp; A_{22} + B_{22}
+\end{bmatrix}
+\end{split}\]</div>
+<p>We can multiply any matrix by a scalar:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+k \begin{bmatrix}
+A_{11} &amp; A_{12} \\
+A_{21} &amp; A_{22}
+\end{bmatrix}
+=
+\begin{bmatrix}
+k(A_{11}) &amp; k(A_{12}) \\
+k(A_{21}) &amp; k(A_{22})
+\end{bmatrix}
+\end{split}\]</div>
+<p>And we can multiply matrices with other matrices. To do so, we calculate the dot product of each row vector of matrix <span class="math notranslate nohighlight">\(A\)</span> with each column vector of matrix <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>In general, when finding the entry <span class="math notranslate nohighlight">\(C_{ij}\)</span> where <span class="math notranslate nohighlight">\(C\)</span> is the matrix product of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, we take the dot product of the <span class="math notranslate nohighlight">\(i\)</span>th row of <span class="math notranslate nohighlight">\(A\)</span> with the <span class="math notranslate nohighlight">\(j\)</span>th column of <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>This is a bit of a more multi-step process, so let’s see how this works, given our two example matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> with the matrix product <span class="math notranslate nohighlight">\(C\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+A_{11} &amp; A_{12} \\
+A_{21} &amp; A_{22}
+\end{bmatrix}
+\begin{bmatrix}
+B_{11} &amp; B_{12} \\
+B_{21} &amp; B_{22}
+\end{bmatrix}
+=
+\begin{bmatrix}
+C_{11} &amp; C_{12} \\
+C_{21} &amp; C_{22}
+\end{bmatrix}
+\end{split}\]</div>
+<p>First, we take the <em>first</em> row vector of <span class="math notranslate nohighlight">\(A\)</span> and multiply it by the <em>first</em> column vector of <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+C_{11} = 
+\begin{bmatrix}
+A_{11} &amp; A_{12}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+B_{11} \\ B_{12}
+\end{bmatrix}
+=
+A_{11} B_{11} + A_{12} B_{12}
+\end{split}\]</div>
+<p>Then, we take the <em>second</em> row vector of <span class="math notranslate nohighlight">\(A\)</span> and multiply it by the same first column vector of <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+C_{21} =
+\begin{bmatrix}
+A_{21} &amp; A_{22}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+B_{11} \\ B_{12}
+\end{bmatrix}
+=
+A_{21} B_{11} + A_{22} B_{12} 
+\end{split}\]</div>
+<p>If the first matrix had more rows, we’d keep doing this, until we’ve multiplied every row of the first matrix by the first column of the second matrix.</p>
+<p>Now, we take the <em>first</em> row vector of <span class="math notranslate nohighlight">\(A\)</span> and multiply it by the <em>second</em> column vector of <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+C_{12} =
+\begin{bmatrix}
+A_{11} &amp; A_{12}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+B_{12} \\ B_{22}
+\end{bmatrix}
+=
+A_{11} B_{12} + A_{12} B_{22} 
+\end{split}\]</div>
+<p>Then, we take the <em>second</em> row vector of <span class="math notranslate nohighlight">\(A\)</span> and multiply it by the same second column vector of <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+C_{22} =
+\begin{bmatrix}
+A_{21} &amp; A_{22}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+B_{11} \\ B_{12}
+\end{bmatrix}
+=
+A_{21} B_{11} + A_{22} B_{12} 
+\end{split}\]</div>
+<p>We’d continue this process, going through all the columns of the second matrix. Putting it all together, we find the final matrix product.</p>
+<p>Since matrix multiplication is dependent on the dot product, we can only multiply two matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> if <span class="math notranslate nohighlight">\(A\)</span> has the same number of columns as <span class="math notranslate nohighlight">\(B\)</span> has rows. So we can find the matrix product of two <span class="math notranslate nohighlight">\(3 \times 3\)</span> matrices, or a <span class="math notranslate nohighlight">\(5 \times 2\)</span> matrix with a <span class="math notranslate nohighlight">\(2 \times 5\)</span> matrix, but not a <span class="math notranslate nohighlight">\(5 \times 2\)</span> and <span class="math notranslate nohighlight">\(3 \times 3\)</span> matrix.</p>
+<p>Why is matrix multiplication useful? Well, because remember matrices are transformations that can be applied to vectors. If we want to apply two matrices, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, to a vector <span class="math notranslate nohighlight">\(\vec a\)</span>, that’s the same as transforming <span class="math notranslate nohighlight">\(\vec a\)</span> by the matrix product <span class="math notranslate nohighlight">\(AB\)</span>.</p>
+</section>
+<section id="using-matrices-to-transform-vectors">
+<h2>Using matrices to transform vectors<a class="headerlink" href="#using-matrices-to-transform-vectors" title="Permalink to this heading">#</a></h2>
+<p>We can use matrices to transform vectors as well, using a modified version of matrix multiplication. The general formula for matrix-vector multiplication is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+  A \vec x=
+  \left[
+    \begin{array}{cccc}
+      a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n}\\
+      a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n}\\
+      \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+      a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn}
+    \end{array}
+  \right]
+  \left[
+    \begin{array}{c}
+      x_1\\
+      x_2\\
+      \vdots\\
+      x_n
+    \end{array}
+  \right]
+  =
+  \left[
+    \begin{array}{c}
+      a_{11}x_1+a_{12}x_2 + \cdots + a_{1n} x_n\\
+      a_{21}x_1+a_{22}x_2 + \cdots + a_{2n} x_n\\
+      \vdots\\
+      a_{m1}x_1+a_{m2}x_2 + \cdots + a_{mn} x_n\\
+    \end{array}
+  \right].
+\end{align*}
+\end{split}\]</div>
+<p>Consider the following matrix and vector:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+S = 
+\begin{bmatrix}
+2 &amp; 0 \\
+0 &amp; 2
+\end{bmatrix},
+\vec v = 
+\begin{bmatrix}
+5 \\
+2
+\end{bmatrix}
+\end{split}\]</div>
+<p>If we apply the matrix <span class="math notranslate nohighlight">\(S\)</span> on a vector <span class="math notranslate nohighlight">\(\vec v\)</span>, then we end up with a new vector <span class="math notranslate nohighlight">\(\vec v_2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+S \vec v = 
+\begin{bmatrix}
+2 &amp; 0 \\
+0 &amp; 2
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+5 \\
+2
+\end{bmatrix}
+= \begin{bmatrix}
+10 \\
+4
+\end{bmatrix}
+\end{split}\]</div>
+<p>We can check our answer using NumPy’s <code class="docutils literal notranslate"><span class="pre">dot()</span></code>, which performs matrix-vector multiplication when given a matrix and a vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">],</span> 
+              <span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">a</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[10],
+       [ 4]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the new vector <span class="math notranslate nohighlight">\(\vec v_2\)</span> is equal to the original vector <span class="math notranslate nohighlight">\(\vec v_1\)</span> scaled by 2! So the matrix <span class="math notranslate nohighlight">\(S\)</span> actually encodes the <strong>linear transformation</strong> of scaling by 2. In fact, all matrices can be thought of as <em>linear maps</em> that map vectors onto their transformed versions. Common transformations, such as rotation, shearing, stretching, translation, and countless others can all be encoded through matrices! This is why matrices are useful!</p>
+</section>
+<section id="linearity">
+<h2>Linearity<a class="headerlink" href="#linearity" title="Permalink to this heading">#</a></h2>
+<p>Linear algebra might seem an unrelated mess of mathematical objects, problems, and techniques. But there is one theme underlying linear algebra - <strong>linearity</strong>. Anything that is linear is acted on by <strong>linear operators</strong>, to which the following rule applies:</p>
+<div class="math notranslate nohighlight">
+\[
+f(ax + by) = af(x) + bf(y)
+\]</div>
+<p>For example, one linear operator would be vector addition, and another linear operator would be matrix multiplication - both follow this rule. Therefore vectors and matrices are linear as well.</p>
+</section>
+<section id="what-s-the-point">
+<h2>What’s the point?<a class="headerlink" href="#what-s-the-point" title="Permalink to this heading">#</a></h2>
+<p>Linear algebra has many arbitrary rules - but why learn them? What does linear algebra have to do with the real world, when it feels like you’re just moving around a bunch of numbers in columns and rows? The answer is - a <strong>lot</strong>.</p>
+<p>For example, matrices are used to solve complicated systems of equations, and find optimal solutions to many problems. Vectors are used to model physical quantities, like force, position, and acceleration. Almost all computer graphics and machine learning uses both, and physics uses both in combination with other mathematics. In fact, the whole reason why linear algebra is called <strong>linear</strong> algebra is that it provides a consistent set of rules that apply to linear problems. Put it another way, any linear problem can be solved with linear algebra!</p>
+</section>
+<section id="extra-motivation-for-tensors">
+<h2>Extra: motivation for tensors<a class="headerlink" href="#extra-motivation-for-tensors" title="Permalink to this heading">#</a></h2>
+<p>Consider a 3D vector:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec A =
+\begin{bmatrix}
+x \\
+y \\
+z
+\end{bmatrix}
+=
+\begin{bmatrix}
+3 \\
+-5 \\
+2
+\end{bmatrix}
+\end{split}\]</div>
+<p>This vector is written in Cartesian coordinates (x, y, z coordinates). The same vector would be written like this in spherical coordinates (<span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\phi\)</span> are given in radians):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec A =
+\begin{bmatrix}
+r \\
+\theta \\
+\phi
+\end{bmatrix}
+=
+\begin{bmatrix}
+(x^2 + y^2 + z^2)^{1/2} \\
+\arctan (y/x) \\
+\arccos (z^2/(x^2 + y^2 + z^2))
+\end{bmatrix}
+=
+\begin{bmatrix}
+6.164 \\
+-1.03 \\
+0.324
+\end{bmatrix}
+\end{split}\]</div>
+<p>Notice that these two are the <em>same</em> vector, but in different coordinate systems, the components of the vector change. So, a vector’s components are <strong>not</strong> invariant. They depend on the coordinate system you use, and converting between coordinate systems is really annoying!</p>
+<p>This is where tensors come in. Tensors are generalizations of n-dimensional arrays - including vectors and matrices - which are invariant. This means, we can rewrite a scalar, vector, or matrix as an equivalent tensor that remains the same in whichever coordinate system we put it in. How cool is that! We’ll explore tensors some more a few sections later.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./knowledge-library"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="monovariable-calculus.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Monovariable Calculus</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="multivariable-calculus.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Multivariable calculus</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-operations">Matrix Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-matrices-to-transform-vectors">Using matrices to transform vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearity">Linearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-the-point">What’s the point?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-motivation-for-tensors">Extra: motivation for tensors</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Project Elära contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

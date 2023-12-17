@@ -1,0 +1,1123 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Classical mechanics, Part 2 &#8212; The Elara Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'knowledge-library/classical-mechanics-2';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tensor Calculus" href="differential-geometry.html" />
+    <link rel="prev" title="Classical mechanics, Part 1" href="classical-mechanics-1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/elara-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/elara-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Elara Handbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About Project Elara</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/open-philosophy.html">Open Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/guiding-principles.html">Guiding Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/docs-organization.html">Docs layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/using-handbook.html">Using the Handbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knowledge Library</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monovariable-calculus.html">Monovariable Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multivariable-calculus.html">Multivariable calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-equations.html">Differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-1.html">Classical mechanics, Part 1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classical mechanics, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-geometry.html">Tensor Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special-relativity.html">Special Relativity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-1.html">General Relativity, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-2.html">General Relativity, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-3.html">General Relativity, Part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alcubierre-metric-intro.html">The Alcubierre Metric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-analysis.html">Complex numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-mechanics.html">Quantum mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer-hub/design-philosophy.html">Design Philosophy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/guide-to-governance.html">Guide to governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/covenant.html">Covenant of Project Elara</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/community-vision.html">Vision of the community</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook/issues/new?title=Issue%20on%20page%20%2Fknowledge-library/classical-mechanics-2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/knowledge-library/classical-mechanics-2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Classical mechanics, Part 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-mechanics">Lagrangian Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-lagrangian-mechanics-to-solve-the-harmonic-oscillator">Using Lagrangian mechanics to solve the harmonic oscillator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-lagrangian-mechanics-to-solve-the-orbit-equation">Using Lagrangian mechanics to solve the orbit equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-lagrangians-to-solve-the-double-pendulum-problem">Using Lagrangians to solve the double pendulum problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langrangian-to-newtonian-mechanics">Langrangian to Newtonian mechanics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangians-to-the-stars">Lagrangians to the stars</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="classical-mechanics-part-2">
+<h1>Classical mechanics, Part 2<a class="headerlink" href="#classical-mechanics-part-2" title="Permalink to this heading">#</a></h1>
+<p>Newton’s laws and conservation of energy are two approaches to solving for the equations of motion of an object. We can make Newtonian mechanics more elegant by extending them to fields and potentials. But ultimately, Newtonian mechanics is still cumbersome to use. Here is an alternate, more beautiful approach - Lagrangian mechanics.</p>
+<section id="lagrangian-mechanics">
+<h2>Lagrangian Mechanics<a class="headerlink" href="#lagrangian-mechanics" title="Permalink to this heading">#</a></h2>
+<p>The <strong>Lagrangian</strong> is the difference of an object’s kinetic and potential energies, and is denoted by:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L(x, \dot x)} = K(\dot x) - U(x)
+\]</div>
+<p>Note that the dots are used for the time derivatives - that is, <span class="math notranslate nohighlight">\(\dot x = \frac{dx}{dt}\)</span>.</p>
+<p>The <strong>action</strong> is the time integral of the Lagrangian:</p>
+<div class="math notranslate nohighlight">
+\[
+S = \int_{t_1}^{t_2} \mathcal{L}(x, \dot x)~dt
+\]</div>
+<p>The <strong>principle of stationary action</strong> is one of the most fundamental and profound laws of physics, and states that for any given system, the action is stationary. What does stationary mean? Recall the idea of stationary <em>points</em> in calculus - which include minima and maxima. For the action to be stationary, that means the Lagrangian must be a stationary <em>function</em>, which are analogous to stationary points, just for the action, which is a function of functions.</p>
+<p>But what form does that Lagrangian have to take to obey the principle of stationary action? The short answer is that it must obey the following equation, known as the <strong>Euler-Lagrange equation</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \mathcal{L}}{\partial x} - \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot x} = 0
+\]</div>
+<p>We will derive this differential equation in the following section - if this section is too math-heavy, feel free to skip this section.</p>
+<p>To begin our derivation, we first go back to single-variable calculus, where we are often told to find the stationary points - such as the maxima or minima - of a function. Both maxima and minima are called <strong>stationary points</strong> - points where the derivative of a function is zero. But what exactly defines a stationary point? Let’s take a step back first. We know that the derivative is defined as the limit as <span class="math notranslate nohighlight">\(\epsilon \to 0\)</span> of:</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = \frac{f(x + \epsilon) - f(x)}{\epsilon}
+\]</div>
+<p>We can rearrange that equation to form:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x + \epsilon) = f(x) + \epsilon f'(x)
+\]</div>
+<p>For a point to be stationary, we know that <span class="math notranslate nohighlight">\(f'(x)\)</span> must be zero. Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x + \epsilon) = f(x)
+\]</div>
+<p>which means that at a stationary point, the function remains the same so long as you remain within a small distance <span class="math notranslate nohighlight">\(\epsilon\)</span> away from the point. We denote a new notation, <span class="math notranslate nohighlight">\(\delta\)</span>, which we call the <strong>variation</strong>, and which we define as:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta f = f(x + \epsilon) - f(x)
+\]</div>
+<p>Normally, since <span class="math notranslate nohighlight">\(f(x + \epsilon) = f(x) + \epsilon f'(x)\)</span>, it would be true that:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta f = [f(x) + \epsilon f'(x)] - f(x) = \epsilon f'(x)
+\]</div>
+<p>But because <span class="math notranslate nohighlight">\(f(x + \epsilon) = f(x)\)</span> at a <em>stationary</em> point, <span class="math notranslate nohighlight">\(f(x + \epsilon) - f(x) = 0\)</span>, so at any stationary point, it is true that:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta f = 0
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(\delta f = \epsilon f'(x)\)</span> is still true at a stationary point, but since <span class="math notranslate nohighlight">\(f'(x) = 0\)</span> at a stationary point, <span class="math notranslate nohighlight">\(\delta f = \epsilon \cdot 0 = 0\)</span>. So you can arrive at the result <span class="math notranslate nohighlight">\(\delta f = 0\)</span> at all stationary points using either method.</p>
+</div>
+<p>Now, we return to the action:</p>
+<div class="math notranslate nohighlight">
+\[
+S = \int \limits_a^b \mathcal{L}(x, \dot x)~dt
+\]</div>
+<p>We demand that the action must be stationary:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta S = 0
+\]</div>
+<p>Which also means that:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \limits_a^b \delta \mathcal{L}(x, \dot x)~dt = 0
+\]</div>
+<p>Recall that in the single-variable case, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta f = \epsilon f'(x)
+\]</div>
+<p>In the multivariable case, the derivative is replaced by partial derivatives. So we can rewrite the variation of <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \limits_a^b \delta \mathcal{L}(x, \dot x)~dt = \int \limits_a^b \epsilon \frac{\partial \mathcal{L}}{\partial x} + \dot \epsilon \frac{\partial \mathcal{L}}{\partial \dot x}~dt
+\]</div>
+<p>We can split apart this integral to get:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \limits_a^b \epsilon \frac{\partial \mathcal{L}}{\partial x}~dt + \int \limits_a^b \frac{\partial \mathcal{L}}{\partial \dot x} \frac{d\epsilon}{dt}~dt
+\]</div>
+<p>We now can use integration by parts on the second integral. Set:</p>
+<div class="math notranslate nohighlight">
+\[
+u = \frac{\partial \mathcal{L}}{\partial \dot x}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+dv = \frac{d\epsilon}{dt}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v = \epsilon
+\]</div>
+<p>Therefore:</p>
+<div class="math notranslate nohighlight">
+\[
+du = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot x} dt
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v = \int dv = \epsilon
+\]</div>
+<p>And using the integration by parts formula:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \limits_a^b  u~dv = uv \bigg |_a^b - \int \limits_a^b  v~du
+\]</div>
+<p>The second term becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+\epsilon \frac{\partial \mathcal{L}}{\partial \dot x} \bigg |_a^b - \int \limits_a^b \epsilon \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot x}~dt
+\]</div>
+<p>But remember, since we are evaluating at a stationary function (not stationary point, stationary function, as the action is a function of functions), all the derivatives of <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> go to zero, so <span class="math notranslate nohighlight">\(\epsilon \frac{\partial \mathcal{L}}{\partial \dot x} \bigg |_a^b\)</span> is zero and can be cancelled out. Therefore, the second term is just:</p>
+<div class="math notranslate nohighlight">
+\[
+- \int \limits_a^b \epsilon \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot x}~dt
+\]</div>
+<p>Let’s put the second term and the first term back together:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \limits_a^b \epsilon \frac{\partial \mathcal{L}}{\partial x}~dt - \int \limits_a^b \epsilon \frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot x}~dt
+\]</div>
+<p>Since they are with respect to the same variable, we can recombine these two integrals:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \limits_a^b \epsilon \frac{\partial \mathcal{L}}{\partial x}~dt - \epsilon \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot x}~dt
+\]</div>
+<p>And we can factor out the epsilon:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \limits_a^b \left(\frac{\partial \mathcal{L}}{\partial x} - \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot x} \right) \epsilon~dt
+\]</div>
+<p>But remember, <span class="math notranslate nohighlight">\(\delta S = 0\)</span>, so:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \limits_a^b \left(\frac{\partial \mathcal{L}}{\partial x} - \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot x} \right) \epsilon~dt = 0
+\]</div>
+<p>And the only way for the equation to be true is if:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \mathcal{L}}{\partial x} - \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot x} = 0
+\]</div>
+<p>This is the <strong>Euler-Lagrange equation</strong>, and it can be used to solve for the equations of motion as long as the Lagrangian is known.</p>
+<p>Note that for a more general set of coordinate systems, where the system is not one-dimensional motion along the <span class="math notranslate nohighlight">\(x\)</span> axis, the Euler-Lagrange equation takes the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot q_i} - \frac{\partial \mathcal{L}}{\partial q_i} = 0
+\]</div>
+<p>And specifically when we are interested in solving for the motion of a system, and not just of one individual object, it should be noted that the kinetic and potential energies are those of the <strong>system</strong> - that is, the sum of the kinetic and potential energies of every object in the system:</p>
+<div class="math notranslate nohighlight">
+\[
+K = \sum_i K_i = K_1 + K_2 + K_3 + \dots + K_n
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+U = \sum_i U_i = U_1 + U_2 + U_3 + \dots + U_n
+\]</div>
+<p>Note that the Euler-Lagrange equations apply primarily to closed systems, i.e. systems with no external force acting on them. If there is an external applied force on the system that does work <span class="math notranslate nohighlight">\(W\)</span>, then the Euler-Lagrange equations become:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot q_i} - \frac{\partial \mathcal{L}}{\partial q_i} = \frac{\partial W}{\partial q_i}
+\]</div>
+<section id="using-lagrangian-mechanics-to-solve-the-harmonic-oscillator">
+<h3>Using Lagrangian mechanics to solve the harmonic oscillator<a class="headerlink" href="#using-lagrangian-mechanics-to-solve-the-harmonic-oscillator" title="Permalink to this heading">#</a></h3>
+<a class="reference internal image-reference" href="../_images/simple-oscillator.png"><img alt="Simple oscillator" class="align-center" src="../_images/simple-oscillator.png" style="width: 400px;" /></a>
+<p>For the single pendulum problem, we first find the equations <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span> given our coordinate system. Our coordinate system is based on the point <span class="math notranslate nohighlight">\((0, 0)\)</span> located at the point where the pendulum is attached to the ceiling. Using basic trigonometry, we find that:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = \ell \sin \theta (t)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y(t) = -\ell \cos \theta (t)
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(y(t)\)</span> is negative because the pendulum is at a negative height relative to our origin. Using our expressions for <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span>, we want to find the expression for the kinetic energy <span class="math notranslate nohighlight">\(K\)</span>. We know that:</p>
+<div class="math notranslate nohighlight">
+\[
+K = \frac{1}{2} mv^2
+\]</div>
+<p>And that:</p>
+<div class="math notranslate nohighlight">
+\[
+v = \sqrt{v_x^2 + v_y^2} = \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}
+\]</div>
+<p>To do this, we solve for <span class="math notranslate nohighlight">\(\frac{dx}{dt}\)</span> and <span class="math notranslate nohighlight">\(\frac{dy}{dt}\)</span>. This takes a bit of care, because we need to implicitly differentiate <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span> with respect to <span class="math notranslate nohighlight">\(t\)</span>, where:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dx}{dt} = \frac{dx}{d\theta} \frac{d\theta}{dt}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy}{dt} = \frac{dy}{d\theta} \frac{d\theta}{dt}
+\]</div>
+<p>Implicitly differentiating, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+v_x = \frac{dx}{dt} = \ell \cos \theta \frac{d\theta}{dt}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_y = \frac{dy}{dt} = \ell \sin \theta \frac{d\theta}{dt}
+\]</div>
+<p>Now, we plug our values for <span class="math notranslate nohighlight">\(v_x\)</span> and <span class="math notranslate nohighlight">\(v_y\)</span> into the kinetic energy equation, which gives us:</p>
+<div class="math notranslate nohighlight">
+\[
+K = \frac{1}{2} m \left(\ell^2 \cos^2 \theta \frac{d\theta}{dt} + \ell^2 \sin^2 \theta \frac{d\theta}{dt}\right)
+\]</div>
+<p>If we do a little simplification by factoring and remembering that <span class="math notranslate nohighlight">\(\cos^2 \theta + \sin^2 \theta = 1\)</span>, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+K = \frac{1}{2} m \ell^2 \left(\frac{d\theta}{dt}\right)^2
+\]</div>
+<p>Now we find the potential energy. Remember that close to Earth, the potential energy is determined by and only by the vertical distance between the origin (which is the reference height of zero) and the measured point. This means that:</p>
+<div class="math notranslate nohighlight">
+\[
+U = mgh
+\]</div>
+<p>The height in this case is negative (because it’s below the origin) and we’re only taking the vertical component of the height (hence <span class="math notranslate nohighlight">\(\cos \theta\)</span>) so:</p>
+<div class="math notranslate nohighlight">
+\[
+U = -mg \cos \theta \ell
+\]</div>
+<p>Putting it all together, our Lagrangian is:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L} = \frac{1}{2} m \ell^2 \left(\frac{d\theta}{dt}\right)^2 + mg \cos \theta \ell
+\]</div>
+<p>Here, our coordinates are determined in terms of the angle <span class="math notranslate nohighlight">\(\theta\)</span> only, so the Euler-Lagrange equations take the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot \theta} - \frac{\partial \mathcal{L}}{\partial \theta} = 0
+\]</div>
+<p>If we plug this into the Euler-Lagrange equation, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+m \frac{d^2 \theta}{dt^2} \ell^2 + mg \sin \theta \ell = 0
+\]</div>
+<p>We can rewrite this as:</p>
+<div class="math notranslate nohighlight">
+\[
+m \frac{d^2 \theta}{dt^2} \ell^2 = - mg \sin \theta \ell
+\]</div>
+<p>And cancel out the common factors to yield:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 \theta}{dt^2} = - \frac{g}{\ell} \sin \theta
+\]</div>
+<p>We have arrived at our answer. This is the differential equation of the simple pendulum. Note that while this equation is impossible to solve analytically directly, we can use the small-angle approximation of <span class="math notranslate nohighlight">\(\sin \theta \approx \theta\)</span> to get:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 \theta}{dt^2} = -\frac{g}{\ell} \theta
+\]</div>
+<p>Of which the solution is:</p>
+<div class="math notranslate nohighlight">
+\[
+\theta(t) = \theta_{max} \sin \left(\sqrt{\frac{g}{\ell}}t + \phi_0 \right)
+\]</div>
+</section>
+<section id="using-lagrangian-mechanics-to-solve-the-orbit-equation">
+<h3>Using Lagrangian mechanics to solve the orbit equation<a class="headerlink" href="#using-lagrangian-mechanics-to-solve-the-orbit-equation" title="Permalink to this heading">#</a></h3>
+<p>We want to derive the orbit of Earth around the Sun. To do so, we again first derive the expressions for <span class="math notranslate nohighlight">\(x(t)\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span> in terms of the solar-earth system:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = r(t) \cos \theta(t)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y(t) = r(t) \sin \theta(t)
+\]</div>
+<p>Differentiating both (and remembering to use the product rule), we find that:</p>
+<div class="math notranslate nohighlight">
+\[
+v_x(t) = \cos \theta(t) \frac{dr}{dt} - r(t) \sin \theta (t) \frac{d\theta}{dt}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v_y(t) = \sin \theta(t) \frac{dr}{dt} + r(t) \cos \theta \frac{d\theta}{dt}
+\]</div>
+<p>Which we can use to find the kinetic energy (after lots of algebra and several passes at using the identity <span class="math notranslate nohighlight">\(\sin^2 \theta + \cos^2 \theta = 1\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+K = \frac{1}{2} m \left[\left(\frac{dr}{dt}\right)^2 + r^2 \left(\frac{d\theta}{dt}\right)^2\right]
+\]</div>
+<p>The potential energy is given by <span class="math notranslate nohighlight">\(U = -\frac{GMm}{r}\)</span>, so the Lagrangian is:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L} = \frac{1}{2} m (\dot r^2 + r^2 \dot \theta^2) + \frac{GMm}{r}
+\]</div>
+<p>Applying the Euler-Lagrange equations to each coordinate, <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>, present in the Lagrangian, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot r} - \frac{\partial \mathcal{L}}{\partial r} = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot \theta} - \frac{\partial \mathcal{L}}{\partial \theta} = 0
+\]</div>
+<p>Solving both equations yields the equations of motion for the Earth:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 r}{dt^2} = r \left(\frac{d\theta}{dt}\right)^2 - \frac{GM}{r^2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 \theta}{dt^2} = - \frac{2}{r} \frac{dr}{dt} \frac{d\theta}{dt} 
+\]</div>
+<p>These can be solved analytically, but for the sake of simplicity here they will be solved using a numerical differential equation solver:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2040</span><span class="o">/</span><span class="mf">2565713178.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">newtonian_d_dt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">G</span><span class="o">=</span><span class="mf">6.67e-11</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mf">2e30</span><span class="p">):</span>
+    <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">X</span>
+    <span class="n">dr_dt</span> <span class="o">=</span> <span class="n">u</span>
+    <span class="n">dtheta_dt</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="n">du_dt</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">v</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span><span class="p">(</span><span class="n">G</span> <span class="o">*</span> <span class="n">M</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> 
+    <span class="n">dv_dt</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">u</span> <span class="o">*</span> <span class="n">v</span><span class="p">)</span> <span class="o">/</span> <span class="n">r</span>
+    <span class="k">return</span> <span class="n">dr_dt</span><span class="p">,</span> <span class="n">dtheta_dt</span><span class="p">,</span> <span class="n">du_dt</span><span class="p">,</span> <span class="n">dv_dt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r0</span> <span class="o">=</span> <span class="mf">1.5e11</span>
+<span class="n">theta0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">u0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mf">1.99e-7</span> <span class="c1"># 2pi / 365 days</span>
+<span class="n">newtonian_initial</span> <span class="o">=</span> <span class="p">[</span><span class="n">r0</span><span class="p">,</span> <span class="n">theta0</span><span class="p">,</span> <span class="n">u0</span><span class="p">,</span> <span class="n">v0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmax</span> <span class="o">=</span> <span class="mi">365</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="c1"># 1 year</span>
+<span class="n">samples</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">,</span> <span class="n">samples</span><span class="p">)</span>
+<span class="n">newtonian</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">newtonian_d_dt</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tmax</span><span class="p">),</span> <span class="n">y0</span><span class="o">=</span><span class="n">newtonian_initial</span><span class="p">,</span> <span class="n">dense_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">newtonian</span><span class="o">.</span><span class="n">sol</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Convert from polar to cartesian</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Plot of Newtonian orbit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d5d8d1950f76fe2ef83a6bd6126f579ef86003c1a3584a5ba383213b64f1144c.png" src="../_images/d5d8d1950f76fe2ef83a6bd6126f579ef86003c1a3584a5ba383213b64f1144c.png" />
+</div>
+</div>
+<p>As it can be seen, the orbit is a ellipse, and we have arrived at this result using Lagrangian mechanics!</p>
+</section>
+<section id="using-lagrangians-to-solve-the-double-pendulum-problem">
+<h3>Using Lagrangians to solve the double pendulum problem<a class="headerlink" href="#using-lagrangians-to-solve-the-double-pendulum-problem" title="Permalink to this heading">#</a></h3>
+<p>We will now tackle a problem that would be very difficult to solve using Newton’s laws, but much easier with Lagrangian mechanics. Here we have a system as follows:</p>
+<a class="reference internal image-reference" href="../_images/double-pendulum.png"><img alt="Double pendulum diagram" class="align-center" src="../_images/double-pendulum.png" style="width: 400px;" /></a>
+<p>Here, the notable difference is that we have a <strong>system</strong> as opposed to a single object, and we need to find the kinetic and potential energies of the entire system. To do this, we divide the kinetic and potential energies into two parts:</p>
+<div class="math notranslate nohighlight">
+\[
+K = K_1 + K_2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+U = U_1 + U_2
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(K_1\)</span> and <span class="math notranslate nohighlight">\(K_2\)</span> are respectively the kinetic energies of the first pendulum mass and second pendulum mass, and likewise with <span class="math notranslate nohighlight">\(U_1\)</span> and <span class="math notranslate nohighlight">\(U_2\)</span> and their potential energies.</p>
+<p>We will first derive the kinetic energies, because they are harder :( As we know, we first setup a coordinate system where the point <span class="math notranslate nohighlight">\((0, 0)\)</span> is centered on the point the double pendulum is attached to the ceiling. Then, we write the position functions of the first pendulum:</p>
+<div class="math notranslate nohighlight">
+\[
+x_1(t) = \ell_1 \sin \theta_1 (t)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y_1(t) = -\ell_1 \cos \theta_1 (t)
+\]</div>
+<p>We figure these out from basic trigonometry and the fact that <span class="math notranslate nohighlight">\(y_1(t)\)</span> is negative, as it is below the origin. We then take the derivatives to find the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> components of the velocity:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dx_1}{dt} = \ell_1 \cos \theta_1 (t) \frac{d\theta_1}{dt}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy_1}{dt} = \ell_1 \sin \theta_1 (t) \frac{d\theta_1}{dt}
+\]</div>
+<p>Using this, we can find <span class="math notranslate nohighlight">\(K_1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+K_1 = \frac{1}{2} m_1 \left(\dot x_1^2 + \dot y_1^2\right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+K_1 = \frac{1}{2} m_1 \left[ \left(\ell_1 \cos \theta_1 (t) \frac{d\theta_1}{dt} \right)^2 + 
+\left(\ell_1 \sin \theta_1 (t) \frac{d\theta_1}{dt}\right)^2 \right]
+\]</div>
+<p>Using the trig identity <span class="math notranslate nohighlight">\(\sin^2 \theta + \cos^2 \theta = 1\)</span>, this is trivial to simplify into:</p>
+<div class="math notranslate nohighlight">
+\[
+K_1 = \frac{1}{2} m_1 \ell_1^2 \left(\frac{d\theta}{dt}\right)^2
+\]</div>
+<p>Then, we write the position functions of the second pendulum:</p>
+<div class="math notranslate nohighlight">
+\[
+x_2 (t) = x_1(t) + \ell_2 \sin \theta_2 (t)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y_2 (t) = y_1(t) + (- \ell_2 \cos \theta_2 (t))
+\]</div>
+<p>Here, we add the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> displacement of the second pendulum with the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> displacement of the first to find the total displacement from the origin, because remember, we’re using the <em>same</em> coordinate system for both pendulums. If we sub in the values of <span class="math notranslate nohighlight">\(x_1(t)\)</span> and <span class="math notranslate nohighlight">\(y_1(t)\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+x_2 (t) = \ell_1 \sin \theta_1 (t) + \ell_2 \sin \theta_2 (t)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y_2 (t) = - \ell_1 \cos \theta_1 (t) - \ell_2 \cos \theta_2 (t))
+\]</div>
+<p>We compute their derivatives:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dx_2}{dt} = \ell_1 \cos \theta_1 (t) \frac{d\theta_1}{dt} + \ell_2 \cos \theta_2(t) \frac{d\theta_2}{dt}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy_2}{dt} = \ell_1 \sin \theta_1(t) \frac{d\theta_1}{dt} + \ell_2 \sin \theta_2(t) \frac{d\theta_2}{dt}
+\]</div>
+<p>And then plug them into the kinetic energy formula to find:</p>
+<div class="math notranslate nohighlight">
+\[
+K_2 = \frac{1}{2} m_2 \left[
+\left(\ell_1 \cos \theta_1 (t) \frac{d\theta_1}{dt} + \ell_2 \cos \theta_2(t) \frac{d\theta_2}{dt}\right)^2 +
+\left(\ell_1 \sin \theta_1(t) \frac{d\theta_1}{dt} + \ell_2 \sin \theta_2(t) \frac{d\theta_2}{dt}\right)^2
+\right]
+\]</div>
+<p>Expanding that out, and using <span class="math notranslate nohighlight">\(\sin^2 \theta + \cos^2 \theta = 1\)</span> to simplify, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+K_2 = \frac{1}{2} m_2 \left[
+\ell_1^2 \left(\frac{d\theta_1}{dt}\right)^2 + 2\ell_1 \ell_2 \frac{d\theta_1}{dt} \frac{d\theta_2}{dt}
+(\cos \theta_1 \cos \theta_2 + \sin \theta_2 \sin \theta_2) + \ell_2^2 \left(\frac{d\theta_2}{dt}\right)^2
+\right]
+\]</div>
+<p>Here, we can use the identity <span class="math notranslate nohighlight">\(\cos x \cos y + \sin x \sin y = \cos (x - y)\)</span> to simplify to:</p>
+<div class="math notranslate nohighlight">
+\[
+K_2 = \frac{1}{2} m_2 \left[
+\ell_1^2 \left(\frac{d\theta_1}{dt}\right)^2 + 2\ell_1 \ell_2 \frac{d\theta_1}{dt} \frac{d\theta_2}{dt} \cos (\theta_1 - \theta_2) + \ell_2^2 \left(\frac{d\theta_2}{dt}\right)^2
+\right]
+\]</div>
+<p>Now, combining the two kinetic energies together, we end up with:</p>
+<div class="math notranslate nohighlight">
+\[
+K = \frac{1}{2} m_1 \ell_1^2 \left(\frac{d\theta}{dt}\right)^2 + \frac{1}{2} m_2 \left[
+\ell_1^2 \left(\frac{d\theta_1}{dt}\right)^2 + 2\ell_1 \ell_2 \frac{d\theta_1}{dt} \frac{d\theta_2}{dt} \cos (\theta_1 - \theta_2) + \ell_2^2 \left(\frac{d\theta_2}{dt}\right)^2
+\right]
+\]</div>
+<p>We use a similar approach for the potential energies - we add the potential energy of the first pendulum and the second to find the total system’s potential energy:</p>
+<div class="math notranslate nohighlight">
+\[
+U = U_1 + U_2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+U = m_1 g (-\ell_1 \cos \theta_1 (t) ) + m_2 g (-\ell_1 \cos \theta_1(t) - \ell_2 \cos \theta_2(t))
+\]</div>
+<p>After factoring, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+U = -(m_1 + m_2) g \ell_1 \cos \theta_1(t) - m_2 g \ell_2 \cos \theta_2 (t)
+\]</div>
+<p>Using <span class="math notranslate nohighlight">\(\mathcal{L} = K - U\)</span>, we substitute into the two Euler-Lagrange equations (one for <span class="math notranslate nohighlight">\(\theta_1\)</span> and one for <span class="math notranslate nohighlight">\(\theta_2\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot \theta_1} - \frac{\partial \mathcal{L}}{\partial \theta_2} = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot \theta_1} - \frac{\partial \mathcal{L}}{\partial \theta_2} = 0
+\]</div>
+<p>With the Lagrangian:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L} = \frac{1}{2} m_1 \ell_1^2 \left(\frac{d\theta}{dt}\right)^2 + \frac{1}{2} m_2 \left[
+\ell_1^2 \left(\frac{d\theta_1}{dt}\right)^2 + 2\ell_1 \ell_2 \frac{d\theta_1}{dt} \frac{d\theta_2}{dt} \cos (\theta_1 - \theta_2) + \ell_2^2 \left(\frac{d\theta_2}{dt}\right)^2
+\right]
++ (m_1 + m_2) g \ell_1 \cos \theta_1(t) + m_2 g \ell_2 \cos \theta_2 (t)
+\]</div>
+<p>To find the equations of motion (<a class="reference external" href="https://diego.assencio.com/?index=1500c66ae7ab27bb0106467c68feebc6">source</a>):</p>
+<div class="math notranslate nohighlight">
+\[
+(m_1 + m_2) l_1 \ddot{\theta}_1 + m_2 l_2 \ddot{\theta}_2 \cos(\theta_1 - \theta_2) + m_2 l_2 \dot{\theta}_2^2\sin(\theta_1 - \theta_2) + (m_1 + m_2) g \sin\theta_1 = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+l_2 \ddot{\theta}_2 + l_1 \ddot{\theta}_1 \cos(\theta_1 - \theta_2)
+- l_1 \dot{\theta}_1^2 \sin(\theta_1 - \theta_2)  + g \sin\theta_2 = 0
+\]</div>
+<p>These equations are completely unsolvable analytically, but they can be solved numerically to yield the position of a double pendulum with time.</p>
+</section>
+<section id="langrangian-to-newtonian-mechanics">
+<h3>Langrangian to Newtonian mechanics<a class="headerlink" href="#langrangian-to-newtonian-mechanics" title="Permalink to this heading">#</a></h3>
+<p>Let’s see how we can recover Newton’s 2nd law from the Euler-Lagrange equation. Remember that the equation (in the case of one-dimenional motion along the <span class="math notranslate nohighlight">\(x\)</span> axis) is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot x} = \frac{\partial \mathcal{L}}{\partial x}
+\]</div>
+<p>And remember that the Lagrangian is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L} = \frac{1}{2} m \dot x^2 - U(x)
+\]</div>
+<p>Applying the Euler-Lagrange equations to the general Lagrangian, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+m \ddot x = -\frac{dU}{dx}
+\]</div>
+<p>Recalling that <span class="math notranslate nohighlight">\(F = -\frac{dU}{dx}\)</span> and <span class="math notranslate nohighlight">\(\ddot x = a\)</span>, we have recovered Newton’s 2nd law!</p>
+<div class="math notranslate nohighlight">
+\[
+F = ma
+\]</div>
+<p>We can even use Lagrangian mechanics on simple problems and check that it matches with Newtonian mechanics. Let’s do our freefall example from earlier. With <span class="math notranslate nohighlight">\(K = \frac{1}{2} m \dot y^2\)</span> and <span class="math notranslate nohighlight">\(U = mgy\)</span>, we use the Euler-Lagrange equations to find:</p>
+<div class="math notranslate nohighlight">
+\[
+m \frac{d^2 y}{dt^2} = - mg
+\]</div>
+<p>Which we can simplify to:</p>
+<div class="math notranslate nohighlight">
+\[
+a_y = -g
+\]</div>
+<p>Which reproduces the Newtonian result!</p>
+</section>
+<section id="lagrangians-to-the-stars">
+<h3>Lagrangians to the stars<a class="headerlink" href="#lagrangians-to-the-stars" title="Permalink to this heading">#</a></h3>
+<p>The Lagrangian formulation of classical mechanics is so powerful, precisely because it relies on a differential equation that can be generalized. Beyond classical mechanics, the Lagrangian isn’t always necessarily <span class="math notranslate nohighlight">\(\mathcal{L} = K - U\)</span>, but the Euler-Lagrange equations still hold true, and so does the principle of stationary action. Thus, just defining a Lagrangian can describe entire theories, as the Euler-Lagrange equations yield the equations of methods for each theory, from which every other result of the theory can be derived. This is the power of Lagrangian mechanics.</p>
+<p>We will end with one final thought - one of the most successful theories in all of physics, the <strong>Standard model</strong> of particle physics, is encapsulated in one compact Lagrangian:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L} = -\frac{1}{4} F_{\mu \nu} F^{\mu \nu} + i \overline \psi \gamma_\beta D^\beta + h.c. + \psi_i y_{ij} \psi_j \phi + h.c. + |D_\mu \phi |^2 - V(\phi)
+\]</div>
+<p>And one of the most mathematically beautiful theories, in fact one we will see very soon, <strong>General Relativity</strong>, is described in another compact Lagrangian:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L} = \frac{1}{2\kappa} R \sqrt{-g}~ ~d^4 x
+\]</div>
+<p>Who knew that Lagrangians could take us deep into the hearts of atoms, and to the furthest stars…? :)</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./knowledge-library"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="classical-mechanics-1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Classical mechanics, Part 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="differential-geometry.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tensor Calculus</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-mechanics">Lagrangian Mechanics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-lagrangian-mechanics-to-solve-the-harmonic-oscillator">Using Lagrangian mechanics to solve the harmonic oscillator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-lagrangian-mechanics-to-solve-the-orbit-equation">Using Lagrangian mechanics to solve the orbit equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-lagrangians-to-solve-the-double-pendulum-problem">Using Lagrangians to solve the double pendulum problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langrangian-to-newtonian-mechanics">Langrangian to Newtonian mechanics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangians-to-the-stars">Lagrangians to the stars</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Project Elära contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

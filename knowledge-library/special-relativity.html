@@ -1,0 +1,985 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Special Relativity &#8212; The Elara Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'knowledge-library/special-relativity';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="General Relativity, Part 1" href="general-relativity-1.html" />
+    <link rel="prev" title="Tensor Calculus" href="differential-geometry.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/elara-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/elara-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Elara Handbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About Project Elara</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/open-philosophy.html">Open Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/guiding-principles.html">Guiding Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/docs-organization.html">Docs layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/using-handbook.html">Using the Handbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knowledge Library</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monovariable-calculus.html">Monovariable Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multivariable-calculus.html">Multivariable calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-equations.html">Differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-1.html">Classical mechanics, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-2.html">Classical mechanics, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-geometry.html">Tensor Calculus</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Special Relativity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-1.html">General Relativity, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-2.html">General Relativity, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-3.html">General Relativity, Part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alcubierre-metric-intro.html">The Alcubierre Metric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-analysis.html">Complex numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-mechanics.html">Quantum mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer-hub/design-philosophy.html">Design Philosophy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/guide-to-governance.html">Guide to governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/covenant.html">Covenant of Project Elara</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/community-vision.html">Vision of the community</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook/issues/new?title=Issue%20on%20page%20%2Fknowledge-library/special-relativity.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/knowledge-library/special-relativity.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Special Relativity</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#events">Events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galilean-relativity">Galilean Relativity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-frames">Reference frames</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformations">Transformations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-constant-speed-of-light">The constant speed of light</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-lorentz-transformations">The Lorentz Transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-of-spacetime">The idea of spacetime</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences-of-special-relativity">Consequences of special relativity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relativity-of-simultaneity">Relativity of simultaneity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-dilation">Time dilation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-contraction">Length contraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relativistic-addition-of-velocities">Relativistic addition of velocities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proper-length-and-proper-time">Proper length and proper time:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizing-newtonian-mechanics-to-special-relativity">Generalizing Newtonian mechanics to special relativity</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="special-relativity">
+<h1>Special Relativity<a class="headerlink" href="#special-relativity" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>“Henceforth space by itself, and time by itself, are doomed to fade away into mere shadows, and only a kind of union of the two will preserve an independent reality…”</p>
+<p><strong>Hermann Minkowski (1908)</strong></p>
+</div></blockquote>
+<p>For over 200 years, the basic premises of Newtonian mechanics remained absolute. Space and time were separate entities, and the laws of physics followed Newton’s postulates. That is, until 1905, when Einstein broke both previously-assumed absolute truths, and set out to create a new theory. This groundbreaking theory was the theory of <strong>Special Relativity</strong>, a description of the motion of objects that supercedes Newtonian mechanics and completely revolutionized our understanding of the world.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this heading">#</a></h2>
+<p>An event is anything that happens that can be measured. This can be a rocket flying through your window, a book that falls on your head, a crater that opens in your room, or all three at once! We can describe events with coordinates - perhaps your rocket-falling-book-crater event happened at position 3 meters to your right, 2 meters to your front, and 0 meters above your head, at time 2:55pm. Physicists obsess over events, because everything in physics is composed of a sequence of events, and so using the laws of physics, physicists can predict what events will happen.</p>
+</section>
+<section id="galilean-relativity">
+<h2>Galilean Relativity<a class="headerlink" href="#galilean-relativity" title="Permalink to this heading">#</a></h2>
+<p>Imagine you were seated aboard a train, and the train was moving with constant velocity. Are you moving and the earth underneath you stationary? Or is the train stationary and the earth is moving under you? In physics, both of these interpretations can be true - your understanding of your motion must be considered <strong>relative</strong> to some other object. For instance, you can pick the stationary object to be the earth, in which case you would be considered moving, or you could pick the stationary object to be yourself on the train, in which case the Earth would be moving. In either case, the laws of physics remain the same.</p>
+<section id="reference-frames">
+<h3>Reference frames<a class="headerlink" href="#reference-frames" title="Permalink to this heading">#</a></h3>
+<p>A reference frame is a coordinate system with an origin centered at a chosen location. For example, you can choose your origin to be a house on the surface of the Earth, a moving train, a rocket, even a random point in interstellar space. You would then have a reference frame at that origin.</p>
+<p>Typically speaking, however, when we refer to the reference frame of an observer, the origin is located at wherever the observer is located. So the reference frame of an astronaut in a rocket would have an origin centered at that rocket. In the astronaut’s reference frame, they themselves are located at the point <span class="math notranslate nohighlight">\((0, 0, 0)\)</span>, and everything else (such as the motion of the Earth) is measured relative to them.</p>
+<p>We use reference frames to measure everything around us, everything from the position and velocities of objects to forces between objects. In fact, without reference frames, we wouldn’t be able to measure any motion at all.</p>
+</section>
+<section id="transformations">
+<h3>Transformations<a class="headerlink" href="#transformations" title="Permalink to this heading">#</a></h3>
+<p>In physics, it is sometimes easier to do calculations in one reference frame than another - no one would like to compute the trajectory of a baseball on Earth from the reference frame of another galaxy! So, we want to be able to convert measurements from one reference frame to another.</p>
+<p>The reference frame of an observer is known as the <strong>unprimed frame</strong>. The observer is at rest with respect to the unprimed frame, and everything is moving relative to them. Any measurement in the unprimed frame is described by coordinates <span class="math notranslate nohighlight">\((t, x, y, z)\)</span>.</p>
+<p>Everything moving relative to the observer has a reference frame of its own. For example, our astronaut could be observing Earth, the Sun, the Moon, a space station - and each of those objects has its own reference frame. The observer measures the velocity <span class="math notranslate nohighlight">\(v\)</span> at which each reference frame moves with respect to the observer. These other moving reference frames are known as <strong>primed frames</strong> because they are denoted with the prime (<span class="math notranslate nohighlight">\('\)</span>) symbol. Any measurement in a primed frame is described by the coordinates <span class="math notranslate nohighlight">\((t', x', y', z')\)</span>.</p>
+<p>These sets of different measurements are related as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+x' = x - vt
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y' = y
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+z' = z
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+t' = t
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The primes here are not derivative symbols, they’re used in this context to denote “different” or “alternate”</p>
+</div>
+<p>One thing we specifically notice is that here, time is <strong>absolute</strong> - the same in every reference frame. As we will see, this will no longer hold true in special relativity.</p>
+</section>
+</section>
+<section id="the-constant-speed-of-light">
+<h2>The constant speed of light<a class="headerlink" href="#the-constant-speed-of-light" title="Permalink to this heading">#</a></h2>
+<p>In the late 19th-century, physicists finally came up with one unified theory of electromagnetism using Maxwell’s equations, which we saw earlier. Recall that the equations are given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \cdot \vec E = \frac{\rho}{\epsilon_0}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\nabla \times \vec E = -\frac{\partial \vec B}{\partial t}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\nabla \cdot \vec B = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\nabla \times \vec B = \mu_0 \vec J + \mu_0 \epsilon_0 \frac{\partial \vec E}{\partial t}
+\]</div>
+<p>Let’s take Faraday’s law:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \times \vec E = -\frac{\partial \vec B}{\partial t}
+\]</div>
+<p>Suppose we take the curl of both sides:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \times (\nabla \times \vec E) = \nabla \times -\frac{\partial \vec B}{\partial t}
+\]</div>
+<p>The right hand side can be rearranged to be:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \times (\nabla \times \vec E) = -\frac{\partial}{\partial t} (\nabla \times \vec B)
+\]</div>
+<p>Which simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \times (\nabla \times \vec E) = -\mu_0 \epsilon_0 \frac{\partial^2 \vec E}{\partial t^2}
+\]</div>
+<p>We can use the vector identity <span class="math notranslate nohighlight">\(\nabla \times (\nabla \times \vec E) = -\nabla^2 E\)</span> to simplify further to:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 E = \mu_0 \epsilon_0 \frac{\partial^2 \vec E}{\partial t^2}
+\]</div>
+<p>Using the same technique for Ampére’s law and then Faraday’s law yields the same result for magnetic fields:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 B = \mu_0 \epsilon_0 \frac{\partial^2 \vec B}{\partial t^2}
+\]</div>
+<p>Note that this looks very much like the wave equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 f = \frac{1}{v^2} \frac{\partial^2 f}{\partial t^2}
+\]</div>
+<p>Which means that oscillating electric and magnetic fields produce electromagnetic waves that move through space at a speed <span class="math notranslate nohighlight">\(v\)</span>. We can solve for <span class="math notranslate nohighlight">\(v\)</span> by noting that:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{v^2} = \mu_0 \epsilon_0
+\]</div>
+<p>This yields:</p>
+<div class="math notranslate nohighlight">
+\[
+v = \frac{1}{\sqrt{\mu_0 \epsilon_0}} = 299792458 \mathrm{\ m/s} = c
+\]</div>
+<p>Now notice something special. The velocity <span class="math notranslate nohighlight">\(c\)</span> of electromagnetic waves - light waves - is a constant, because it is composed of the reciprocal of the square root of two other constants. This means that regardless of the velocity of the reference frame, it must be the same speed.</p>
+<p>However, remember that in Galilean relativity, we defined that velocities add by <span class="math notranslate nohighlight">\(\vec v + \vec u\)</span>. So we’d expect that an observer in a moving reference frame would measure a higher speed of light, while observers in a stationary reference frame would measure a lower speed of light. Through numerous experiments, this was proven not to be the case - we are certain that the speed of light is constant, regardless of the reference frame.</p>
+<p>Therefore, the Galilean transformations must be wrong, and a new set of transformations - the Lorentz transformations - must supercede them.</p>
+</section>
+<section id="the-lorentz-transformations">
+<h2>The Lorentz Transformations<a class="headerlink" href="#the-lorentz-transformations" title="Permalink to this heading">#</a></h2>
+<p>The Lorentz transformations are Einstein’s revision to Galilean relavity, derived from two postulates:</p>
+<ul class="simple">
+<li><p>The laws of physics hold true in every reference frame</p></li>
+<li><p>The speed of light <span class="math notranslate nohighlight">\(c\)</span> is constant in every reference frame</p></li>
+</ul>
+<p>To derive the Lorentz transformations, let’s start with the Galilean transformations for <span class="math notranslate nohighlight">\(x \rightarrow x'\)</span> and <span class="math notranslate nohighlight">\(x' \rightarrow x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x' = x - vt
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x = x' + vt'
+\]</div>
+<p>To correct Galilean coordinate transformations, we intuitively need to multiply the Galilean transformations by a factor <span class="math notranslate nohighlight">\(\gamma\)</span>, which we can think of as the “correcting factor” to make sure that the Galilean transforms preserve the speed of light in every reference frame:</p>
+<div class="math notranslate nohighlight">
+\[
+x' = \gamma (x - vt)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x = \gamma (x' + vt')
+\]</div>
+<p>Now, we can multiply the left and right hand sides of the equation together, to combine the two equations into one equation:</p>
+<div class="math notranslate nohighlight">
+\[
+x' x = \gamma (x - vt) \gamma (x' + vt')
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x' x = \gamma^2 (xx' + xvt - x'vt - v^2  t t')
+\]</div>
+<p>Remember the second postulate of special relativity is that the speed of light is an invariant in every reference frame - that is <span class="math notranslate nohighlight">\(c = \frac{x}{t} = \frac{x'}{t'}\)</span>. Rearranging, we can say that <span class="math notranslate nohighlight">\(x = ct\)</span> and <span class="math notranslate nohighlight">\(x' = ct'\)</span>. Substituting that in, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+c^2 tt' = \gamma^2 (c^2 tt' + ct vt - ct' vt - v^2 tt')
+\]</div>
+<p>The two middle terms cancel each other out, so we have:</p>
+<div class="math notranslate nohighlight">
+\[
+c^2 tt' = \gamma^2 (c^2 tt' - v^2 tt')
+\]</div>
+<p>We isolate <span class="math notranslate nohighlight">\(\gamma^2\)</span> by dividing the right-hand side of the equation by the left, to obtain:</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma^2 = \frac{c^2 tt'}{c^2 tt' - v^2 tt'}
+\]</div>
+<p>We can factor out the common factor of <span class="math notranslate nohighlight">\(tt'\)</span>, to get:</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma^2 = \frac{c^2 tt'}{tt'(c^2 - v^2)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\gamma^2 = \frac{c^2}{(c^2 - v^2)}
+\]</div>
+<p>We can then simplify by dividing both the numerator and denominator by <span class="math notranslate nohighlight">\(c^2\)</span>, which gives us:</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma^2 = \frac{1}{1 - \frac{v^2}{c^2}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\gamma^2 = \frac{1}{1 - \left(\frac{v}{c}\right)^2}
+\]</div>
+<p>Finally, taking the square root, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma = \frac{1}{\sqrt{1 - \left(\frac{v}{c}\right)^2}}
+\]</div>
+<p>We can use this to derive the Lorentz transformations for <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span>, but we need a little more algebra to figure out the Lorentz transform for <span class="math notranslate nohighlight">\(t\)</span>. To do this, we first write out the Lorentz transformations from <span class="math notranslate nohighlight">\(x \rightarrow x'\)</span> and <span class="math notranslate nohighlight">\(x' \rightarrow x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x' = \gamma(x - vt)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x = \gamma (x' + vt')
+\]</div>
+<p>We take the second equation to solve for <span class="math notranslate nohighlight">\(t'\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ 
+t' = \frac{x}{\gamma v} - \frac{x'}{v}
+\]</div>
+<p>And we can now plug in the first Lorentz transformation equation into <span class="math notranslate nohighlight">\(x'\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ 
+t' = \frac{x}{\gamma v} - \frac{\gamma(x - vt)}{v}
+\]</div>
+<p>We can now distribute to find:</p>
+<div class="math notranslate nohighlight">
+\[
+t' = \gamma \left(\frac{x}{\gamma^2 v} - \frac{x}{v} + t\right)
+\]</div>
+<p>We can further factor out the first two terms as:</p>
+<div class="math notranslate nohighlight">
+\[
+t' = \gamma \left(x\left[\frac{1}{\gamma^2 v} - \frac{1}{v}\right]+ t\right)
+\]</div>
+<p>This simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[
+t' = \gamma \left(x\left[\frac{1- \gamma^2}{\gamma^2 v}\right] + t\right)
+\]</div>
+<p>Which then simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[
+t' = \gamma \left(-\frac{xv}{c^2} + t\right)
+\]</div>
+<p>Or:</p>
+<div class="math notranslate nohighlight">
+\[
+t' = \gamma \left(t - \frac{vx}{c^2}\right)
+\]</div>
+<p>So, we now have the complete set of <strong>Lorentz transformations</strong>, which obey the laws of special relativity:</p>
+<div class="math notranslate nohighlight">
+\[
+t' = \gamma \left(t - \frac{vx}{c^2}\right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x' = \gamma (x - vt)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y' = y
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+z' = z
+\]</div>
+<p>Where the Lorentz factor <span class="math notranslate nohighlight">\(\gamma\)</span> is approximately 1 at speeds of everyday life, but rises to infinity as you approach <span class="math notranslate nohighlight">\(c\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">299792458</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.999</span> <span class="o">*</span> <span class="n">c</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">v</span> <span class="o">/</span> <span class="n">c</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">one</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Gamma&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">one</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;y = 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Gamma factor as a function of speed (in m/s)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/76241db26634d539ffd4d5ce9926043eae805535e4641b75f9eecabe4f867100.png" src="../_images/76241db26634d539ffd4d5ce9926043eae805535e4641b75f9eecabe4f867100.png" />
+</div>
+</div>
+</section>
+<section id="the-idea-of-spacetime">
+<h2>The idea of spacetime<a class="headerlink" href="#the-idea-of-spacetime" title="Permalink to this heading">#</a></h2>
+<p>In classical physics, time had always been thought of as a steady feature in the background of the universe, something that was universal, and crucially, experienced the same way by everyone. But now, with the Lorentz transforms, it was clear that time was a dimension, like any other, and it couldn’t be separated from the dimensions of space. Hence, the new idea of <strong>spacetime</strong> was born - a 4-dimensional space that contained space <em>and</em> time.</p>
+<p>But how would this new spacetime be described? One way to describe spacetime is by defining a <strong>metric</strong>, which we saw back in tensor calculus. A metric can be used to define how distances are measured in space. For instance, in 2D Euclidean space, we can measure distances with:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = dx^2 + dy^2
+\]</div>
+<p>which is just the Pythagorean theorem. Hermann Minkowski, Einstein’s former professor, recognized that this metric would not work in special relativity when applied to spacetime. He instead proposed a different metric, which we today know as the <strong>Minkowski metric</strong>.</p>
+<p>We start from the Euclidean metric in three dimensions:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = dx^2 + dy^2 + dz^2
+\]</div>
+<p>Now, if we add a time dimension, and still consider Euclidean space, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = dt^2 + dx^2 + dy^2 + dz^2
+\]</div>
+<p>We want to use the same units for time as well as space (units of meters). Otherwise, we would have incompatible units in our metric. Thus, we add a factor of <span class="math notranslate nohighlight">\(c^2\)</span> to get:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = dt^2 + dx^2 + dy^2 + dz^2
+\]</div>
+<p>Now, note the observation that in special relativity, as an object moves faster, it experiences <em>less</em> time, instead of more time, as in Euclidean space. Therefore, the time component of the metric must be negative:</p>
+<div class="math notranslate nohighlight">
+\[
+ds^2 = -c^2 dt^2 + dx^2 + dy^2 + dz^2
+\]</div>
+<p>We have arrived at the Minkowski metric.</p>
+</section>
+<section id="consequences-of-special-relativity">
+<h2>Consequences of special relativity<a class="headerlink" href="#consequences-of-special-relativity" title="Permalink to this heading">#</a></h2>
+<section id="relativity-of-simultaneity">
+<h3>Relativity of simultaneity<a class="headerlink" href="#relativity-of-simultaneity" title="Permalink to this heading">#</a></h3>
+<p>Let’s go back to the Lorentz transform for time coordinates:</p>
+<div class="math notranslate nohighlight">
+\[
+t' = \gamma \left(t - \frac{vx}{c^2}\right)
+\]</div>
+<p>We can rewrite this equation equivalently in terms of <em>changes</em> in time:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta t' = \gamma \left(\Delta t - \frac{v \Delta x}{c^2}\right)
+\]</div>
+<p>From this equation, it is clear that two events with <span class="math notranslate nohighlight">\(\Delta t = 0\)</span> - happening simultaneously in one frame - do not necessarily imply that <span class="math notranslate nohighlight">\(\Delta t' = 0\)</span> - that is, they are happening simultaneously in the other frame. In fact, the actual case is that:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta t = 0 \Rightarrow \Delta t' = -\frac{\gamma v\Delta x}{c^2}
+\]</div>
+<p>Which implies that events that are simultaneous in frame <span class="math notranslate nohighlight">\(S\)</span> are separated by a time of <span class="math notranslate nohighlight">\(-\frac{\gamma v\Delta x}{c^2}\)</span> in frame <span class="math notranslate nohighlight">\(S'\)</span>. This is the <strong>relativity of simultaneity</strong>.</p>
+</section>
+<section id="time-dilation">
+<h3>Time dilation<a class="headerlink" href="#time-dilation" title="Permalink to this heading">#</a></h3>
+<p>Again, we return to the equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta t' = \gamma \left(\Delta t - \frac{v \Delta x}{c^2}\right)
+\]</div>
+<p>In this case, suppose we have two clocks, one at rest aboard a moving spaceship (frame <span class="math notranslate nohighlight">\(S'\)</span>), and one at rest on Earth (frame <span class="math notranslate nohighlight">\(S\)</span>). Because both clocks are not moving, we can say that <span class="math notranslate nohighlight">\(\Delta x = 0\)</span>. But this leads us to find something strange:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta t' = \gamma \Delta t
+\]</div>
+<p>That is, more time passes on Earth than aboard the spaceship during the same measured time interval. Or put it another way, clocks tick more slowly when placed in a moving reference frame. For instance, a 3-second time interval for a spaceship going at 80% light speed would be measured as 7-seconds by the earthbound clock. In practice, this effect doesn’t show up until a reference frame is moving at more than 50% of the speed of light, but in interstellar spaceflight, the effects can be dramatic - at 99.999% of the speed of light, one year aboard a spacecraft would be 223 years on Earth! In fact, this is one mode of time travel into the future - passengers aboard a very fast craft would experience little time, while a lot more time passes for stationary observers, allowing passengers to seemingly magically travel into the future.</p>
+</section>
+<section id="length-contraction">
+<h3>Length contraction<a class="headerlink" href="#length-contraction" title="Permalink to this heading">#</a></h3>
+<p>We first take the x-coordinate Lorentz transform equation, and we write it in terms of the change in <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta x' = \gamma (\Delta x - v \Delta t)
+\]</div>
+<p>We set <span class="math notranslate nohighlight">\(\Delta t = 0\)</span> as we want a snapshot of one moment in time - therefore, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta x' = \gamma \Delta x
+\]</div>
+<p>We can solve for <span class="math notranslate nohighlight">\(\Delta x\)</span> with:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta x = \frac{\Delta x'}{\gamma}
+\]</div>
+<p>This means in the stationary frame, a moving object would be <em>contracted</em> along the direction of motion. This means in the paradoxical case that a meterstick travelling at 90% or more than the speed of light would be able to fit into a barn house less than a meter long.</p>
+</section>
+<section id="relativistic-addition-of-velocities">
+<h3>Relativistic addition of velocities<a class="headerlink" href="#relativistic-addition-of-velocities" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+u'={\frac {dx'}{dt'}}={\frac {\gamma (dx-vdt)}{\gamma \left(dt-{\frac {vdx}{c^{2}}}\right)}}={\frac {{\frac {dx}{dt}}-v}{1-\left({\frac {v}{c^{2}}}\right)\left({\frac {dx}{dt}}\right)}}={\frac {u-v}{1-uv/c^{2}}}
+\]</div>
+</section>
+<section id="proper-length-and-proper-time">
+<h3>Proper length and proper time:<a class="headerlink" href="#proper-length-and-proper-time" title="Permalink to this heading">#</a></h3>
+<p>Proper time <span class="math notranslate nohighlight">\(\tau\)</span> is the time measured by an observer’s own clock as the observer moves through spacetime. It is related to the coordinate time <span class="math notranslate nohighlight">\(t\)</span>, which is the clock of an external observer, by:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta t = \gamma \Delta \tau
+\]</div>
+<p>Proper length <span class="math notranslate nohighlight">\(\ell\)</span> is the length measured by an observer’s own ruler as the observer moves through spacetime. It is related to the coordinate length <span class="math notranslate nohighlight">\(L\)</span>, which is the ruler of an external observer, by:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta L = \gamma \Delta \ell 
+\]</div>
+</section>
+</section>
+<section id="generalizing-newtonian-mechanics-to-special-relativity">
+<h2>Generalizing Newtonian mechanics to special relativity<a class="headerlink" href="#generalizing-newtonian-mechanics-to-special-relativity" title="Permalink to this heading">#</a></h2>
+<p>Consider a particle moving along a path through spacetime <span class="math notranslate nohighlight">\(x^\mu (\tau)\)</span>. The four-velocity of that particle is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+U^\mu = \frac{dx^\mu}{d\tau} = \gamma \frac{dx^\mu}{dt} = 
+\left(c\frac{dt}{d\tau}, \frac{dx}{d\tau}, \frac{dy}{d\tau}, \frac{dz}{d\tau} \right)
+\]</div>
+<p>It can also be written as:</p>
+<div class="math notranslate nohighlight">
+\[
+U^\mu = (c\gamma, \gamma v)
+\]</div>
+<p>Relativistic four-momentum is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+P^\mu = m U^\mu = m \gamma v = (mc\gamma, m\gamma v)
+\]</div>
+<p>Relativistic four-force is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+F^\mu = \frac{dP^\mu}{d\tau}
+\]</div>
+<p>Relativitic kinetic energy is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+K = (\gamma - 1)mc^2 = \gamma mc^2 - mc^2
+\]</div>
+<p>Total relativistic energy is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+E = \gamma mc^2 = K + mc^2
+\]</div>
+<p>When the object is stationary, <span class="math notranslate nohighlight">\(\gamma = 1\)</span>, so the equation simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[
+E = mc^2
+\]</div>
+<p>This provides another way to write relativistic momentum:</p>
+<div class="math notranslate nohighlight">
+\[
+P^\mu = (E/c, mU^\mu)
+\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./knowledge-library"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="differential-geometry.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Tensor Calculus</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="general-relativity-1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">General Relativity, Part 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#events">Events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galilean-relativity">Galilean Relativity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-frames">Reference frames</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformations">Transformations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-constant-speed-of-light">The constant speed of light</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-lorentz-transformations">The Lorentz Transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idea-of-spacetime">The idea of spacetime</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences-of-special-relativity">Consequences of special relativity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relativity-of-simultaneity">Relativity of simultaneity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-dilation">Time dilation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-contraction">Length contraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relativistic-addition-of-velocities">Relativistic addition of velocities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proper-length-and-proper-time">Proper length and proper time:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizing-newtonian-mechanics-to-special-relativity">Generalizing Newtonian mechanics to special relativity</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Project Elära contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1103 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Multivariable calculus &#8212; The Elara Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'knowledge-library/multivariable-calculus';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Differential equations" href="differential-equations.html" />
+    <link rel="prev" title="Linear Algebra" href="linear-algebra.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/elara-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/elara-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Elara Handbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About Project Elara</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/open-philosophy.html">Open Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/guiding-principles.html">Guiding Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/docs-organization.html">Docs layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/using-handbook.html">Using the Handbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knowledge Library</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monovariable-calculus.html">Monovariable Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Multivariable calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-equations.html">Differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-1.html">Classical mechanics, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-2.html">Classical mechanics, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-geometry.html">Tensor Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special-relativity.html">Special Relativity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-1.html">General Relativity, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-2.html">General Relativity, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-3.html">General Relativity, Part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alcubierre-metric-intro.html">The Alcubierre Metric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-analysis.html">Complex numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-mechanics.html">Quantum mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer-hub/design-philosophy.html">Design Philosophy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/guide-to-governance.html">Guide to governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/covenant.html">Covenant of Project Elara</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/community-vision.html">Vision of the community</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook/issues/new?title=Issue%20on%20page%20%2Fknowledge-library/multivariable-calculus.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/knowledge-library/multivariable-calculus.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Multivariable calculus</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites-for-multivariable-calculus">Prerequisites for multivariable calculus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-equations">Parametric Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monovariable-calculus">Monovariable calculus</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivatives">Partial Derivatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-partial-derivatives">Mixed partial derivatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-valued-functions">Scalar-valued functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-field">Scalar field</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-valued-functions">Vector-valued functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-field">Vector field</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#div-grad-curl">Div, Grad, Curl</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-integrals">Multiple integrals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-integrals">Line integrals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-integrals">Surface integrals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-calculus-theorems">Vector calculus theorems</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="multivariable-calculus">
+<h1>Multivariable calculus<a class="headerlink" href="#multivariable-calculus" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>“Give me a lever long enough and a fulcrum on which to place it, and I shall move the world.”</p>
+<p><strong>Archimedes</strong></p>
+</div></blockquote>
+<p>Within the first hundred years of the invention of calculus, Newton and Leibnitz had already pushed single-variable calculus to its limit. A new generation of mathematicians had cropped up, ones who yearned to push the envelope of calculus, extending it to multivariable functions. Multivariable calculus allowed for physics, then in its infancy, to finally flourish, bringing with it our modern understanding of the world. And so it is invaluable that we explore this critical tool in the physicist’s toolbox, and follow in the footsteps of Lagrange and Euler; seeing further, “standing on the shoulders of giants”.</p>
+<section id="prerequisites-for-multivariable-calculus">
+<h2>Prerequisites for multivariable calculus<a class="headerlink" href="#prerequisites-for-multivariable-calculus" title="Permalink to this heading">#</a></h2>
+<section id="parametric-equations">
+<h3>Parametric Equations<a class="headerlink" href="#parametric-equations" title="Permalink to this heading">#</a></h3>
+<p>Parametric equations are equations where <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are functions of a <em>parameter</em> <span class="math notranslate nohighlight">\(t\)</span>. For instance, the following is a parametric equation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x = \sin t \\
+y = \cos t
+\end{cases}
+\end{split}\]</div>
+<p>Note that <span class="math notranslate nohighlight">\(x^2 + y^2 = \sin^2 (t) + \cos^2 (t) = 1\)</span>, so this is the parametric equation of the unit circle, as we will confirm below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sympy.plotting.plot</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_p2d_example</span><span class="p">():</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+    <span class="n">plt</span> <span class="o">=</span> <span class="n">plot_parametric</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">aspect_ratio</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_p2d_example</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/bc7f221d7a0ec7b2a4e61523bc6ecb5fde9f452c9be70e63102db223148229d8.png" src="../_images/bc7f221d7a0ec7b2a4e61523bc6ecb5fde9f452c9be70e63102db223148229d8.png" />
+</div>
+</div>
+<p>The same concept can be generalized with a 3D parametric equation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_p3d_example</span><span class="p">():</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+    <span class="n">plt</span> <span class="o">=</span> <span class="n">plot3d_parametric_line</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">t</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_p3d_example</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1f644a95d9d97530fe9b60c5ee9af8482c0ed19f8b85d31c681f76992bb47a9c.png" src="../_images/1f644a95d9d97530fe9b60c5ee9af8482c0ed19f8b85d31c681f76992bb47a9c.png" />
+</div>
+</div>
+</section>
+<section id="monovariable-calculus">
+<h3>Monovariable calculus<a class="headerlink" href="#monovariable-calculus" title="Permalink to this heading">#</a></h3>
+<p>The derivative of a monovariable function is defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy}{dx} = \lim_{x \to h} \frac{f(x + h) - f(x)}{h}
+\]</div>
+<p>The indefinite integral of a function is the inverse operation of the derivative:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{dy}{dx} dx = f(x)
+\]</div>
+<p>And is defined by:</p>
+<div class="math notranslate nohighlight">
+\[
+\int f(x) dx = \lim_{\Delta x_a \rightarrow 0} \sum_{a = 1}^n f(x_a) \Delta x_a
+\]</div>
+<p>Definite integrals are the (signed) area under the curve of a function, and can be evaluated by the fundamental theorem of calculus:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dF}{dx} = f(x) \Rightarrow \int_a^b f(x)dx = F(b) - F(a)
+\]</div>
+</section>
+</section>
+<section id="partial-derivatives">
+<h2>Partial Derivatives<a class="headerlink" href="#partial-derivatives" title="Permalink to this heading">#</a></h2>
+<p>If you were travelling along a mountain, you would notice something interesting. Let’s assume you take two journeys across the mountain, measuring the height of the mountain as you go. If you walk strictly from east to west of the mountain, you find that the rate of change of the height is given by a specific function <span class="math notranslate nohighlight">\(a(x)\)</span>. If you then change directions and walk strictly from north to south of the mountain, then you find that the rate of change of the height is given by a <em>different</em> specific function <span class="math notranslate nohighlight">\(b(y)\)</span>. Clearly these two rates of change are different.</p>
+<a class="reference internal image-reference" href="../_images/partial-derivatives.png"><img alt="Partial derivatives diagram" class="align-center" src="../_images/partial-derivatives.png" style="width: 500px;" /></a>
+<p>If we call the height of the mountain a function <span class="math notranslate nohighlight">\(h(x, y)\)</span>, we would call the rate of change of the height in strictly the east-west direction (along <span class="math notranslate nohighlight">\(x\)</span>) is the <strong>partial derivative</strong> of the height <span class="math notranslate nohighlight">\(h\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span>, which we notate with:</p>
+<div class="math notranslate nohighlight">
+\[
+a(x, y) = \frac{\partial h(x, y)}{\partial x}
+\]</div>
+<p>And the rate of change of the height in strictly the north-south direction (along <span class="math notranslate nohighlight">\(y\)</span>) is the <strong>partial derivative</strong> of the height <span class="math notranslate nohighlight">\(h\)</span> with respect to <span class="math notranslate nohighlight">\(y\)</span>, which we notate with:</p>
+<div class="math notranslate nohighlight">
+\[
+b(x, y) = \frac{\partial h(x, y)}{\partial y}
+\]</div>
+<p>Essentially, partial derivatives take the derivative of a multivariable function with respect to one variable and leave all other variables constant. For example, take <span class="math notranslate nohighlight">\(f(x, y) = 2x^2 y\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial (2x^2 y)}{\partial x} = y \cdot \frac{d (2x^2)}{dx} = y \cdot 4x = 4xy
+\]</div>
+<p>Here, we treat <span class="math notranslate nohighlight">\(y\)</span> as a constant, allowing us to factor it out of the equation as a constant, and then we can just take the ordinary derivative of <span class="math notranslate nohighlight">\(2x^2\)</span>. Similarly:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial (2x^2 y)}{\partial y} = 2x^2 \cdot \frac{d(1y)}{dy} = 2x^2 \cdot 1 = 2x^2
+\]</div>
+<p>Here, we treat <span class="math notranslate nohighlight">\(x\)</span> as a constant, allowing us to factor everything in terms of <span class="math notranslate nohighlight">\(x\)</span> (that being <span class="math notranslate nohighlight">\(2x^2\)</span>) out of the equation as a constant, and then we can just take the ordinary derivative of <span class="math notranslate nohighlight">\(1y\)</span>.</p>
+<p>Formally, the partial derivative of a multivariable function <span class="math notranslate nohighlight">\(f(x_1, x_2, x_3, \dots, x_i, \dots, x_n)\)</span> is defined by:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial x^i} = \lim_{a \rightarrow 0} \frac{f(x_1, \dots, (x_i + a), \dots, x_n) + f(x_1, \dots, (x_i), \dots, x_n)}{a}
+\]</div>
+<p>For a two-variable function, such as <span class="math notranslate nohighlight">\(f(x, y)\)</span>, the partial derivative with respect to <span class="math notranslate nohighlight">\(x\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial x} = \lim_{a \rightarrow 0} \frac{f(x + a, y) - f(x, y)}{a}
+\]</div>
+<p>And the partial derivative with respect to <span class="math notranslate nohighlight">\(y\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial y} = \lim_{a \rightarrow 0} \frac{f(x, y + a) - f(x, y)}{a}
+\]</div>
+<p>The <strong>multivariable chain rule</strong> for derivatives of a composite function is based on the single-variable version. For a function <span class="math notranslate nohighlight">\(f(x, y) = (x(t), y(t))\)</span>, the derivative with respect to <span class="math notranslate nohighlight">\(t\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dt} = \frac{\partial f}{\partial x} \frac{dx}{dt} + \frac{\partial f}{\partial y} \frac{dy}{dt}
+\]</div>
+<p>For instance, we could calculate the partial derivative of <span class="math notranslate nohighlight">\(f(x, y) = 2x^2 y\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span>. Let’s say that <span class="math notranslate nohighlight">\(x(t) = 3t^5 + 5\)</span> and <span class="math notranslate nohighlight">\(y(t) = 7 \sqrt{t}\)</span>. We can then calculate our derivative with respect to <span class="math notranslate nohighlight">\(t\)</span> like so:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dt} =
+\frac{\partial (2x^2 y)}{\partial x} \frac{d (3t^5 + 5)}{dt} +
+\frac{\partial (2x^2 y)}{\partial y} \frac{d (7 \sqrt{t})}{dt}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dt} = 4xy \cdot 15t^4 + \frac{2x^2}{2 \sqrt{t}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dt} = \frac{x \left(60 t^{\frac{9}{2}} y + x\right)}{\sqrt{t}}
+\]</div>
+<p>The more general form of the chain rule with a multivariable function <span class="math notranslate nohighlight">\(f(q_1, q_2, q_3, \dots, q_n) = (q_1(t), q_2(t), q_3(t), \dots, q_n(t))\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dt} = \sum_i^n \frac{\partial f}{\partial q^i} \frac{d q^i}{dt}
+\]</div>
+<p>And if both the outer and inner functions are multivariable:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f}{\partial t} = \sum_i^n \frac{\partial f}{\partial q^i} \frac{\partial q^i}{\partial t}
+\]</div>
+</section>
+<section id="mixed-partial-derivatives">
+<h2>Mixed partial derivatives<a class="headerlink" href="#mixed-partial-derivatives" title="Permalink to this heading">#</a></h2>
+<p>Second partial derivatives are denoted by <span class="math notranslate nohighlight">\(\frac{\partial^2 f}{\partial x^2}\)</span> or <span class="math notranslate nohighlight">\(f_{xx}\)</span>. When using the “del” notation (with the <span class="math notranslate nohighlight">\(\partial\)</span> symbol) you take derivatives from right to left order.</p>
+<p>Second partial derivatives <strong>commute</strong>, which means the order you take them doesn’t matter. Thus <span class="math notranslate nohighlight">\(\frac{\partial f}{\partial x \partial y} = \frac{\partial f}{\partial y \partial x}\)</span>.</p>
+</section>
+<section id="scalar-valued-functions">
+<h2>Scalar-valued functions<a class="headerlink" href="#scalar-valued-functions" title="Permalink to this heading">#</a></h2>
+<p>A scalar-valued function is a function that always outputs a number for each input, not a vector, such as <span class="math notranslate nohighlight">\(f(x, y) = 2x + 3y^2\)</span>.</p>
+<section id="scalar-field">
+<h3>Scalar field<a class="headerlink" href="#scalar-field" title="Permalink to this heading">#</a></h3>
+<p>A scalar field is when a scalar-valued function gives the value of every point in space. An example of a scalar field could be a temperature field; then the temperature at each point <span class="math notranslate nohighlight">\((x, y, z)\)</span> in space is a number given by the function <span class="math notranslate nohighlight">\(T(x, y, z)\)</span>.</p>
+</section>
+</section>
+<section id="vector-valued-functions">
+<h2>Vector-valued functions<a class="headerlink" href="#vector-valued-functions" title="Permalink to this heading">#</a></h2>
+<p>Vector-valued functions produce a vector for each input, for instance:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec f(t) = 
+\begin{bmatrix}
+t^2 + 2t \\
+\sin(2t) + t
+\end{bmatrix}
+\end{split}\]</div>
+<p>Note that vector-valued functions can have components that are functions of <span class="math notranslate nohighlight">\(x, y, z\)</span>, or functions of <span class="math notranslate nohighlight">\(t\)</span>, in which case its components are <strong>parametric functions</strong>.</p>
+<p>The derivative of a vector-valued function is another vector in all cases. For example, velocity is often given by a vector-valued function where:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vec v(t) = \begin{bmatrix}
+v_x(t) \\
+v_y(t) \\
+v_z(t)
+\end{bmatrix} = \begin{bmatrix}
+x'(t) \\
+y'(t) \\
+z'(t)
+\end{bmatrix}
+\end{split}\]</div>
+<p>Speed is given by the norm of the velocity function:</p>
+<div class="math notranslate nohighlight">
+\[
+v = \sqrt{v_x^2 + v_y^2 + v_z^2}
+\]</div>
+<p>If the vector-valued function is of one variable, e.g. <span class="math notranslate nohighlight">\(\vec v(t)\)</span>, then its derivative is a regular derivative <span class="math notranslate nohighlight">\(\frac{d \vec v}{dt}\)</span> that is a vector. If the vector-valued function is of several variables, e.g. <span class="math notranslate nohighlight">\(\vec v(s, t)\)</span>, then it has one partial derivative for each variable, e.g. <span class="math notranslate nohighlight">\(\frac{\partial \vec v}{\partial s}\)</span> and <span class="math notranslate nohighlight">\(\frac{\partial \vec v}{\partial t}\)</span>, and each of those partial derivatives is also a vector.</p>
+<section id="vector-field">
+<h3>Vector field<a class="headerlink" href="#vector-field" title="Permalink to this heading">#</a></h3>
+<p>A vector field is when a vector-valued function gives the value of every point in space. An example of a vector field could be a wind velocity field; then the wind velocity vector at each point <span class="math notranslate nohighlight">\((x, y, z)\)</span> in space is a number given by the function <span class="math notranslate nohighlight">\(\vec W_v(x, y, z)\)</span>.</p>
+</section>
+</section>
+<section id="div-grad-curl">
+<h2>Div, Grad, Curl<a class="headerlink" href="#div-grad-curl" title="Permalink to this heading">#</a></h2>
+<p>The <strong>gradient</strong> of a multivariable function takes scalar-valued function (or more generally scalar field) and produces a vector field. The vector produced follows 2 attributes:</p>
+<ul class="simple">
+<li><p>Its direction is in the direction of greatest increase</p></li>
+<li><p>Its magnitude is proportional to the steepness (rate of increase)</p></li>
+</ul>
+<p>In Cartesian coordinates, the gradient of a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> is defined using the nabla (<span class="math notranslate nohighlight">\(\nabla\)</span>) symbol as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla f =
+\begin{bmatrix}
+\frac{\partial f}{\partial x} \\
+\frac{\partial f}{\partial y}
+\end{bmatrix}
+\end{split}\]</div>
+<p>For example, let’s take the gradient of <span class="math notranslate nohighlight">\(f(x, y) = x^2 - y^2\)</span>. The gradient at each point <span class="math notranslate nohighlight">\((x, y, z)\)</span> would be then given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla f =
+\begin{bmatrix}
+\frac{\partial f}{\partial x} \\
+\frac{\partial f}{\partial y}
+\end{bmatrix} =
+\begin{bmatrix}
+2x \\
+-2y
+\end{bmatrix}
+\end{split}\]</div>
+<p>Or more generally, of a function <span class="math notranslate nohighlight">\(f(q_1, q_2, q_3, \dots, q_n)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla f =
+\begin{bmatrix}
+\frac{\partial f}{\partial q_1} \\
+\frac{\partial f}{\partial q_2} \\
+\frac{\partial f}{\partial q_3} \\
+\vdots \\
+\frac{\partial f}{\partial q_n}
+\end{bmatrix}
+\end{split}\]</div>
+<p>To intuitively understand the gradient, take a look at the graph of <span class="math notranslate nohighlight">\(f(x, y)\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_fxy</span><span class="p">():</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x y&quot;</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="n">plot3d</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_fxy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/89c37ee83d72283579b8e9835dc00e6757836a1234462e29bd602dd164ea79f0.png" src="../_images/89c37ee83d72283579b8e9835dc00e6757836a1234462e29bd602dd164ea79f0.png" />
+</div>
+</div>
+<p>Let’s now take a look at its gradient:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gradient</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x y&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">f</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">plot_vecfield</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">description</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x y&quot;</span><span class="p">)</span>
+    <span class="n">xrange</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">yrange</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xrange</span><span class="p">,</span> <span class="n">yrange</span><span class="p">)</span>
+
+    <span class="n">U</span><span class="o">=</span><span class="n">X</span>
+    <span class="n">V</span><span class="o">=</span><span class="n">Y</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xrange</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">yrange</span><span class="p">)):</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">y1</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">U</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x</span><span class="p">:</span><span class="n">x1</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="n">y1</span><span class="p">})</span>
+            <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x</span><span class="p">:</span><span class="n">x1</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="n">y1</span><span class="p">})</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">description</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">fxy_plt_vecfield</span><span class="p">():</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x y&quot;</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">gradient</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">plot_vecfield</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="s2">&quot;Gradient of $f(x, y) = x^2 - y^2$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fxy_plt_vecfield</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1d09cd1677025cc6e14fa2c93eb70fa382da74527b1a72a044f1e0598dae763d.png" src="../_images/1d09cd1677025cc6e14fa2c93eb70fa382da74527b1a72a044f1e0598dae763d.png" />
+</div>
+</div>
+<p>Note how the vectors all point outwards from the center towards the “hills” of the function, the direction of greatest increase.</p>
+<p>The <strong>directional derivative</strong> is built on the gradient and gives the rate of change of a function with respect to any direction <span class="math notranslate nohighlight">\(\vec v\)</span>, rather than just the <span class="math notranslate nohighlight">\(x, y, z\)</span> directions. It is defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_{\vec v} f(x, y) = \frac{\partial f}{\partial \vec v} = \nabla f \cdot \vec v
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember that this is a <strong>dot product</strong>, not just multiplication! The output of the directional derivative has always to be a scalar function!</p>
+</div>
+<p>This means that given a vector <span class="math notranslate nohighlight">\(\langle a, b \rangle\)</span>, then the directional derivative at a point <span class="math notranslate nohighlight">\((x, y)\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_{\vec v} f(x, y) = a \frac{\partial f}{\partial x} + b \frac{\partial f}{\partial y} 
+\]</div>
+<p>We cannot take the gradient of a vector field. However, there are two other operations we can do on a vector field - they are the <strong>curl</strong> and <strong>divergence</strong>, notated as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{grad}\: (f) = \nabla f
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{div}\: (f) = \nabla \cdot f
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{curl}\: (f) = \nabla \times f
+\]</div>
+<p>The divergence is defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \cdot F = \left\langle \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z}\right\rangle \cdot \langle \vec F_x, \vec F_y, F_z \rangle = \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} + \frac{\partial F_z}{\partial z}
+\]</div>
+<p>The divergence can be thought of as describing fluid flow - if the divergence is positive, fluid is flowing outwards, whereas if the divergence is negative, fluid is flowing inwards.</p>
+<p>Meanwhile, the curl, a measure of fluid rotation, is defined much like the typical cross product:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla \times F =
+\begin{vmatrix}
+\hat i &amp; \hat j &amp; \hat k \\
+\frac{\partial}{\partial x} &amp; \frac{\partial}{\partial y} &amp; \frac{\partial}{\partial z} \\
+F_x &amp; F_y &amp; F_z
+\end{vmatrix}
+\end{split}\]</div>
+<p>Which, when expanded out, results in:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \times F = 
+\left\langle
+\frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z},
+\frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x},
+\frac{\partial F_{y}}{\partial x}- \frac {\partial F_x}{\partial y}
+\right\rangle
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that the center term of the curl using the normal cross product formula is actually <span class="math notranslate nohighlight">\(-\left(\frac{\partial F_z}{\partial x} - \frac{\partial F_x}{\partial z}\right)\)</span>, which we just distributed the negative sign to get <span class="math notranslate nohighlight">\(\frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x}\)</span></p>
+</div>
+<p>The Laplacian operator is the gradient of the divergence of a scalar field, given as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{lapl}\: (f) = \nabla \cdot \nabla f = \nabla^2 f =
+\frac{\partial^2 F_x}{\partial x^2} + \frac{\partial^2 F_y}{\partial y^2} + \frac{\partial^2 F_z}{\partial z^2}
+\]</div>
+</section>
+<section id="multiple-integrals">
+<h2>Multiple integrals<a class="headerlink" href="#multiple-integrals" title="Permalink to this heading">#</a></h2>
+<p>We are already familiar with the idea of an integral along a single-variable function <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x) dx = \lim_{\Delta \to 0} \sum f(x_i) \Delta x
+\]</div>
+<p>Here, we are adding thin slices of width <span class="math notranslate nohighlight">\(dx\)</span> and height <span class="math notranslate nohighlight">\(f(x_i)\)</span> to find the area under the curve of <span class="math notranslate nohighlight">\(f(x)\)</span>. We can generalize this to two-variable functions <span class="math notranslate nohighlight">\(f(x, y)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\iint\limits_{R}{{f\left( {x,y} \right)\,dA}} = \lim_{\Delta \to 0} \sum f(x_i, y_i) \Delta A
+\]</div>
+<p>This is called a <strong>double integral</strong>, and it finds the volume under the <em>surface</em> <span class="math notranslate nohighlight">\(f(x, y)\)</span> by adding thin <em>cubes</em> of area <span class="math notranslate nohighlight">\(dA\)</span> and height <span class="math notranslate nohighlight">\(f(x_i, y_i)\)</span> within the bounds <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<p>To evaluate double integrals, we use a similar process as partial derivatives: we integrate first with respect to <span class="math notranslate nohighlight">\(y\)</span>, then with respect to <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\iint \limits_{R} f(x, y) dA = \int_{x_0}^{x_1} \int_{y_0}^{y_1} f(x, y) \, dy \, dx
+\]</div>
+<p>For example, let’s evaluate:</p>
+<div class="math notranslate nohighlight">
+\[
+\iint \limits_R 6xy^2 dA, x \in [2, 4], y\in [1, 3]
+\]</div>
+<p>This becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_2^4 \int_1^2 6xy^2 \, dy \, dx
+\]</div>
+<p>Let’s first evaluate the inner integral. Treating everything that doesn’t contain <span class="math notranslate nohighlight">\(y\)</span> as constant, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_1^2 6xy^2 dy = (2xy^3) \Big|_1^2 = 2x(2^3) - 2x(1^3) = 16x - 2x = 14x
+\]</div>
+<p>Here we integrated <span class="math notranslate nohighlight">\(6xy^2\)</span> with respect to <span class="math notranslate nohighlight">\(y\)</span>, then substituted the resulting <span class="math notranslate nohighlight">\(y\)</span>’s in the answer for the bounds of integration. Now, let’s plug this into our second integral:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_2^4 14x dx = (7x^2) \Big|_2^4 = 84
+\]</div>
+<p>The same procedure is true for <strong>triple integrals</strong> over a region <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, where we find the volume under a 4-dimensional surface by adding thin 4D regions of volume <span class="math notranslate nohighlight">\(dV\)</span> and height <span class="math notranslate nohighlight">\(f(x_i, y_i, z_i)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\iiint_E f(x, y, z) dV = \int_{x_0}^{x_1} \int_{y_0}^{y_1} \int_{z_0}^{z_1} f(x, y, z) \, dz \, dy \, dx
+\]</div>
+</section>
+<section id="line-integrals">
+<h2>Line integrals<a class="headerlink" href="#line-integrals" title="Permalink to this heading">#</a></h2>
+<p>Similar to integrals over a 1D line, 2D area, or 3D volume, we can take integrals over a curve - these are called <strong>line integrals</strong>. There are two types of line integrals - ones over scalar fields, and ones over vector fields. Line integrals over <strong>scalar fields</strong> take the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_C f(r) \, ds
+\]</div>
+<p>They can be evaluated with:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_C f(x, y) \, ds = \int_a^b f(x(t), y(t)) \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt} \right)^2} dt
+\]</div>
+<p>Or in the 3D scalar field case:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_C f(x, y, z) \, ds = \int_a^b f(x(t), y(t), z(t)) \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 + \left(\frac{dz}{dt}\right)^2} dt
+\]</div>
+<p>For example, we can evaluate the line integral, with a curve <span class="math notranslate nohighlight">\(C\)</span> with endpoints <span class="math notranslate nohighlight">\((1, 2)\)</span>, and <span class="math notranslate nohighlight">\((4, 7)\)</span> (<a class="reference external" href="https://www.whitman.edu/mathematics/calculus_online/section16.02.html">source</a>):</p>
+<div class="math notranslate nohighlight">
+\[
+\int_C ye^x ds
+\]</div>
+<p>To do this, we must parameterize <span class="math notranslate nohighlight">\(C\)</span> with two parametric equations:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = 1 + 3t
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y(t) = 2 + 5t
+\]</div>
+<p>This means that at <span class="math notranslate nohighlight">\(t = 0\)</span>, <span class="math notranslate nohighlight">\(C = (1, 2)\)</span>, and at <span class="math notranslate nohighlight">\(t = 1\)</span>, <span class="math notranslate nohighlight">\(C = (4, 7)\)</span>. We now take their derivatives:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dx}{dt} = 3
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy}{dt} = 5
+\]</div>
+<p>We now subsitute into the equation for scalar 2D line integrals:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_C ye^x ds = \int_0^1 (2 + 5t) e^(1 + 3t) \sqrt{3^2 + 5^2} dt = \frac{16}{9}\sqrt{34}e^4-{1\over9}\sqrt{34}\,e
+\]</div>
+<p>The main application for scalar line integrals is to calculate the mass, moment of inertia, and center of mass of a wire. However, vector line integrals are far more common, and in many cases, far more useful.</p>
+<p>Line integrals over <strong>vector fields</strong> take a different form. They look like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_C \vec F \cdot d\vec r
+\]</div>
+<p>And are evaluated with:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_C \vec F \cdot d\vec r = \int_a^b \vec F(\vec r(t)) \cdot \vec r'(t) dt
+\]</div>
+<p>Note that the dot is not multiplication, but a <strong>dot product</strong>. In evaluating a line integral over a vector field, both <span class="math notranslate nohighlight">\(\vec F\)</span> and <span class="math notranslate nohighlight">\(\vec r(t)\)</span> <em>must</em> be known to solve.</p>
+<p>The main application of vector line integrals is in various physical laws - for example, the <strong>work</strong> done by a vector field <span class="math notranslate nohighlight">\(\vec F\)</span> (such as a gravitational or magnetic field) on a particle that travels along the curve <span class="math notranslate nohighlight">\(C\)</span> through that field is given by a vector line integral:</p>
+<div class="math notranslate nohighlight">
+\[
+W = \int_C F \cdot d\vec r
+\]</div>
+<p>Meanwhile, the integral forms of two of <strong>Maxwell’s equations</strong> all use vector line integrals. For example, Ampère’s law states that the line integral of a magnetic field <span class="math notranslate nohighlight">\(\vec B\)</span> is proportional to the enclosed current:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_C \vec B \cdot d\vec r = \mu_0 I
+\]</div>
+<p>Note that here, we use a special symbol to denote that the curve <span class="math notranslate nohighlight">\(C\)</span> enclosing the magnetic field is <em>closed</em>. Additionally, the more generalized version of Ampère’s law is slightly more complex:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_C \vec B \cdot d \vec r = \mu_0 \left(I + \epsilon_0 \frac{\partial \Phi_E}{\partial t}\right)
+\]</div>
+<p>Additionally, Faraday’s law states that the line integral of an electric field <span class="math notranslate nohighlight">\(\vec E\)</span> is proportional to the rate of change of the magnetic flux:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_C \vec E \cdot d \vec r = - \frac{\partial \Phi_B}{\partial t}
+\]</div>
+</section>
+<section id="surface-integrals">
+<h2>Surface integrals<a class="headerlink" href="#surface-integrals" title="Permalink to this heading">#</a></h2>
+<p>Surface integrals generalize the idea of a line integral to surfaces. They can be defined over scalar fields or vector fields. I will add more to this section later. For now though, just note that they look very similar to double integrals, just the integration is of an infinitesimal portion of surface <span class="math notranslate nohighlight">\(dS\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\iint \limits_\Sigma f(x, y) dS
+\]</div>
+<p>The most important application of surface integrals is in the integral form of <strong>Maxwell’s equations</strong> - the first two equations extensively utilize surface integrals. Gauss’s law states that the surface integral of the electric field over a closed surface (often, a sphere) is proportional to the enclosed charge:</p>
+<div class="math notranslate nohighlight">
+\[
+\Phi_E = \iint \limits_{\Sigma_{\text{closed}}} \vec E \cdot d\vec S = \frac{Q}{\epsilon_0}
+\]</div>
+<p>And Gauss’s law for magnetism states that the surface integral of the magnetic field over a closed surface is zero:</p>
+<div class="math notranslate nohighlight">
+\[
+\iint \limits_{\Sigma_{\text{closed}}} \vec B \cdot d\vec S = 0
+\]</div>
+</section>
+<section id="vector-calculus-theorems">
+<h2>Vector calculus theorems<a class="headerlink" href="#vector-calculus-theorems" title="Permalink to this heading">#</a></h2>
+<p>There are several important vector calculus theorems. First, the divergence theorem, which relates surface and triple integrals:</p>
+<div class="math notranslate nohighlight">
+\[
+\iiint \limits_\Omega (\nabla \cdot \vec F) \, dV = \iint \limits_\Sigma \vec F \cdot d\vec S
+\]</div>
+<p>Then, Stokes’ theorem, which relates surface integrals around a region and line integrals enclosing that region:</p>
+<div class="math notranslate nohighlight">
+\[
+\iint \limits_\Sigma (\nabla \times \vec F) \, dS = \oint_C \vec F \cdot d \vec r
+\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./knowledge-library"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="linear-algebra.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Linear Algebra</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="differential-equations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Differential equations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites-for-multivariable-calculus">Prerequisites for multivariable calculus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-equations">Parametric Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monovariable-calculus">Monovariable calculus</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-derivatives">Partial Derivatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-partial-derivatives">Mixed partial derivatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-valued-functions">Scalar-valued functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-field">Scalar field</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-valued-functions">Vector-valued functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-field">Vector field</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#div-grad-curl">Div, Grad, Curl</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-integrals">Multiple integrals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-integrals">Line integrals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-integrals">Surface integrals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-calculus-theorems">Vector calculus theorems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Project Elära contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

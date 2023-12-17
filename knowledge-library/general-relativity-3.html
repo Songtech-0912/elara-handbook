@@ -1,0 +1,926 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>General Relativity, Part 3 &#8212; The Elara Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'knowledge-library/general-relativity-3';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Alcubierre Metric" href="alcubierre-metric-intro.html" />
+    <link rel="prev" title="General Relativity, Part 2" href="general-relativity-2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/elara-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/elara-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Elara Handbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About Project Elara</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/open-philosophy.html">Open Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/guiding-principles.html">Guiding Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/docs-organization.html">Docs layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/using-handbook.html">Using the Handbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knowledge Library</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monovariable-calculus.html">Monovariable Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multivariable-calculus.html">Multivariable calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-equations.html">Differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-1.html">Classical mechanics, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-2.html">Classical mechanics, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-geometry.html">Tensor Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special-relativity.html">Special Relativity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-1.html">General Relativity, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-2.html">General Relativity, Part 2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">General Relativity, Part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alcubierre-metric-intro.html">The Alcubierre Metric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-analysis.html">Complex numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-mechanics.html">Quantum mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer-hub/design-philosophy.html">Design Philosophy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/guide-to-governance.html">Guide to governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/covenant.html">Covenant of Project Elara</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/community-vision.html">Vision of the community</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook/issues/new?title=Issue%20on%20page%20%2Fknowledge-library/general-relativity-3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/knowledge-library/general-relativity-3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>General Relativity, Part 3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-the-einstein-field-equations">Deriving the Einstein Field Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-recap-with-intuition">A recap with intuition</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="general-relativity-part-3">
+<h1>General Relativity, Part 3<a class="headerlink" href="#general-relativity-part-3" title="Permalink to this heading">#</a></h1>
+<p>After having explored geodesics, the metric tensor, and the curvature tensors, we are ready to tackle the formidable task of finally deriving Einstein’s equations!</p>
+<section id="deriving-the-einstein-field-equations">
+<h2>Deriving the Einstein Field Equations<a class="headerlink" href="#deriving-the-einstein-field-equations" title="Permalink to this heading">#</a></h2>
+<p>As with before, we can use the Euler-Lagrange equations and the principle of least action to obtain the Einstein Field Equations.</p>
+<p>The action for General Relativity in empty spacetime can be generalized as:</p>
+<div class="math notranslate nohighlight">
+\[
+S =  \kappa \int R \sqrt{-g} ~d^4 x
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(g = \det(g_{\mu \nu})\)</span>, <span class="math notranslate nohighlight">\(d^4x = dt\, dx\, \, dy\, dz\)</span> and <span class="math notranslate nohighlight">\(\kappa\)</span> is simply a proportionality constant. Note that while it describes a vacuum, that spacetime can still be curved. For example, you could say that the spacetime <em>outside</em> of a black hole is a vacuum (because there is no matter), but the spacetime would still be curved (because the black hole warps its surrounding spacetime, even if we only include the spacetime around a black hole and not the black hole itself).</p>
+<p>The action can be derived from one of two ways. It can be shown to be correct through dimensional analysis - the units on the left and right side of the equation match up. However, there is also a more intuitive way to illustrate this.</p>
+<p>The action must be composed of scalar-valued functions (or scalars), as it is an integral over all spacetime, and multidimensional integrals can only take scalar-valued functions or scalars to integrate over (see for yourself that this must be true). But it must also include information about the curvature of spacetime and spacetime itself. As we know, all the information about the curvature of spacetime is captured in the Riemann tensor. But the Riemann tensor is not a scalar-valued function - it is instead a (rank-4) tensor-valued function. So we have to find a way to get a scalar from the Riemann tensor. We already know of a scalar that can be formed from the Riemann tensor - the Ricci scalar. We want to add an additional proportionality constant in front, which is also a scalar, because we’d expect to see constants in our final field equations as well. We can always set the constant <span class="math notranslate nohighlight">\(\kappa = 1\)</span> if we find it’s not necessary later. Since both the curvature of spacetime and the matter and energy present within spacetime should act on the metric, we add them together. Finally, since spacetime is often curved, we need a factor of <span class="math notranslate nohighlight">\(\sqrt{-g}\)</span> to make sure the volume element <span class="math notranslate nohighlight">\(d^4 x\)</span> is the same size no matter what coordinates or what spacetime we use. So from there, we obtain the action.</p>
+<p>From our action, we know that the Lagrangian is:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathscr{L} = \kappa R \sqrt{-g}
+\]</div>
+<p>We will use the Euler-Lagrange field equations, a slight variation of the original Euler-Lagrange equations we derived:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \mathscr{L}}{\partial \varphi} - \frac{\partial}{\partial x^\beta} \left( \frac{\partial \mathscr{L}}{\partial (\partial_\beta \varphi)}\right) = 0
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\varphi\)</span> is the field, and in our case, the field is the metric tensor field <span class="math notranslate nohighlight">\(g_{\mu \nu} (x^\beta)\)</span>, thus <span class="math notranslate nohighlight">\(\varphi = g_{\mu \nu}\)</span>, so if we substitute, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \mathscr{L}}{\partial g_{\mu \nu}} - \frac{\partial}{\partial x^\beta} \left( \frac{\partial \mathscr{L}}{\partial (\partial_\beta g_{\mu \nu})}\right) = 0
+\]</div>
+<p>Note that we use the curly L for the Lagrangian because it is not technically the Lagrangian per se, but the field equivalent of the Lagrangian, known as the <strong>Lagrangian density</strong>. But we’ll just call it the Lagrangian here. The distinction between the Lagrangian density and the Lagrangian isn’t important here; the practical difference here is that the Lagrangian uses the typical Euler-Lagrange equation, while the Lagrangian density uses the Euler-Lagrange <em>field</em> equation.</p>
+<p>We notice in the Euler-Lagrange field equations that the second term contains the partial derivative with respect to the derivatives of the metric. But note that in our Lagrangian, there are no terms that take the derivative of the metric as input. So the second term vanishes, and we are left with a comparatively easier equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \mathscr{L}}{\partial g_{\mu \nu}} = 0
+\]</div>
+<p>Before we take this derivative, let us first rewrite our Lagrangian as:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathscr{L} = \kappa g^{\mu \nu} R_{\mu \nu} \sqrt{-g}
+\]</div>
+<p>Now, we can finally take the derivative with respect to the metric:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \mathscr{L}}{\partial g_{\mu \nu}} = \kappa \frac{\partial}{\partial g_{\mu \nu}} \left(g^{\mu \nu} R_{\mu \nu} \sqrt{-g}\right) = 0
+\]</div>
+<p>We immediately run into a hurdle! The Lagrangian has three multiplied functions, the inverse metric, the Ricci tensor, and the square root of the determinant of the metric. How do we differentiate a triple product? We can use the triple product rule:</p>
+<div class="math notranslate nohighlight">
+\[
+(f \cdot g \cdot h)' = f'gh + fg'h + fgh'
+\]</div>
+<p>Another problem! How do we differentiate the inverse metric with respect to the metric? The answer comes from a matrix calculus identity, which, translated to tensor notation, is this:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial g^{\mu \nu}}{\partial g_{\mu \nu}} = -g^{\mu \nu} g^{\mu \nu}
+\]</div>
+<p>Final problem! How do we differentiate the determinant of the metric with respect to the metric? This answer also comes from a matrix calculus identity, which is this:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \det(g_{\mu \nu})}{\partial g_{\mu \nu}} = \frac{\partial g}{\partial g_{\mu \nu}} = g g^{\mu \nu}
+\]</div>
+<p>With all this in mind, we can finally compute the derivatives. The first term of the derivative is just the derivative of the inverse metric, multiplied by the other two terms in the triple product. The derivative of the Ricci tensor with respect to the metric is zero (it doesn’t depend on the metric), so the second term of the derivative of the triple product is zero. In the third term, we need to use the chain rule to differentiate the square root. The final result is this:</p>
+<div class="math notranslate nohighlight">
+\[
+-\kappa R_{\mu \nu} g^{\mu \nu} g^{\mu \nu} - \kappa \frac{1}{2\sqrt{-g}}g g^{\mu \nu} g^{\mu \nu} R_{\mu \nu} = 0
+\]</div>
+<p>We can clean this up a bit. First, we can multiply both sides by <span class="math notranslate nohighlight">\(-1\)</span>, to get:</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa R_{\mu \nu} g^{\mu \nu} g^{\mu \nu} + \kappa \frac{1}{2\sqrt{-g}}g g^{\mu \nu} g^{\mu \nu} R_{\mu \nu} = 0
+\]</div>
+<p>Then, we can multiply both sides of the equation by <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{-g}}\)</span>, which results in:</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa R_{\mu \nu} g^{\mu \nu} g^{\mu \nu} - \kappa \frac{1}{2} g^{\mu \nu} g^{\mu \nu} R_{\mu \nu} = 0 
+\]</div>
+<p>We remember that <span class="math notranslate nohighlight">\(R = g^{\mu \nu} R_{\mu \nu}\)</span>, so we can substitute it in:</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa R_{\mu \nu} g^{\mu \nu} g^{\mu \nu} - \kappa \frac{1}{2} g^{\mu \nu} R = 0
+\]</div>
+<p>We want to get rid of the double <span class="math notranslate nohighlight">\(g^{\mu \nu}\)</span> terms, so we can multiply both sides of the equation by <span class="math notranslate nohighlight">\(g_{\mu \nu} g_{\mu \nu}\)</span>, to get:</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa R_{\mu \nu} g^{\mu \nu} g^{\mu \nu} g_{\mu \nu} g_{\mu \nu} - \kappa \frac{1}{2} g^{\mu \nu} g_{\mu \nu} g_{\mu \nu} R = 0
+\]</div>
+<p>The inverse metric contracts with the metric:</p>
+<div class="math notranslate nohighlight">
+\[
+g^{\mu \nu} g^{\mu \nu} g_{\mu \nu} g_{\mu \nu} = g^{\mu \nu} g_{\mu \nu} = \delta_\mu^\mu = \sum_{i = 0}^3 1 = 4
+\]</div>
+<p>So this entire expression becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa 4R_{\mu \nu} - \kappa 2 R g_{\mu \nu} = 0
+\]</div>
+<p>But we can divide by 4 right after as the right-hand side is zero, to yield:</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa R_{\mu \nu} - \kappa \frac{1}{2} R g_{\mu \nu} = 0
+\]</div>
+<p>We can factor out the constant:</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa \left(R_{\mu \nu} - \frac{1}{2} R g_{\mu \nu}\right) = 0
+\]</div>
+<p>The term inside the parentheses is called the <strong>Einstein tensor</strong> and describes the curvature and characteristics of spacetime:</p>
+<div class="math notranslate nohighlight">
+\[
+G_{\mu \nu} = R_{\mu \nu} - \frac{1}{2} R g_{\mu \nu}
+\]</div>
+<p>In vacuum, the equation we just derived is the Einstein Field Equation:</p>
+<div class="math notranslate nohighlight">
+\[
+G_{\mu \nu} = 0
+\]</div>
+<p>Now, there is matter and energy within space, then we use a modified action, where <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is the contribution to the action of the gravitating matter and energy:</p>
+<div class="math notranslate nohighlight">
+\[
+S = \int (\kappa R -\mathcal{M} )\sqrt{-g}~d^4x
+\]</div>
+<p>So the Lagrangian is:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathscr{L} =  (\kappa R -\mathcal{M} )\sqrt{-g}
+\]</div>
+<p>Using the Euler-Lagrange field equations, this becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+-\kappa R_{\mu \nu} g^{\mu \nu} g^{\mu \nu} \sqrt{-g} - \kappa \frac{1}{2\sqrt{-g}}g g^{\mu \nu} g^{\mu \nu} R_{\mu \nu} - \frac{\partial \mathcal{M}}{\partial g_{\mu \nu}} \sqrt{-g} + \frac{1}{2 \sqrt{-g}} gg^{\mu \nu} \mathcal{M} = 0
+\]</div>
+<p>First, we multiply by <span class="math notranslate nohighlight">\(-1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa R_{\mu \nu} g^{\mu \nu} g^{\mu \nu} \sqrt{-g} + \kappa \frac{1}{2\sqrt{-g}}g g^{\mu \nu} g^{\mu \nu} R_{\mu \nu} + \frac{\partial \mathcal{M}}{\partial g_{\mu \nu}} \sqrt{-g} - \frac{1}{2 \sqrt{-g}} gg^{\mu \nu} \mathcal{M} = 0
+\]</div>
+<p>Then we multiply by <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{-g}}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa R_{\mu \nu} g^{\mu \nu} g^{\mu \nu}  - \kappa \frac{1}{2} g^{\mu \nu} g^{\mu \nu} R_{\mu \nu} + \frac{\partial \mathcal{M}}{\partial g_{\mu \nu}} \sqrt{-g} + \frac{1}{2} g^{\mu \nu} \mathcal{M} = 0
+\]</div>
+<p>We use the definition <span class="math notranslate nohighlight">\(R = g^{\mu \nu} R_{\mu \nu}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa R_{\mu \nu} g^{\mu \nu} g^{\mu \nu}  - \kappa \frac{1}{2} g^{\mu \nu} R + \frac{\partial \mathcal{M}}{\partial g_{\mu \nu}} \sqrt{-g} + \frac{1}{2} g^{\mu \nu} \mathcal{M} = 0
+\]</div>
+<p>And by contraction with <span class="math notranslate nohighlight">\(g_{\mu \nu} g_{\mu \nu}\)</span> we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa R_{\mu \nu}   - \kappa \frac{1}{2} g_{\mu \nu} R + \frac{\partial \mathcal{M}}{\partial g_{\mu \nu}} g_{\mu \nu} g_{\mu \nu} \sqrt{-g} + \frac{1}{2} g_{\mu \nu} \mathcal{M} = 0
+\]</div>
+<p>We can move the second and third terms, which depend on <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> to the right of the equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa R_{\mu \nu}   - \kappa \frac{1}{2} g_{\mu \nu} R = -\frac{\partial \mathcal{M}}{\partial g_{\mu \nu}} g_{\mu \nu} g_{\mu \nu} \sqrt{-g} - \frac{1}{2} g_{\mu \nu} \mathcal{M}
+\]</div>
+<p>And factor the left-hand side of the equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\kappa \left(R_{\mu \nu} - \frac{1}{2} g_{\mu \nu} R\right) = -\frac{\partial \mathcal{M}}{\partial g_{\mu \nu}} g_{\mu \nu} g_{\mu \nu} \sqrt{-g} - \frac{1}{2} g_{\mu \nu} \mathcal{M}
+\]</div>
+<p>We recognize our familiar friend, the Einstein tensor, on the left. If we define a tensor <span class="math notranslate nohighlight">\(T_{\mu \nu}\)</span> to equal the right-hand side:</p>
+<div class="math notranslate nohighlight">
+\[
+T_{\mu \nu} = -\frac{\partial \mathcal{M}}{\partial g_{\mu \nu}} g_{\mu \nu} g_{\mu \nu} \sqrt{-g} - \frac{1}{2} g_{\mu \nu} \mathcal{M}
+\]</div>
+<p>Then we have the complete field equations:</p>
+<div class="math notranslate nohighlight">
+\[
+G_{\mu \nu} = \frac{1}{\kappa} T_{\mu \nu}
+\]</div>
+<p>The tensor <span class="math notranslate nohighlight">\(T_{\mu \nu}\)</span> on the right is called the <strong>stress-energy tensor</strong>. There is no one “general formula” for the stress-energy tensor; we can define different expressions for the stress-energy tensor depending on what matter, energy, momentum, and stresses are present within the region of spacetime being analyzed, with the only real rule being that the resulting expression follow tensor algebra conventions (e.g. same number of free indices on both sides of the equation). One of the simplest expressions for a stress-energy tensor is:</p>
+<div class="math notranslate nohighlight">
+\[
+T_{\mu \nu} = \rho U_\mu U_\nu
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(U_\mu\)</span> and <span class="math notranslate nohighlight">\(U_\nu\)</span> are four-velocities, as shown before in special relativity, and <span class="math notranslate nohighlight">\(\rho\)</span> is the density of the gravitating matter-energy.</p>
+<p>But back to the equation:</p>
+<div class="math notranslate nohighlight">
+\[
+G_{\mu \nu} = \frac{1}{\kappa} T_{\mu \nu}
+\]</div>
+<p>What is the constant <span class="math notranslate nohighlight">\(\kappa\)</span>? We will need to use the Newtonian limit of relativity to answer that question. When gravity is weak, and objects are moving much slower than the speed of light, we expect that we can recover Poisson’s equation from the field equation. We will cover that in the following derivation.</p>
+<p>Given that four-velocity is defined as <span class="math notranslate nohighlight">\(U_\mu = (\gamma c, \gamma v)\)</span>, and we defined objects to be moving much slower than the speed of light, the 0th component of four-velocity, so slow that their speeds are effectively zero compared to the speed of light, we can effectively say that <span class="math notranslate nohighlight">\(\gamma \approx 1\)</span> and <span class="math notranslate nohighlight">\(U_\mu \approx (c, 0, 0, 0)\)</span>. Therefore, the component <span class="math notranslate nohighlight">\(T_{00}\)</span> of the stress-energy tensor is just <span class="math notranslate nohighlight">\(\rho c^2\)</span>, and all other components of the stress-energy tensor are zero.</p>
+<p>Given a static metric, that is, one that doesn’t change much in time, we can also say that <span class="math notranslate nohighlight">\(\partial_0 g_{\mu \nu} = 0\)</span>. And because we expect spacetime to be very close to Minkowski spacetime, we will set:</p>
+<div class="math notranslate nohighlight">
+\[
+g_{\mu \nu} = \eta_{\mu \nu} + h_{\mu \nu}
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(h_{\mu \nu}\)</span> is a tiny bit of metric that accounts for Newtonian gravity. Also, given our low velocity assumtions, we already mentioned that:</p>
+<div class="math notranslate nohighlight">
+\[
+U^{\mu} = \left(\frac{dt}{d\tau}, \frac{dx}{d\tau}, \frac{dy}{d\tau}, \frac{dz}{d\tau}\right) \approx (c, 0, 0, 0)
+\]</div>
+<p>We consider the geodesic equations:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 x^\mu}{d\tau^2}  + \Gamma^\mu_{\gamma \sigma} \frac{dx^\gamma}{d\tau} \frac{dx^\sigma}{d\tau} = 0
+\]</div>
+<p>We can simplify given that given that only the <span class="math notranslate nohighlight">\(\frac{dt}{d\tau}\)</span> component matters, because all the other velocities are zero:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 x^\mu}{d\tau^2}  + \Gamma^\mu_{00} \frac{dt}{d\tau} \frac{dt}{d\tau} = 0
+\]</div>
+<p>We can rewrite this as:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 x^\mu}{d\tau^2}  = -\Gamma^\mu_{00} \frac{dt}{d\tau} \frac{dt}{d\tau}
+\]</div>
+<p>And recalling <span class="math notranslate nohighlight">\(\frac{dt}{d\tau} \approx c\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 x^\mu}{d\tau^2}  = -\Gamma^\mu_{00} c^2
+\]</div>
+<p>Now, we can compare this to Newton’s equation for gravity:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 r}{dt^2} = -\nabla  \phi
+\]</div>
+<p>Therefore:</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma^\mu_{00} c^2 = \nabla \phi
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Gamma^\mu_{00} = \frac{1}{c^2} \nabla \phi
+\]</div>
+<p>Now, given that:</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma^i_{k l} = \frac{1}{2} g^{im} (\partial_l g_{mk} + \partial_k g_{ml} - \partial_m g_{kl})
+\]</div>
+<p>If we substitute <span class="math notranslate nohighlight">\(i \to \mu, k \to t, l \to t\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma^\mu_{00} = \frac{1}{2} g^{\mu m} (\partial_t g_{mt} + \partial_t g_{mt} - \partial_m g_{00})
+\]</div>
+<p>But recall that <span class="math notranslate nohighlight">\(\partial_t g_{\mu \nu} = 0\)</span> given our static metric assumption, so:</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma^\mu_{00} = -\frac{1}{2} g^{\mu m} \partial_m g_{00}
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(g^{\mu \nu} = \eta^{\mu \nu} - h^{\mu \nu}\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma^\mu_{00} = -\frac{1}{2} (\eta^{\mu m} - h^{\mu m} )(\partial_m \eta_{00} - \partial_m h_{00})
+\]</div>
+<p>We can simplify this by noting that because <span class="math notranslate nohighlight">\(\eta_{00} = -1\)</span>, its derivative is zero, so:</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma^\mu_{00} = -\frac{1}{2} (\eta^{\mu m} - h^{\mu m} ) \partial_m h_{00}
+\]</div>
+<p>If we expand this out, we would get:</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma^\mu_{00} = -\frac{1}{2} \eta^{\mu m} \partial_m h_{00} + h^{\mu m} \partial_m h_{00}
+\]</div>
+<p>But the second term is very tiny, so we can effectively say it is zero, and given <span class="math notranslate nohighlight">\(\eta^{\mu m} = -1\)</span>, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma^\mu_{00} = \frac{1}{2} \partial_m h_{00}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>How did we know that <span class="math notranslate nohighlight">\(\eta_{\mu m} = -1\)</span>? This is because <span class="math notranslate nohighlight">\(\eta_{\mu m}\)</span> is the first column of the Minkowski metric (as <span class="math notranslate nohighlight">\(m\)</span> is a dummy index, so you can think of it as <span class="math notranslate nohighlight">\(\eta_{0 m} \dots \eta_{3 m}\)</span>), and the only non-zero term in its first column is <span class="math notranslate nohighlight">\(\eta_{00}\)</span>.</p>
+</div>
+<p>The partial derivative with respect to an arbitrary coordinate is just the gradient:</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma^\mu_{00} = \frac{1}{2} \nabla h_{00}
+\]</div>
+<p>We already know what <span class="math notranslate nohighlight">\(\Gamma^\mu_{00}\)</span> is though, so:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{c^2} \nabla \phi = \frac{1}{2} \nabla h_{00}
+\]</div>
+<p>So we find that <span class="math notranslate nohighlight">\(h_{00} = \frac{2\phi}{c^2}\)</span>, and therefore <span class="math notranslate nohighlight">\(g_{00} = - 1 - \frac{2\phi}{c^2}\)</span>.</p>
+<p>Now, we have everything we need to compute the Einstein tensor. Using the definition of the Ricci tensor, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{ij} = \partial_k \Gamma^k_{ij} - \partial_j \Gamma^k_{ik} + \Gamma^k_{ij} \Gamma^m_{km} - \Gamma^k_{im} \Gamma^m_{jk}
+\]</div>
+<p>Given our knowledge of <span class="math notranslate nohighlight">\(\Gamma^\mu_{00}\)</span>, and with substitutions <span class="math notranslate nohighlight">\(k \to \mu, i \to t, j \to t\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{00} = \partial_\mu \Gamma^\mu_{00} - \partial_t \Gamma^\mu_{t\mu} + \Gamma^\mu_{00} \Gamma^m_{\mu m} - \Gamma^\mu_{tm} \Gamma^m_{t\mu}
+\]</div>
+<p>But recall that the time derivative of the metric must be zero, so the second term cancels out. And recall that all the Christoffel symbols that are not <span class="math notranslate nohighlight">\(\Gamma^\mu_{00}\)</span> are zero. If we expand out the dummy summation indices, we find that they all go to zero. Therefore, we just have:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{00} = \partial_\mu \Gamma^\mu_{00}
+\]</div>
+<p>Which becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{00} = \frac{1}{c^2} \nabla^2 \phi
+\]</div>
+<p>Recall the definition of the Einstein tensor:</p>
+<div class="math notranslate nohighlight">
+\[
+G_{\mu \nu} = R_{\mu \nu} - \frac{1}{2} g_{\mu \nu} g^{\mu \nu} R_{\mu \nu}
+\]</div>
+<p>If we substitute, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+G_{00} = R_{00} - \left[\left(- 1 - \frac{2\phi}{c^2}\right) R_{00}\right] = \frac{1}{c^2} \nabla^2 \phi + \frac{1}{c^2} \nabla^2 \phi + \frac{2\phi}{c^4} \nabla^2 \phi
+\]</div>
+<p>Now, since <span class="math notranslate nohighlight">\(c^4\)</span> is a massive number, <span class="math notranslate nohighlight">\(\frac{2\phi}{c^4} \approx 0\)</span>, so:</p>
+<div class="math notranslate nohighlight">
+\[
+G_{00} = \frac{2}{c^2} \nabla^2 \phi
+\]</div>
+<p>Using the Einstein field equations:</p>
+<div class="math notranslate nohighlight">
+\[
+G_{\mu \nu} = \frac{1}{\kappa} T_{\mu \nu}
+\]</div>
+<p>We can substitute in our values for the Einstein and stress-energy tensors:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2}{c^2} \nabla^2 \phi = \frac{1}{\kappa} \rho c^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \phi = \frac{1}{2\kappa} \rho c^4
+\]</div>
+<p>Compare this with Poisson’s equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2 \phi = 4\pi G\rho
+\]</div>
+<p>This means that:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{2\kappa} \rho c^4 = 4\pi G\rho
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\kappa = \frac{c^4}{8\pi G}
+\]</div>
+<p>Remember the field equations:</p>
+<div class="math notranslate nohighlight">
+\[
+G_{\mu \nu} = \frac{1}{\kappa} T_{\mu \nu}
+\]</div>
+<p>Now knowing the value of <span class="math notranslate nohighlight">\(\kappa\)</span>, we need only substitute to get:</p>
+<div class="math notranslate nohighlight">
+\[
+G_{\mu \nu} = \frac{8\pi G}{c^4} T_{\mu \nu}
+\]</div>
+<p>This elegant equation is the apotheosis of general relativity, and it rightfully deserves its place as one of the most famous equations in all of physics.</p>
+<p>Note that sometimes, there is an alternate form of the Einstein Field Equations that is easier to solve. To do this, we expand out the full equations:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{\mu \nu} - \frac{1}{2} Rg_{\mu \nu} = \frac{8\pi G}{c^4} T_{\mu \nu}
+\]</div>
+<p>We now multiply both sides by <span class="math notranslate nohighlight">\(g^{\mu \nu}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+g^{\mu \nu} R_{\mu \nu} - \frac{1}{2} R g_{\mu \nu} g^{\mu \nu} = \frac{8\pi G}{c^4} T_{\mu \nu} g^{\mu \nu}
+\]</div>
+<p>Using the fact that <span class="math notranslate nohighlight">\(g_{\mu \nu} = g^{\mu \nu} = 4\)</span> and <span class="math notranslate nohighlight">\(T_{\mu \nu} g^{\mu \nu} = T\)</span>, this becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+R - \frac{1}{2} (4R) = \frac{8\pi G}{c^4} T \Rightarrow -R = \frac{8\pi G}{c^4} T
+\]</div>
+<p>So, substituting back into the original EFEs:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{\mu \nu} +\frac{1}{2} \frac{8\pi G}{c^4} T g_{\mu \nu} = \frac{8\pi G}{c^4} T_{\mu \nu}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_{\mu \nu} = \frac{8\pi G}{c^4} \left(T_{\mu \nu} - \frac{1}{2} g_{\mu \nu} T \right)
+\]</div>
+<p>This makes the field equations simpler for vacuum solutions, where <span class="math notranslate nohighlight">\(T_{\mu \nu} = T = 0\)</span>. Thus, the equations just become:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{\mu \nu} = 0
+\]</div>
+<p>which is still incredibly hard to solve, but more manageable than the typical case.</p>
+<p>Finally, there is one more important fact about the field equations: taking the covariant derivatives of both sides is equal to zero. This means that:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu T_{\mu \nu} = 0
+\]</div>
+<p>This expression may look familiar if we recall that the covariant derivative with a repeated index is just the divergence of a field. What this is saying is that the total change in matter-energy flux in all of spacetime is zero - essentially, the conservation of energy.</p>
+</section>
+<section id="a-recap-with-intuition">
+<h2>A recap with intuition<a class="headerlink" href="#a-recap-with-intuition" title="Permalink to this heading">#</a></h2>
+<p>After doing so much math, it is helpful to reconnect with what the math is actually <em>saying</em>. That is, we want to regain our physical intuition for what the math describes.</p>
+<p>Gravity is a fictitious force, caused by the curvature of spacetime. When spacetime isn’t curved, particles undergo no acceleration, and thus feel no gravitational force. But when spacetime is curved, which happens whenever masses are present in spacetime, particles undergo a definite acceleration. Due to the equivalence principle, the effect of gravity is indistinguishable from the effect of an acceleration, so therefore particles that are being accelerated feel like a force is acting on them.</p>
+<p>The gravitational field is an object that extends through all space that gives each point a vector proportional to the gravitational force. Masses create and vary the gravitational field, and in turn the field exerts a force on masses within the field.</p>
+<p>The gravitational potential is a function whose slope is equal to the gravitational field. It can be thought of as a landscape that masses are placed in. Where that landscape is very steep, the gravitational force is very strong; where that landscape is very flat, the gravitational force is very weak.</p>
+<p>The metric tensor is a mathematical description of a spacetime. The classical analogue of it is the gravitational potential. Just as the gravitational potential influences the force of gravity, the metric tensor influences the curvature of spacetime, which particles experience as gravity.</p>
+<p>We can measure distances in typical Euclidean space using a fixed grid, where the increments between the grid line are measured by constant basis vectors. In curved spacetime, basis vectors are no longer constant. The Christoffel symbols are a precise measure of how basis vectors changes in spacetime, or essentially, how the Euclidean constant grid gets distorted in spacetime. It is roughly analogous to the gravitational field. Just as a gravitational field disappears in empty space far away from any masses, the Christoffel symbols vanish too.</p>
+<p>The Riemann tensor describes how the curvature of spacetime changes a vector as you move it in different directions in spacetime. The Ricci tensor describes how a volume in spacetime located at a given point in spacetime becomes contracted due to the curvature of spacetime. The Einstein tensor is the <em>average</em> value of this contraction of volume across all of the region of spacetime being studied.</p>
+<p>The stress-energy tensor describes the matter-energy fluxes within a region of spacetime. The classical analogue would be matter density. Finally, just as matter is the source for gravity in Newtonian mechanics, matter is the source of spacetime curvature in General Relativity, and spacetime curvature is what we feel as gravity. John Archibald Wheeler famously summarized all of these ideas with the succint observation:</p>
+<blockquote>
+<div><p>“Spacetime tells matter how to move; matter tells spacetime how to curve”</p>
+</div></blockquote>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./knowledge-library"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="general-relativity-2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">General Relativity, Part 2</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="alcubierre-metric-intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Alcubierre Metric</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-the-einstein-field-equations">Deriving the Einstein Field Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-recap-with-intuition">A recap with intuition</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Project Elära contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

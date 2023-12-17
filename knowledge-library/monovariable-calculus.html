@@ -1,0 +1,1402 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Monovariable Calculus &#8212; The Elara Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'knowledge-library/monovariable-calculus';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Linear Algebra" href="linear-algebra.html" />
+    <link rel="prev" title="Algebra" href="algebra.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/elara-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/elara-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Elara Handbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About Project Elara</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/open-philosophy.html">Open Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/guiding-principles.html">Guiding Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/docs-organization.html">Docs layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/using-handbook.html">Using the Handbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knowledge Library</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Monovariable Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multivariable-calculus.html">Multivariable calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-equations.html">Differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-1.html">Classical mechanics, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-2.html">Classical mechanics, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-geometry.html">Tensor Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special-relativity.html">Special Relativity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-1.html">General Relativity, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-2.html">General Relativity, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-3.html">General Relativity, Part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alcubierre-metric-intro.html">The Alcubierre Metric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-analysis.html">Complex numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-mechanics.html">Quantum mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer-hub/design-philosophy.html">Design Philosophy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/guide-to-governance.html">Guide to governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/covenant.html">Covenant of Project Elara</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/community-vision.html">Vision of the community</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook/issues/new?title=Issue%20on%20page%20%2Fknowledge-library/monovariable-calculus.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/knowledge-library/monovariable-calculus.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Monovariable Calculus</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limits">Limits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">Derivatives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-alternative-understanding-of-the-derivative">An alternative understanding of the derivative</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opinionated-derivative-notation">(Opinionated) derivative notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation">Differentiation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#practicing-the-chain-rule">Practicing the chain rule</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reciprocal-derivatives">Reciprocal derivatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tangent-to-a-curve">Tangent to a curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-derivatives">Higher-order derivatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-maxima-and-minima">Finding maxima and minima</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-differentiation">Implicit differentiation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antiderivatives">Antiderivatives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-intuitive-understanding">An intuitive understanding</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration">Integration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#area-under-a-curve">Area under a curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-value-of-a-function">Average value of a function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fundamental-theorem-of-calculus">The fundamental theorem of calculus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#u-substitution">U-substitution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts">Integration by parts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-integration-rules">Other integration rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-calculators">Integral calculators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-series">Taylor series</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="monovariable-calculus">
+<h1>Monovariable Calculus<a class="headerlink" href="#monovariable-calculus" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>Calculus is the most powerful weapon of thought yet devised by the wit of man.</p>
+<p><strong>Wallace B. Smith</strong></p>
+</div></blockquote>
+<p>Calculus is the study of continuous change: a simple set of concepts that can be applied to the most complex of systems. Nearly all of modern-day science is built on calculus, especially physics; it is quite the tool to have in your engineer’s toolbox!</p>
+<p>Over its nearly 400-year history, calculus has evolved into perhaps the most versatile and broad field of mathematics. There is multivariable calculus, vector calculus, stochastic calculus, the calculus of variations, tensor calculus, fractional calculus…we could go on and on…</p>
+<p>However, a lifelong journey through calculus begins with monovariable calculus (or just “calculus”). In monovariable calculus, we’re concerned with developing the fundamental ideas of calculus. These ideas will carry over to all the more advanced forms of calculus. Through them, you’re realize how calculus has such versatility and power.</p>
+<section id="limits">
+<h2>Limits<a class="headerlink" href="#limits" title="Permalink to this heading">#</a></h2>
+<p>The <strong>limit</strong> is the value a function approaches as <span class="math notranslate nohighlight">\(x\)</span> approaches a given value.</p>
+<p>For instance:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{x^2 - 1}{x - 1}
+\]</div>
+<p>While the function is not defined at <span class="math notranslate nohighlight">\(x = 1\)</span>, it approaches 2 as <span class="math notranslate nohighlight">\(x\)</span> approaches 1, thus we can say:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{x \rightarrow 1} f(x) = 2
+\]</div>
+<p>Sometimes, limits are the same regardless of the direction <span class="math notranslate nohighlight">\(x\)</span> approaches <span class="math notranslate nohighlight">\(c\)</span>. At other times, the limit is different, and dependent on the direction. For instance, take:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{1}{x - 3}
+\]</div>
+<p>As <span class="math notranslate nohighlight">\(x\)</span> approaches 3 from the right-hand side, <span class="math notranslate nohighlight">\(f(x)\)</span> approaches infinity, and as <span class="math notranslate nohighlight">\(x\)</span> approaches 3 from the left-hand side, <span class="math notranslate nohighlight">\(f(x)\)</span> approaches <strong>negative</strong> infinity. Thus, we can say there are separate left-hand and right-hand limits, where:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{x \rightarrow 3^+} f(x) = \infty = DNE
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\lim_{x \rightarrow 3^-} f(x) = -\infty = DNE
+\]</div>
+<p>(DNE means “does not exist”)</p>
+<p>Notice that as the limit is infinite, and infinity is not a real number, we do not say that the limit of the function is infinity. Rather, we say that the limit does not exist.</p>
+<p>The limit of a function does not exist in one of three cases:</p>
+<ul class="simple">
+<li><p>If the function’s left- and right-hand limits are not equal at that x-value</p></li>
+<li><p>If the function oscillates in value around an x-value</p></li>
+<li><p>If the function becomes indefinitely large around an x-value</p></li>
+</ul>
+</section>
+<section id="derivatives">
+<h2>Derivatives<a class="headerlink" href="#derivatives" title="Permalink to this heading">#</a></h2>
+<p>The equation for the slope of a line is defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+m = \frac{\Delta f(x)}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}
+\]</div>
+<p>However, the slope equation only works for straight lines. How, then, could we find the slope of a curve?</p>
+<p>Well, we can first take advantage of the fact that if you zoom <em>really</em> close in to a curve, it looks like a straight line:</p>
+<a class="reference internal image-reference" href="../_images/Calculus-curve-zoom.jpg"><img alt="Zooming into a curve" class="align-center" src="../_images/Calculus-curve-zoom.jpg" style="width: 600px;" /></a>
+<p><em>Notice how, as we zoom into the curve, the curve looks more and more like a straight line, and the curvature becomes less and less noticeable.</em></p>
+<p>The <strong>derivative</strong> is a function that tells you the slope of another function at <em>any</em> point. You can think of it as an “upgraded” version of the slope formula. We find the derivative by taking two points, <span class="math notranslate nohighlight">\((x, f(x))\)</span> and <span class="math notranslate nohighlight">\(((x + a), f(x+a))\)</span>, and calculating the slope from them:</p>
+<a class="reference internal image-reference" href="../_images/Derivative-illustration.png"><img alt="Illustration of the derivative" class="align-center" src="../_images/Derivative-illustration.png" style="width: 400px;" /></a>
+<p>As we shrink <span class="math notranslate nohighlight">\(a\)</span> and make it smaller and smaller, <span class="math notranslate nohighlight">\(a\)</span> will approach zero, and the slope becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{f(x+a) -f(x)}{(x+a) -x} = \frac{f(x+a) -f(x)}{a}
+\]</div>
+<p>So, for a function <span class="math notranslate nohighlight">\(f\)</span>, the derivative <span class="math notranslate nohighlight">\(\frac{df}{dx}\)</span> is defined as the limit by taking <span class="math notranslate nohighlight">\(a\)</span> smaller and smaller:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dx} = \lim_{a \rightarrow 0} \frac{f(x+a) -f(x)}{a}
+\]</div>
+<section id="an-alternative-understanding-of-the-derivative">
+<h3>An alternative understanding of the derivative<a class="headerlink" href="#an-alternative-understanding-of-the-derivative" title="Permalink to this heading">#</a></h3>
+<p>A more intuitive, but less mathematically rigorous, definition of the derivative is to look at the slope formula once again:</p>
+<div class="math notranslate nohighlight">
+\[
+m = \frac{\Delta y}{\Delta x}
+\]</div>
+<p>Now, let’s imagine making the change <span class="math notranslate nohighlight">\(\Delta\)</span> smaller and smaller. The eventual result is that <span class="math notranslate nohighlight">\(\Delta y\)</span>, a small change, becomes a tiny change <span class="math notranslate nohighlight">\(dy\)</span>, and <span class="math notranslate nohighlight">\(\Delta x\)</span>, a small change, becomes a tiny change <span class="math notranslate nohighlight">\(dx\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{\Delta \to 0} \frac{\Delta y}{\Delta x} = \frac{dy}{dx}
+\]</div>
+</section>
+<section id="opinionated-derivative-notation">
+<h3>(Opinionated) derivative notation<a class="headerlink" href="#opinionated-derivative-notation" title="Permalink to this heading">#</a></h3>
+<p>Calculus was invented at roughly the same time by two brilliant mathematicians - Gottlieb Leibniz and Isaac Newton. Unfortunately, each of them published their work at the same time with differing notations. Leibniz wrote the derivative with the notation <span class="math notranslate nohighlight">\(\frac{df}{dx}\)</span>; Newton used the notation <span class="math notranslate nohighlight">\(\dot f\)</span>. Lagrange and Euler, not long after, came up with the notation <span class="math notranslate nohighlight">\(f'(x)\)</span>. In any case, Leibniz and Newton…got into a fight, which became a political controversy, and other mathematicians decided to develop <em>other</em> notations as well. So, sadly, there is not a unified notation around calculus.</p>
+<p>The most common form of notation is Leibniz’s notation, where the derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> is written like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dx}
+\]</div>
+<p>The <em>nth</em>-derivative is written as:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^n f}{dx^n}
+\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Note:</strong> Even though this looks like a fraction, and can be manipulated similar to fractions, the derivative in Leibniz’s notation is <strong>absolutely not</strong> the same as a fraction!</p>
+</div>
+<p>The second most common notation is Langrange’s notation, where the derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> is written like this:</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x)
+\]</div>
+<p>Here, the <em>nth</em>-derivative is written as:</p>
+<div class="math notranslate nohighlight">
+\[
+f^n (x)
+\]</div>
+<p>In Project Elära, derivatives of a single-variable function use Leibniz notation most commonly to minimize confusion. The derivative of a function <span class="math notranslate nohighlight">\(f(x)\)</span> in Project Elära is <em>preferred</em> to be written as:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dx}
+\]</div>
+<p>If we have a function <span class="math notranslate nohighlight">\(v(t)\)</span>, the derivative with respect to <span class="math notranslate nohighlight">\(t\)</span> would be written as:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dv}{dt}
+\]</div>
+<p>A higher order derivative (e.g. second derivative) is written like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 f}{dx^2}
+\]</div>
+<p>The derivative evaluated at a certain point <span class="math notranslate nohighlight">\(x = a\)</span> is written as:</p>
+<div class="math notranslate nohighlight">
+\[
+\left.\frac{df}{dx} \right |_{x = a}
+\]</div>
+<p>However, there are some alternate notations that will sometimes be used. Note that these are <strong>all</strong> equivalent:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx} f(x) = f'(x)
+\]</div>
+<p>You will also see <span class="math notranslate nohighlight">\(\dot f\)</span> and <span class="math notranslate nohighlight">\(\ddot f\)</span> sometimes for first and second time derivatives respectively. This is recommended not to be used as it is easily notationally confused.</p>
+</section>
+<section id="differentiation">
+<h3>Differentiation<a class="headerlink" href="#differentiation" title="Permalink to this heading">#</a></h3>
+<p>The derivative is a very powerful function, but finding the derivative of a function unfortunately requires a bit of time and patience. This is because there is no universal formula for finding the derivative of a certain function - instead, we have general <em>rules</em> for finding the derivatives of a certain type of function, which we use in the process of <strong>differentiation</strong>.</p>
+<p>Let’s start with the easiest derivative - the derivative of any constant function is zero. Why? Because the slope of any constant function is always zero, and remember, the derivative is a function that tells you the slope at every point. So if the slope at every point is zero, the derivative will always be zero.</p>
+<p>We call this the <strong>constant rule</strong>, and we write it out like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dC}{dx} = 0 
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(n\)</span> can be any constant. For instance, the derivative of 2 with respect to <span class="math notranslate nohighlight">\(x\)</span> (the same as finding the rate of change of <span class="math notranslate nohighlight">\(f(x) = 2\)</span>) would be:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d(2)}{dx} = 0
+\]</div>
+<p>This also means that if you have a function <span class="math notranslate nohighlight">\(f(x) = c\)</span>, where <span class="math notranslate nohighlight">\(c\)</span> is a constant, then:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dx} = c
+\]</div>
+<p>That should be simple enough, right?</p>
+<p>Now, let’s do the second-easiest derivative. The derivative of the exponential function <span class="math notranslate nohighlight">\(f(x) = e^x\)</span> is itself. We call this the <strong>exponential rule</strong>, and we write it out like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d(e^x)}{dx} = e^x
+\]</div>
+<p>The exponential rule can also be more generally written as this:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d(a^x)}{dx} = \ln(a) a^x
+\]</div>
+<p>For trigonometric functions, the derivatives unfortunately have to be memorized, but you just have to memorize two of them to find the derivatives of all trigonometric functions:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d(\sin x)}{dx} = \cos x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{d(\cos x)}{dx} = -\sin x
+\]</div>
+<p>And for polynomial functions, we can use the <strong>power rule</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d(x^n)}{dx} = nx^{n - 1}
+\]</div>
+<p>The power rule applies to linear functions in the form <span class="math notranslate nohighlight">\(y = mx +c\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dx} = \frac{d(mx + c)}{dx} = \frac{d(mx)}{dx} = 1 m \left(x^{1-0}\right) = m
+\]</div>
+<p>As well as for rational functions in the form <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^n}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d\left(\frac{1}{x^n}\right)}{dx} = \frac{d(x^{-n})}{dx} = -nx^{-n -1} = -\frac{n}{x^{n + 1}}
+\]</div>
+<p>And nth root functions (e.g. square root, cube root, etc.) in the form <span class="math notranslate nohighlight">\(f(x) = \sqrt[n]{x}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d\left(\sqrt[n]{x}\right)}{dx} = \frac{d\left(x^\frac{1}{n}\right)}{dx} = \frac{1}{n} x^{\frac{1 - n}{n}}
+\]</div>
+<p>Combining the power rule and exponential rule gives us the derivatives of logarithms:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d(\ln x)}{dx} = \frac{1}{x}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{d(\log_a x)}{dx} = \frac{1}{x \ln a}
+\]</div>
+<p>However, most functions are made from a <em>combination</em> of these functions. For instance, the function <span class="math notranslate nohighlight">\(f(x) = 2x^2 + 3x + 5\)</span> is a combination of a constant function, linear function, and power function. To find the derivatives of combinations of functions, we have a few more rules to help us.</p>
+<p>First, we have the <strong>sum rule</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d(f(x) + g(x))}{x} = \frac{df}{dx} + \frac{dg}{dx}
+\]</div>
+<p>Then, the <strong>constant coefficient rule:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d(c \cdot f(x))}{dx} = c \cdot \frac{df}{dx}
+\]</div>
+<p>Then, the <strong>product rule</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d(f(x)g(x)}{dx} = \frac{df}{dx} g(x) + \frac{dg}{dx} f(x)
+\]</div>
+<p>From the product rule, we can derive the <strong>quotient rule</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d\left(\frac{f(x)}{g(x)}\right)}{dx} = \frac{\frac{df}{dx} g(x) - \frac{dg}{dx} f(x)}{(g(x))^2}
+\]</div>
+<p>And, most importantly, we have the <strong>chain rule</strong>. The chain rule is used for <em>composite functions</em> - functions that have been nested into each other. For instance, <span class="math notranslate nohighlight">\(h(x) = \sin x^2\)</span> is made by nesting the function <span class="math notranslate nohighlight">\(g(x) = x^2\)</span> <em>inside</em> of the function <span class="math notranslate nohighlight">\(f(x) = \sin x\)</span>. So, we can say that <span class="math notranslate nohighlight">\(h(x) = f(g(x))\)</span>. This is a <strong>composition of functions</strong>.</p>
+<p>With that in mind, the <strong>chain rule</strong> is written like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df(g(x))}{dx} = \frac{df}{du}\frac{du}{dx} = \frac{df}{dx} \{g(x)\} \frac{dg}{dx}
+\]</div>
+<p>This means we nest <span class="math notranslate nohighlight">\(g(x)\)</span> in the derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> and multiply that by the derivative of <span class="math notranslate nohighlight">\(g(x)\)</span>. The other rules here are mostly self-explanatory, but I’ll go through a worked example with the chain rule: let’s try to find the derivative of <span class="math notranslate nohighlight">\(h(x) = \cos x^2\)</span>.</p>
+<section id="practicing-the-chain-rule">
+<h4>Practicing the chain rule<a class="headerlink" href="#practicing-the-chain-rule" title="Permalink to this heading">#</a></h4>
+<p>We use the chain rule for <em>composite</em> functions, like our example, <span class="math notranslate nohighlight">\(h(x) = \cos x^2\)</span>. We know that we can rewrite <span class="math notranslate nohighlight">\(h(x)\)</span> as a composite function <span class="math notranslate nohighlight">\(f(g(x))\)</span>, where:</p>
+<div class="math notranslate nohighlight">
+\[
+h = \cos (u)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+u = x^2
+\]</div>
+<p>We can now use the chain rule. In the first step, we find <span class="math notranslate nohighlight">\(\frac{dh}{du}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dh}{du} = -\sin (u) = -\sin (x^2)
+\]</div>
+<p>Note that we substituted in <span class="math notranslate nohighlight">\(x^2\)</span> for <span class="math notranslate nohighlight">\(u\)</span>. Now, we find <span class="math notranslate nohighlight">\(\frac{du}{dx}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{du}{dx} = 2x
+\]</div>
+<p>We now just need to multiply them together:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dh}{dx} = \frac{dh}{du} \frac{du}{dx}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{dh}{dx} = -2x \sin x^2
+\]</div>
+<p>That’s our answer!</p>
+</section>
+</section>
+<section id="reciprocal-derivatives">
+<h3>Reciprocal derivatives<a class="headerlink" href="#reciprocal-derivatives" title="Permalink to this heading">#</a></h3>
+<p>In monovariable calculus <em>only</em>, derivatives follow the <strong>reciprocal rule</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dx} = \frac{1}{\frac{dx}{df}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{dx}{df} = \frac{1}{\frac{df}{dx}}
+\]</div>
+</section>
+<section id="tangent-to-a-curve">
+<h3>Tangent to a curve<a class="headerlink" href="#tangent-to-a-curve" title="Permalink to this heading">#</a></h3>
+<p>The tangent to the function <span class="math notranslate nohighlight">\(f(x)\)</span> at <span class="math notranslate nohighlight">\(x = a\)</span> is given by the function <span class="math notranslate nohighlight">\(T(x)\)</span>, where:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(x) = \frac{df}{dx}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+T(x) = \sigma \left(a\right)\left(x-a\right)+f\left(a\right)
+\]</div>
+<p>This is also called the <strong>linear approximation</strong> of a function.</p>
+</section>
+<section id="higher-order-derivatives">
+<h3>Higher-order derivatives<a class="headerlink" href="#higher-order-derivatives" title="Permalink to this heading">#</a></h3>
+<p>Taking a derivative <em>nth</em> times gives you the <em>nth</em> derivative of a function. For example, taking the derivative of the derivative is the second derivative, the derivative of the second derivative is the third derivative, and so on. Going in the other direction, the 0th derivative is not taking the derivative at all - the same as the original function.</p>
+<p>The second derivative is the most common higher-order derivative, and it is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 f}{dx^2} = \frac{d\left(\frac{df}{dx}\right)}{dx}
+\]</div>
+<p>The <em>order</em> of the derivative is the number of times you take the derivative: for instance, the 7th derivative involves taking the derivative of a function 7 times! (don’t do that, please…)</p>
+</section>
+<section id="finding-maxima-and-minima">
+<h3>Finding maxima and minima<a class="headerlink" href="#finding-maxima-and-minima" title="Permalink to this heading">#</a></h3>
+<p>We can find the critical points (maxima and minima) of a function <span class="math notranslate nohighlight">\(f(x)\)</span> by finding its derivative and setting it to zero:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dx} = 0
+\]</div>
+<p>For instance, for the function <span class="math notranslate nohighlight">\(f(x) = 2x^2 + 1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{df}{dx} = 4x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+4x = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x = 0
+\]</div>
+<p>Then, plugging in that x value into the original f(x), we can find the y value of the maximum/minimum point:</p>
+<div class="math notranslate nohighlight">
+\[
+f(0) = 2(0^2) + 1 = 1
+\]</div>
+<p>So the minimum of <span class="math notranslate nohighlight">\(f(x)\)</span> is the point <span class="math notranslate nohighlight">\((0, 1)\)</span>. How do we know if it’s a maximum or minimum though? To find out, we use the <strong>second derivative</strong>, which measures how the slope changes. If a point is a maximum, the slope will change from positive to negative around that point; if a point is a minimum, vice-versa. So:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+\text{if} \quad \frac{d^2 f}{dx^2} &lt; 0 \quad x = \text{max.} \\
+\text{if} \quad \frac{d^2 f}{dx^2} &gt; 0 \quad x = \text{min.}
+\end{cases}
+\end{split}\]</div>
+<p>The second derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> is the derivative of its derivative, which we can find like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d^2 f}{dx^2} = \frac{d(4x)}{dx} = 4
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\frac{d^2 f}{dx^2} &gt; 0\)</span>, we know that the point <span class="math notranslate nohighlight">\((0, 1)\)</span> has to be a <strong>minimum</strong>.</p>
+</section>
+<section id="implicit-differentiation">
+<h3>Implicit differentiation<a class="headerlink" href="#implicit-differentiation" title="Permalink to this heading">#</a></h3>
+<p>Implicit differentiation is when we differentiate with respect to an intermediary variable, often used when the object being differentiated is not a function. For instance, consider the equation of a circle:</p>
+<div class="math notranslate nohighlight">
+\[
+x^2 + y^2 = 1
+\]</div>
+<p>To implicitly differentiate it, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx} (x^2 + y^2) = \frac{d}{dx} (1)
+\]</div>
+<p>The right-hand side is straightforward:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx} (x^2 + y^2) = 0
+\]</div>
+<p>The sum rule can be used for the left-hand side:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}
+ x^2 + \frac{d}{dx}
+y^2 = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+2x + \frac{d}{dx}
+y^2
+ = 0
+\]</div>
+<p>To implicitly differentiate <span class="math notranslate nohighlight">\(y^2\)</span>, we can use the chain rule:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dx}
+y^2 = 2y \frac{dy}{dx}
+\]</div>
+<p>So:</p>
+<div class="math notranslate nohighlight">
+\[
+2x + 2y \frac{dy}{dx} = 0
+\]</div>
+<p>Rearranging the terms, we find that:</p>
+<div class="math notranslate nohighlight">
+\[
+2y \frac{dy}{dx} = -2x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy}{dx} = - \frac{x}{y}
+\]</div>
+<p><strong>Problem:</strong> Suppose that <span class="math notranslate nohighlight">\(y = x^2 + 3\)</span>. Find <span class="math notranslate nohighlight">\(\frac{dy}{dt}\)</span> when <span class="math notranslate nohighlight">\(x = 1\)</span>, <span class="math notranslate nohighlight">\(\frac{dx}{dt} = 2\)</span>.</p>
+<p>We implicitly differentiate <span class="math notranslate nohighlight">\(y\)</span> to find:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy}{dt} = 2x \frac{dx}{dt}
+\]</div>
+<p>Then we plug in the values for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(\frac{dx}{dt}\)</span> to find that:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy}{dt} = 2(1)(2) = 4
+\]</div>
+</section>
+</section>
+<section id="antiderivatives">
+<h2>Antiderivatives<a class="headerlink" href="#antiderivatives" title="Permalink to this heading">#</a></h2>
+<p>The antiderivative is the function <span class="math notranslate nohighlight">\(F(x)\)</span> that is the original function of a derivative <span class="math notranslate nohighlight">\(f(x)\)</span>. For instance, the antiderivative of <span class="math notranslate nohighlight">\(2x\)</span> is <span class="math notranslate nohighlight">\(x^2\)</span>, because if <span class="math notranslate nohighlight">\(2x\)</span> is the derivative, then the original function is <span class="math notranslate nohighlight">\(x^2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d(x^2)}{dx} = 2x
+\]</div>
+<p>The <strong>indefinite integral</strong> is another name for the antiderivative. The indefinite integral is written as:</p>
+<div class="math notranslate nohighlight">
+\[
+F(x) + C = \int f(x)dx
+\]</div>
+<p>The <span class="math notranslate nohighlight">\(C\)</span> is due to the fact that the integral returns a family of antiderivatives, as any derivative has infinitely many antiderivatives.</p>
+<p>Just like derivatives, indefinite integrals follow certain rules:</p>
+<div class="math notranslate nohighlight">
+\[
+\int dx = x + C
+\]</div>
+<p>Constant rule:</p>
+<div class="math notranslate nohighlight">
+\[
+\int k  \, dx = kx + C
+\]</div>
+<p>Inverse power rule:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x^n dx = \frac{x^{n + 1}}{n + 1}
+\]</div>
+<p>Sum and difference rule:</p>
+<div class="math notranslate nohighlight">
+\[
+\int [f(x) \pm g(x)] dx = \int f(x) dx \pm \int g(x) dx
+\]</div>
+<p>Constant factor rule:</p>
+<div class="math notranslate nohighlight">
+\[
+\int k f(x) dx = k \int f(x) dx
+\]</div>
+<section id="an-intuitive-understanding">
+<h3>An intuitive understanding<a class="headerlink" href="#an-intuitive-understanding" title="Permalink to this heading">#</a></h3>
+<p>Suppose we have the derivative of a function, and that derivative is <span class="math notranslate nohighlight">\(f(x)\)</span>. We now want to find the original function <span class="math notranslate nohighlight">\(F(x)\)</span> that derivative came from. To do so, we notice that:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{dF}{dx}
+\]</div>
+<p>So if we rearrange the terms, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) dx = dF
+\]</div>
+<p>Now, <span class="math notranslate nohighlight">\(dF\)</span> is similar to saying “a tiny tiny change in F”. If we add lots of <span class="math notranslate nohighlight">\(dF\)</span>’s together, it would seem reasonable that we would get <span class="math notranslate nohighlight">\(F\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+F(x) = \sum_i dF
+\]</div>
+<p>Only in integral calculus, we replace the summation symbol with the integral symbol <span class="math notranslate nohighlight">\(\int\)</span>, so it becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+F(x) = \int dF = \int f(x) dx
+\]</div>
+</section>
+</section>
+<section id="integration">
+<h2>Integration<a class="headerlink" href="#integration" title="Permalink to this heading">#</a></h2>
+<section id="area-under-a-curve">
+<h3>Area under a curve<a class="headerlink" href="#area-under-a-curve" title="Permalink to this heading">#</a></h3>
+<p>Up to this point, we’ve only seen one type of integral - the indefinite integral, used for finding the original function given its derivative. Now, we will explore another type of integral, the definite integral, which returns an area rather than a function. The definite integral looks like this:</p>
+<div class="math notranslate nohighlight">
+\[
+A = \int \limits_a^b f(x) dx
+\]</div>
+<p>Intuitively, the definite integral gives the area underneath a curve. It does this by creating tiny rectangles under that curve:</p>
+<a class="reference internal image-reference" href="https://www.technologyuk.net/mathematics/integral-calculus/images/integral_calculus_0013.gif"><img alt="Integral visualization as rectangles under a curve" class="align-center" src="https://www.technologyuk.net/mathematics/integral-calculus/images/integral_calculus_0013.gif" style="width: 400px;" /></a>
+<p>We can find the area by summing the areas of the rectangles we place under the curve. As more rectangles are used, the approximation becomes closer to the true area. Taking the limit as the number of rectangles approaches infinity, we find the true area underneath the curve:</p>
+<div class="math notranslate nohighlight">
+\[
+A = \lim_{n \rightarrow \infty} \sum_{i = 1}^n f(c_i) \Delta x = \int \limits_a^b f(x) dx
+\]</div>
+<p>Several properties of the definite integral include:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^a f(x) dx = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int_b^a f(x)dx = -\int_a^b f(x)dx
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int_a^c f(x) dx = \int_a^b f(x)dx + \int_b^c f(x)dx
+\]</div>
+</section>
+<section id="average-value-of-a-function">
+<h3>Average value of a function<a class="headerlink" href="#average-value-of-a-function" title="Permalink to this heading">#</a></h3>
+<p>The average (mean) value of a function on <span class="math notranslate nohighlight">\([a, b]\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{b-a} \int_a^b f(x)dx
+\]</div>
+</section>
+<section id="the-fundamental-theorem-of-calculus">
+<h3>The fundamental theorem of calculus<a class="headerlink" href="#the-fundamental-theorem-of-calculus" title="Permalink to this heading">#</a></h3>
+<p>Derivatives, indefinite integrals, and definite integrals are related by the <strong>fundamental theorem of calculus (FTC)</strong>. The theorem consists of two parts.</p>
+<p>The first part of the FTC states that if you have an original function <span class="math notranslate nohighlight">\(F(x)\)</span> whose derivative is <span class="math notranslate nohighlight">\(f(x)\)</span>, then taking the indefinite integral of the derivative gives you the original function:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{dF}{dx} \Rightarrow F(x) = \int f(x) dx
+\]</div>
+<p>The FTC #1 establishes that differentiation and integration are <strong>inverse operations</strong>. The derivative is the <em>rate of change</em>, whereas the integral finds the <em>accumulated net change</em>.</p>
+<p>Then the second part of the FTC states that the definite integral, which is the area underneath the curve of <span class="math notranslate nohighlight">\(f(x)\)</span>, is given by evaluating the indefinite integral between the bounds of the curve:</p>
+<div class="math notranslate nohighlight">
+\[
+A = \int \limits_a^b f(x) dx = F(b) - F(a)
+\]</div>
+<p>This means that when we know the indefinite integral of a function, we can use the FTC as a shortcut to evaluating the definite integral.</p>
+<p>For instance, let’s try to evaluate the area under the curve of <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> from <span class="math notranslate nohighlight">\(x = 0\)</span> to <span class="math notranslate nohighlight">\(x = 3\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \limits_0^3 x^2 dx
+\]</div>
+<p>We first find the indefinite integral of <span class="math notranslate nohighlight">\(f(x)\)</span> - the original function whose derivative is <span class="math notranslate nohighlight">\(x^2\)</span>. We can use the inverse power rule for this:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x^n dx = \frac{1}{n + 1} x^{n + 1} + C
+\]</div>
+<p>Thus the indefinite integral of <span class="math notranslate nohighlight">\(f(x)\)</span> is equal to:</p>
+<div class="math notranslate nohighlight">
+\[
+F(x) = \frac{x^3}{3} + C
+\]</div>
+<p>Now, we just evaluate <span class="math notranslate nohighlight">\(F(3) - F(0)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+F(3) - F(0) = \left(\frac{3^3}{3} + C\right) - \left(\frac{0^3}{3} + C\right)
+\]</div>
+<p>The two <span class="math notranslate nohighlight">\(C\)</span>’s cancel and we are simply left with:</p>
+<div class="math notranslate nohighlight">
+\[
+F(3) - F(0) = 9
+\]</div>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \limits_0^3 x^2 dx = 9
+\]</div>
+</section>
+<section id="u-substitution">
+<h3>U-substitution<a class="headerlink" href="#u-substitution" title="Permalink to this heading">#</a></h3>
+<p>Just as we have the chain rule for derivatives, we have a sort of “reverse” chain rule for evaluating indefinite integrals. We begin with a typical integral:</p>
+<div class="math notranslate nohighlight">
+\[
+\int f(x) dx
+\]</div>
+<p>And we want to express the integrand <span class="math notranslate nohighlight">\(f(x)\)</span> in terms of another function <span class="math notranslate nohighlight">\(g(u)\)</span>. To do this, we define:</p>
+<div class="math notranslate nohighlight">
+\[
+x = g(u)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+f(x) = f(g(u))
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{dx}{du} = g'(u)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+dx = g'(u) du
+\]</div>
+<p>Therefore:</p>
+<div class="math notranslate nohighlight">
+\[
+\int f(x) dx = \int f(g(u)) g'(u) du
+\]</div>
+<p>which is essentially a reverse chain rule. Why would we do this though? Doesn’t it make integrals more complicated? While the formula may seem scary, the reality is that with clever cancelling, u-substitution can make integrals a lot easier to solve. Take, for instance:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{x^{3}}{\sqrt{16-x^{4}}}dx
+\]</div>
+<p>Here, we identify the part of the integral that we want to make our <span class="math notranslate nohighlight">\(u\)</span>. Usually, this is an annoyingly complex part of the integral that we want to make simpler with u-substitution. In this case, it would be <span class="math notranslate nohighlight">\(u = 16 - x^4\)</span>. So:</p>
+<div class="math notranslate nohighlight">
+\[
+u = 16 - x^4
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{du}{dx} = -4x^3
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+dx = \frac{du}{-4x^3}
+\]</div>
+<p>Now, we can substitute <span class="math notranslate nohighlight">\(16-x^4\)</span> for <span class="math notranslate nohighlight">\(u\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{x^{3}}{\sqrt{16-x^{4}}}dx = \int \frac{x^{3}}{\sqrt{u}}dx
+\]</div>
+<p>And substitute <span class="math notranslate nohighlight">\(\frac{du}{-4x^3}\)</span> for <span class="math notranslate nohighlight">\(dx\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{x^{3}}{\sqrt{u}}dx = \int \frac{x^{3}}{\sqrt{u}} \frac{du}{-4x^3}
+\]</div>
+<p>And magically we find that the <span class="math notranslate nohighlight">\(x^3\)</span> and <span class="math notranslate nohighlight">\(-4x^3\)</span> cancel, leaving us with an integrand completely in terms of <span class="math notranslate nohighlight">\(u\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{x^{3}}{\sqrt{u}} \frac{du}{-4x^3} = \int -\frac{1}{4} \frac{1}{\sqrt{u}} du
+\]</div>
+<p>We can make the integral even simpler by moving the constant factor outside the integral:</p>
+<div class="math notranslate nohighlight">
+\[
+\int -\frac{1}{4} \frac{1}{\sqrt{u}} du = -\frac{1}{4} \int \frac{1}{\sqrt{u}} du
+\]</div>
+<p>We’ve successfully greatly simplified the integral!</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{x^{3}}{\sqrt{16-x^{4}}}dx \Rightarrow -\frac{1}{4} \int \frac{1}{\sqrt{u}} du
+\]</div>
+<p>Solving this integral in terms of <span class="math notranslate nohighlight">\(u\)</span> is easy:</p>
+<div class="math notranslate nohighlight">
+\[
+-\frac{1}{4} \int \frac{1}{\sqrt{u}} du = -\frac{1}{2} \sqrt{u} + C
+\]</div>
+<p>We just need to remember to now replace <span class="math notranslate nohighlight">\(u\)</span> with its value in terms of <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+-\frac{1}{2} \sqrt{u} + C = -\frac{1}{2} \sqrt{16 - x^4} + C
+\]</div>
+<p>So we evaluated a difficult integral using u-substitution to find its answer!</p>
+</section>
+<section id="integration-by-parts">
+<h3>Integration by parts<a class="headerlink" href="#integration-by-parts" title="Permalink to this heading">#</a></h3>
+<p>Integration by parts is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\int u dv = uv - \int v du
+\]</div>
+<p>It is the integral form of the product rule for derivatives. Unsurprisingly, it is often used for integrating products of functions. To illustrate this, let’s consider integrating <span class="math notranslate nohighlight">\(f(x) = x \sin (x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x\sin(x) dx
+\]</div>
+<p>To integrate, we first pick our <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(dv\)</span>. We generally want <span class="math notranslate nohighlight">\(u\)</span> to be a function that is easy to differentiate, and <span class="math notranslate nohighlight">\(dv\)</span> to be a function that is easy to integrate. Here, we will pick <span class="math notranslate nohighlight">\(u = x\)</span>, <span class="math notranslate nohighlight">\(dv = \sin(x)\)</span>. So:</p>
+<div class="math notranslate nohighlight">
+\[
+u = x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{du}{dx} = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+du = 1dx = dx
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+dv = \sin x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+v = \int dv = -\cos x
+\]</div>
+<p>Using the integration by parts formula, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x\sin(x) dx = -x \cos x - \int (-\cos x) dx
+\]</div>
+<p>Which simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x \sin x dx = -x\cos x + \sin x + C
+\]</div>
+</section>
+<section id="other-integration-rules">
+<h3>Other integration rules<a class="headerlink" href="#other-integration-rules" title="Permalink to this heading">#</a></h3>
+<p>There are several other notable integration tricks such as integrating by partial fractions, integrating by trigonometric substitutions, using trig identities, long division, and other algebraic methods for solving indefinite integrals. A full list of them can be found at <a class="reference external" href="https://brilliant.org/wiki/integration-tricks/">https://brilliant.org/wiki/integration-tricks/</a>. Another way to solve complicated integrals is to refer to integral tables, which contain precomputed tables of common integrals - see <a class="reference external" href="https://en.wikipedia.org/wiki/Lists_of_integrals">https://en.wikipedia.org/wiki/Lists_of_integrals</a>.</p>
+</section>
+<section id="integral-calculators">
+<h3>Integral calculators<a class="headerlink" href="#integral-calculators" title="Permalink to this heading">#</a></h3>
+<p>When integrals are too difficult to solve using any known method, consult an online integral calculator! Some very good ones are <a class="reference external" href="https://mathdf.com/int/">https://mathdf.com/int/</a> and <a class="reference external" href="https://www.wolframalpha.com">https://www.wolframalpha.com</a>. Additionally, for relatively simple expressions (to type in), consult <a class="reference external" href="https://gamma.sympy.org/">https://gamma.sympy.org/</a>. The SymPy Python library is also well worth learning to do symbolic integration on a computer.</p>
+</section>
+</section>
+<section id="taylor-series">
+<h2>Taylor series<a class="headerlink" href="#taylor-series" title="Permalink to this heading">#</a></h2>
+<p>Imagine we had a certain function <span class="math notranslate nohighlight">\(f(x)\)</span>. We want to approximate that function with a polynomial <span class="math notranslate nohighlight">\(T(x)\)</span>. So we write the general equation of a polynomial centered at <span class="math notranslate nohighlight">\(x = a\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+T(x) = c_0 + c_1 (x - a) + c_2 (x-a)^2 + c_3 (x - a)^3 + c_4 (x - a)^4 + \dots c_n (x - a)^n
+\]</div>
+<p>Now, for this function to be equal to <span class="math notranslate nohighlight">\(f(x)\)</span>, then <span class="math notranslate nohighlight">\(T(a) = f(a)\)</span>. So we compute <span class="math notranslate nohighlight">\(T(a)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+T(a) = c_0 + c_1 (a - a) + c_2 (a-a)^2 + c_3 (a - a)^3 + c_4 (a - a)^4 + \dots c_n (a - a)^n
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(a - a\)</span> cancels to zero, every term in the equation cancels to zero other than <span class="math notranslate nohighlight">\(c_0\)</span>, so:</p>
+<div class="math notranslate nohighlight">
+\[
+T(a) = c_0
+\]</div>
+<p>But we know that <span class="math notranslate nohighlight">\(T(a) = f(a)\)</span>. So we can rewrite <span class="math notranslate nohighlight">\(T(x)\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[
+T(x) = f(a) + c_1 (x - a) + c_2 (x-a)^2 + c_3 (x - a)^3 + c_4 (x - a)^4 + \dots c_n (x - a)^n
+\]</div>
+<p>Alright, but just having two functions be equal at a single point isn’t enough to make sure that these two functions are equal. To be more sure that the two functions are equal, we demand <span class="math notranslate nohighlight">\(T'(a) = f'(a)\)</span> must be true as well. If we compute <span class="math notranslate nohighlight">\(T'(x)\)</span>, we’d get:</p>
+<div class="math notranslate nohighlight">
+\[
+T'(x) = c_1 + 2c_2(x - a) + 3 c_3(x - a)^2 + 4c_4 (x -a)^3 + \dots nc_n (x - a)^{n - 1}
+\]</div>
+<p>Once again, if we compute <span class="math notranslate nohighlight">\(T'(a)\)</span>, the terms all cancel other than the first, so we have:</p>
+<div class="math notranslate nohighlight">
+\[
+T'(a) = c_1 + 2c_2 (a - a) + 3c_3(a - a)^2 + 4c_4 (a - a)^3 + \dots nc_n(a - a)^{n - 1}
+\]</div>
+<p>Again, since all the <span class="math notranslate nohighlight">\(a - a\)</span> terms cancel to zero, we are left with just one term, where:</p>
+<div class="math notranslate nohighlight">
+\[
+T'(a) = c_1
+\]</div>
+<p>But again, we know that <span class="math notranslate nohighlight">\(T'(a) = f'(a)\)</span>, so we can rewrite <span class="math notranslate nohighlight">\(T(x)\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[
+T(x) = f(a) + f'(a) (x - a) + c_2 (x-a)^2 + c_3 (x - a)^3 + c_4 (x - a)^4 + \dots c_n (x - a)^n
+\]</div>
+<p>Still, we can’t be certain that <span class="math notranslate nohighlight">\(T(x) = f(x)\)</span>. We don’t just want their values and their first derivatives to match at <span class="math notranslate nohighlight">\(x = a\)</span> - we want their second derivatives to match too! So we do the same exercise - take the second derivative of <span class="math notranslate nohighlight">\(T(x)\)</span>. We get:</p>
+<div class="math notranslate nohighlight">
+\[
+T''(x) =2c_2 + 3(2) c_3(x - a) + 4(3)c_4 (x -a)^2 + \dots n (n-1)c_n (x - a)^{n - 2}
+\]</div>
+<p>Once again, if we solve for <span class="math notranslate nohighlight">\(T''(a)\)</span>, every term except for the first cancel to yield zero, so we get:</p>
+<div class="math notranslate nohighlight">
+\[
+T''(a) = 2c_2
+\]</div>
+<p>But we said that <span class="math notranslate nohighlight">\(f''(a) = T''(a)\)</span>, so:</p>
+<div class="math notranslate nohighlight">
+\[
+c_2 = \frac{1}{2} f''(a)
+\]</div>
+<p>So <span class="math notranslate nohighlight">\(T(x)\)</span> is now:</p>
+<div class="math notranslate nohighlight">
+\[
+T(x) = f(a) + f'(a) (x - a) + \frac{1}{2} f''(a) (x-a)^2 + c_3 (x - a)^3 + c_4 (x - a)^4 + \dots c_n (x - a)^n
+\]</div>
+<p>You might be noticing a pattern here! In fact, if we take the general expression of <span class="math notranslate nohighlight">\(T(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+T(x) = \sum_{n = 0}^\infty c_n (x - a)^n
+\]</div>
+<p>Then the nth-term of <span class="math notranslate nohighlight">\(T(x)\)</span> would be:</p>
+<div class="math notranslate nohighlight">
+\[
+c_n (x - a)^n
+\]</div>
+<p>If we take the derivative of the nth term, using the power rule, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+c_n (n)(n-1)(n-2)\dots(3)(2)(1) (x-a)^{n -n}
+\]</div>
+<p>Here we can write <span class="math notranslate nohighlight">\(n(n - 1)(n-2)(n-3) \dots (3)(2)(1)\)</span> as <span class="math notranslate nohighlight">\(n!\)</span> (we call that “n-factorial”). For example, <span class="math notranslate nohighlight">\(3! = 3 \times 2 \times 1 = 6\)</span>. We can also rewrite <span class="math notranslate nohighlight">\(n-n = 0\)</span>, and anything raised to the power of zero is just one, so we get this expression for the nth-derivative of <span class="math notranslate nohighlight">\(T\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+c_n n!
+\]</div>
+<p>And if we demand that the nth-derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> is equal to the nth-derivative of <span class="math notranslate nohighlight">\(T(x)\)</span> at <span class="math notranslate nohighlight">\(x = a\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[
+f^{(n)}(a) = c_n n!
+\]</div>
+<p>If we solve for <span class="math notranslate nohighlight">\(c_n\)</span>, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+c_n = \frac{f^{(n)} (a)}{n!}
+\]</div>
+<p>Then if we plug this back in to the infinite sum representation of <span class="math notranslate nohighlight">\(T(x)\)</span>, replacing <span class="math notranslate nohighlight">\(c_n\)</span> with what we derived:</p>
+<div class="math notranslate nohighlight">
+\[
+T(x) = \sum_{n = 0}^\infty \frac{f^{(n)} (a)}{n!}(x - a)^n
+\]</div>
+<p>This is the formula for the <strong>Taylor series</strong> of a function. For practical purposes, we usually don’t let the sum range from 0 to infinity, and instead cap the sum at some number, which we call the <strong>order</strong> of the resulting polynomial. For example, the 7th-order Taylor polynomial is a Taylor series capped at 7 terms.</p>
+<p>We can use the Taylor series to compute the values of transcendental functions (the exponential function, logarithmic function, and trigonometric functions), given known values of a function. For example, using a 7th-order Taylor approximation at <span class="math notranslate nohighlight">\(a = 0\)</span> and range reduction techniques to rescale any value of the sine function to between <span class="math notranslate nohighlight">\(-\frac{\pi}{4}\)</span> and <span class="math notranslate nohighlight">\(\frac{\pi}{4}\)</span>, you can calculate the value of the sine function to within an error of <span class="math notranslate nohighlight">\(\pm 3.6 \times 10^{-6}\)</span> of the correct value.</p>
+<p>The Taylor series is also a method of calculating the precise value of <span class="math notranslate nohighlight">\(e\)</span>, Euler’s number, to use in calculations of the exponential function. To do so, we first need to recognize that <span class="math notranslate nohighlight">\(e^0 = 1\)</span>, as with any other number raised to the power of zero. We also know that because <span class="math notranslate nohighlight">\(\frac{d}{dx} e^x = e^x\)</span>, the nth-derivative of <span class="math notranslate nohighlight">\(e^x\)</span> will always be <span class="math notranslate nohighlight">\(e^x\)</span>, and thus the nth-derivative <span class="math notranslate nohighlight">\(f^{(n)} (0)\)</span> is always going to be <span class="math notranslate nohighlight">\(e^0 = 1\)</span>. Plugging that into our Taylor series, and setting <span class="math notranslate nohighlight">\(a = 0\)</span> (as our point of reference is <span class="math notranslate nohighlight">\(x = 0\)</span>), we have:</p>
+<div class="math notranslate nohighlight">
+\[
+e^x = T(x) = \sum_{n = 0}^\infty \frac{1}{n!} (x -0)^n
+\]</div>
+<p>Which becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+T(x) = \sum_{n = 0}^\infty \frac{x^n}{n!}
+\]</div>
+<p>Now, given also that we know that <span class="math notranslate nohighlight">\(e^1 = e\)</span>, then <span class="math notranslate nohighlight">\(T(1) = e\)</span>, so:</p>
+<div class="math notranslate nohighlight">
+\[
+e = T(1) = \sum_{n = 0}^\infty \frac{1^n}{n!}
+\]</div>
+<p>And since <span class="math notranslate nohighlight">\(1^n = 1\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+e = \sum_{n = 0}^\infty \frac{1}{n!} = 1 + 1 + \frac{1}{2} + \frac{1}{6} + \frac{1}{24} + \dots
+\]</div>
+<p>Which results in:</p>
+<div class="math notranslate nohighlight">
+\[
+e \approx 2.718
+\]</div>
+<p>You can also find <span class="math notranslate nohighlight">\(\pi\)</span> using Taylor series in a similar manner (just with a Taylor approximation of the arctangent or arcsine function instead).</p>
+<p>Taylor series are also good for approximating complex functions. For example, the Taylor series for <span class="math notranslate nohighlight">\(\sin(x)\)</span> starts with:</p>
+<div class="math notranslate nohighlight">
+\[
+\sin (x) \approx x - \frac{1}{3!} x^3 + \frac{1}{5!} x^5 - \frac{1}{7!} x^7 + \dots
+\]</div>
+<p>Which means the first-order Taylor polynomial for <span class="math notranslate nohighlight">\(\sin(x)\)</span> is just:</p>
+<div class="math notranslate nohighlight">
+\[
+\sin(x) \approx x
+\]</div>
+<p>This is called the <strong>small-angle approximation</strong> to the sine function, and it is very powerful - as we’ll see later, it allows many complicated differential equations to be simplified and made solvable.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./knowledge-library"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="algebra.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Algebra</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="linear-algebra.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Linear Algebra</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limits">Limits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">Derivatives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-alternative-understanding-of-the-derivative">An alternative understanding of the derivative</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opinionated-derivative-notation">(Opinionated) derivative notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiation">Differentiation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#practicing-the-chain-rule">Practicing the chain rule</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reciprocal-derivatives">Reciprocal derivatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tangent-to-a-curve">Tangent to a curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-derivatives">Higher-order derivatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-maxima-and-minima">Finding maxima and minima</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-differentiation">Implicit differentiation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antiderivatives">Antiderivatives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-intuitive-understanding">An intuitive understanding</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration">Integration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#area-under-a-curve">Area under a curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-value-of-a-function">Average value of a function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fundamental-theorem-of-calculus">The fundamental theorem of calculus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#u-substitution">U-substitution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-by-parts">Integration by parts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-integration-rules">Other integration rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-calculators">Integral calculators</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-series">Taylor series</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Project Elära contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

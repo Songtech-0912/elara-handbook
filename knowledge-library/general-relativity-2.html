@@ -1,0 +1,701 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>General Relativity, Part 2 &#8212; The Elara Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'knowledge-library/general-relativity-2';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="General Relativity, Part 3" href="general-relativity-3.html" />
+    <link rel="prev" title="General Relativity, Part 1" href="general-relativity-1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/elara-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/elara-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Elara Handbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About Project Elara</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/open-philosophy.html">Open Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/guiding-principles.html">Guiding Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/docs-organization.html">Docs layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/using-handbook.html">Using the Handbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knowledge Library</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monovariable-calculus.html">Monovariable Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multivariable-calculus.html">Multivariable calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-equations.html">Differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-1.html">Classical mechanics, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-2.html">Classical mechanics, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-geometry.html">Tensor Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special-relativity.html">Special Relativity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-1.html">General Relativity, Part 1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">General Relativity, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-3.html">General Relativity, Part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alcubierre-metric-intro.html">The Alcubierre Metric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-analysis.html">Complex numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-mechanics.html">Quantum mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer-hub/design-philosophy.html">Design Philosophy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/guide-to-governance.html">Guide to governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/covenant.html">Covenant of Project Elara</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/community-vision.html">Vision of the community</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook/issues/new?title=Issue%20on%20page%20%2Fknowledge-library/general-relativity-2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/knowledge-library/general-relativity-2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>General Relativity, Part 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-covariant-derivative">The Covariant Derivative</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-riemann-tensor">The Riemann tensor</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="general-relativity-part-2">
+<h1>General Relativity, Part 2<a class="headerlink" href="#general-relativity-part-2" title="Permalink to this heading">#</a></h1>
+<p>Previously, we built up the idea of acceleration as being indistinguishable from gravitational force, and found the geodesic equation, which governs how objects move in curved spacetime. But to truly accurately describe relativity, we also need a mathematical description of what curvature in spacetime is. This will be what we’ll explore in this section.</p>
+<section id="the-covariant-derivative">
+<h2>The Covariant Derivative<a class="headerlink" href="#the-covariant-derivative" title="Permalink to this heading">#</a></h2>
+<p>As we’ve seen by this point, the laws of physics are primarily written in partial differential equations, and so it would be natural to think that General Relativity can be characterized by partial differential equations too. The issue is, consider a vector <span class="math notranslate nohighlight">\(\vec V = V^a e_a\)</span>. If we were to take its partial derivative, we’d have (using the product rule):</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \vec V}{\partial x^b} = \frac{\partial V^a}{\partial x^b} e_a + \frac{\partial e_a}{\partial x^b} V^a
+\]</div>
+<p>But remember that tensors should transform like tensors, where each component is at most a partial derivative multiplied by the original tensor? The additional <span class="math notranslate nohighlight">\(\frac{\partial e_a}{\partial x^b} V^a\)</span> term means that the regular partial derivative doesn’t transform like a tensor. So instead of partial derivatives, we need to define a new type of derivative, the <strong>covariant derivative</strong>, which compensates for the additional term in the partial derivative. The covariant derivative takes the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_b V^a = \frac{\partial V^a}{\partial x^b} + V^k \Gamma^a_{kb}
+\]</div>
+<p>for vectors (those with an upper index), and the form:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_b V_a = \frac{\partial V_a}{\partial x^b} - V_k \Gamma^k_{ab}
+\]</div>
+<p>for covectors (those with a lower index). To take the covariant derivative of tensors formed from both vectors and covectors, such as the metric tensor <span class="math notranslate nohighlight">\(g_{\mu \nu}\)</span>, we add a term for each upper index the tensor has and subtract a term for each lower index the tensor has (you’ll see how this works in just a moment). For example, for the metric tensor, we first write out the covariant derivative as a partial derivative, plus an unknown term:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_b g_{\mu \nu} = \frac{\partial g_{\mu \nu}}{\partial x^b} + \dots
+\]</div>
+<p>Then, we notice that the metric tensor has two lower indices, so we need two correction terms. The first correction term is for the index <span class="math notranslate nohighlight">\(\mu\)</span>, and the second correction term is for the index <span class="math notranslate nohighlight">\(\nu\)</span>. To emphasize which index each correction term is for, there is a little hat on that index:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_b g_{\mu \nu} = \frac{\partial g_{\mu \nu}}{\partial x^b} - g_{\hat \mu \nu} A - g_{\mu \hat \nu} B
+\]</div>
+<p>Now comes the slightly bizarre part. We’re going to replace whichever index we’re interested in (the one with a hat on) with a dummy index <span class="math notranslate nohighlight">\(\alpha\)</span>. This is so that the rules of tensor algebra work out such that the covariant derivative transforms like a tensor. So:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial g_{\mu \nu}}{\partial x^b} - g_{\alpha \nu} A - g_{\mu \alpha} B
+\]</div>
+<p>To figure out the correct index convention for <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, we use the rule that we multiply <span class="math notranslate nohighlight">\(\Gamma^\alpha_{\gamma b}\)</span> for each lower index correction term, and multiply <span class="math notranslate nohighlight">\(\Gamma^\gamma_{\alpha b}\)</span> for each upper index correction term. Here:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> is the dummy index we’re using</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> is the index of the term we’re interested in</p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span> is the index we take the covariant derivative with respect to.</p></li>
+</ul>
+<p>So <span class="math notranslate nohighlight">\(A = \Gamma^\alpha_{\mu b}\)</span> and <span class="math notranslate nohighlight">\(B = \Gamma^\alpha_{\nu b}\)</span>. Thus we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_b g_{\mu \nu} = \frac{\partial g_{\mu \nu}}{\partial x^b} - g_{\alpha \nu} \Gamma^\alpha_{\mu b} - g_{\mu \alpha} \Gamma^\alpha_{\nu b}
+\]</div>
+<p>Also, it should be noted that “covariant derivative” is a bit of a misnomer - here, the definition of the word “covariant” pre-dates the idea of contra- and covariant tensors (tensors with upper/lower indices), and referes to the earlier definition of “invariant”. Thus, the covariant derivative is really just a fancy way of saying a derivative of a tensor that is invariant of the coordinates used.</p>
+<p>Lastly, the covariant derivative of a field with respect to the same index as the index of the field is equal to simply the divergence:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_b V^b = \nabla \cdot \vec V
+\]</div>
+</section>
+<section id="the-riemann-tensor">
+<h2>The Riemann tensor<a class="headerlink" href="#the-riemann-tensor" title="Permalink to this heading">#</a></h2>
+<p>What can we use to measure the curvature of spacetime? We already know that with the covariant derivative, we can take fully-invariant derivatives in spacetime. But if spacetime is to be curved, then if we take a derivative of a vector along direction <span class="math notranslate nohighlight">\(\mu\)</span>, then another along direction <span class="math notranslate nohighlight">\(\nu\)</span>, we’d expect to get a different result than if we were to take a derivative along direction <span class="math notranslate nohighlight">\(\nu\)</span>, then along direction <span class="math notranslate nohighlight">\(\mu\)</span>. We can qualitatively describe this as:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu \nabla_\nu V^\alpha \neq \nabla_\nu \nabla_\mu V^\alpha
+\]</div>
+<p>The difference between the two sets of derivatives is going to tell us how much the curvature of spacetime varies between the two points. So we simply need to compute:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu \nabla_\nu V^\alpha - \nabla_\nu \nabla_\mu V^\alpha
+\]</div>
+<p>First, we expand out the covariant derivatives:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu (\nabla_\nu V^\alpha) - \nabla_\nu (\nabla_\mu V^\alpha)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu (\partial_\nu V^\alpha + V^\sigma \Gamma^\alpha_{\sigma \nu}) - \nabla_\nu (\partial_\mu V^\alpha + V^\sigma \Gamma^\alpha_{\sigma \mu})
+\]</div>
+<p>Let’s take this step by step, and we’ll start with the first covariant derivative:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu (\partial_\nu V^\alpha + V^\sigma \Gamma^\alpha_{\sigma \nu})
+\]</div>
+<p>Notice that because <span class="math notranslate nohighlight">\(\sigma\)</span> is a dummy index and contracts, we can rewrite the inside of the parentheses as another tensor:</p>
+<div class="math notranslate nohighlight">
+\[
+C^\alpha_\nu = \partial_\nu V^\alpha + V^\sigma \Gamma^\alpha_{\sigma \nu}
+\]</div>
+<p>If we take the covariant derivative of <span class="math notranslate nohighlight">\(C^\alpha_\nu\)</span>, we know that we have a partial derivative, plus several other correction terms::</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu C^\alpha_\nu = \partial_\mu C^\alpha_\nu + \dots
+\]</div>
+<p>We can write out the remaining correction terms as the tensor multiplied by several coefficients (add correction term if upper index, subtract correction term if lower index), with hats indicating which terms we’re interested in:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu C^\alpha_\nu = \partial_\mu C^\alpha_\nu + C^{\hat \alpha}_\nu A - C^\alpha_{\hat \nu} B
+\]</div>
+<p>We replace the hatted indices with our dummy index <span class="math notranslate nohighlight">\(\lambda\)</span> (we chose a new variable so as not to cause confusion with the existing variables):</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu C^\alpha_\nu = \partial_\mu C^\alpha_\nu + C^\lambda_\nu A - C^\alpha_\lambda B
+\]</div>
+<p>Using the correction term coefficient rule described earlier for the Christoffel symbols, we recall that:</p>
+<ul class="simple">
+<li><p>For an upper index coefficient term we have the dummy index on the bottom and the interested index on the top</p></li>
+<li><p>For a lower index coefficient term we have the dummy index on top and the interested index on the bottom</p></li>
+<li><p>The rightmost lower term on the coefficient is always the index we’re taking the covariant derivative with respect to (in our case <span class="math notranslate nohighlight">\(\mu\)</span>)</p></li>
+</ul>
+<p>So we can figure out that <span class="math notranslate nohighlight">\(A = \Gamma^\alpha_{\lambda \mu}\)</span>, and <span class="math notranslate nohighlight">\(B = \Gamma^\lambda_{\nu \mu}\)</span>. So:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu C^\alpha_\nu = \partial_\mu C^\alpha_\nu + C^\lambda_\nu \Gamma^\alpha_{\lambda \mu} - C^\alpha_\lambda \Gamma^\lambda_{\nu \mu}
+\]</div>
+<p>But recall that:</p>
+<div class="math notranslate nohighlight">
+\[
+C^\alpha_\nu = \partial_\nu V^\alpha + V^\sigma \Gamma^\alpha_{\sigma \nu}
+\]</div>
+<p>From which we can perform index substitutions on every index to get:</p>
+<div class="math notranslate nohighlight">
+\[
+C^\lambda_\nu = \partial_\nu V^\lambda + V^\sigma \Gamma^\lambda_{\sigma \nu}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+C^\alpha_\lambda = \partial_\lambda V^\alpha + V^\sigma \Gamma^\alpha_{\sigma \lambda}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The last two were obtained by changing the indices <span class="math notranslate nohighlight">\(\alpha \to \lambda\)</span> and <span class="math notranslate nohighlight">\(\nu \to \lambda\)</span>. Shouldn’t this be illegal in tensor algebra, where we’re not supposed to swap free indices in the same equation? There is a nuance here - we can swap free indices <strong>only</strong> if we subtitute each and every index with a corresponding different index. That, is, if you have an equation <span class="math notranslate nohighlight">\(x^i = g^{ij} b_j\)</span>, you can’t simply say “I want to swap <span class="math notranslate nohighlight">\(j \to i\)</span> and make the equation <span class="math notranslate nohighlight">\(x^i = g^{ii} b_i\)</span>”. Here, you’re selectively substituting <span class="math notranslate nohighlight">\(j \to i\)</span> without making a substitution for <span class="math notranslate nohighlight">\(i\)</span>, so the equation is wrong! But you can say that “I’ll rewrite the equation using different indices, substituting <span class="math notranslate nohighlight">\(i \to a\)</span> and <span class="math notranslate nohighlight">\(j \to b\)</span>, so I have <span class="math notranslate nohighlight">\(x^a = g^{ab} b_b\)</span>”. Since we swapped <em>every</em> index with a <em>unique</em> different index, this is acceptable.</p>
+</div>
+<p>We can therefore rewrite the covariant derivative of <span class="math notranslate nohighlight">\(C^\alpha_\nu\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu C^\alpha_\nu = \partial_\mu (\partial_\nu V^\alpha + V^\sigma \Gamma^\alpha_{\sigma \nu}) + (\partial_\nu V^\lambda + V^\sigma \Gamma^\lambda_{\sigma \nu}) \Gamma^\alpha_{\lambda \mu} - (\partial_\lambda V^\alpha + V^\sigma \Gamma^\alpha_{\sigma \lambda}) \Gamma^\lambda_{\nu \mu}
+\]</div>
+<p>Be careful! The second and third terms are just products, but the first term is a derivative, so we have to use the product rule to expand - <span class="math notranslate nohighlight">\(\partial_\mu (\partial_\nu V^\alpha + V^\sigma \Gamma^\alpha_{\sigma \nu}) = \partial_\mu \partial_\nu V^\alpha + \partial_\mu (V^\sigma \Gamma^\alpha_{\sigma \nu})\)</span>. Using that, and expanding the rest of the terms out, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu \nabla_\nu V^\alpha = \nabla_\mu C^\alpha_\nu = \partial_\mu \partial_\nu V^\alpha + \partial_\mu (V^\sigma \Gamma^\alpha_{\sigma \nu}) + \Gamma^\alpha_{\lambda \mu} \partial_\nu V^\lambda + V^\sigma \Gamma^\lambda_{\sigma \nu} \Gamma^\alpha_{\lambda \mu} - \partial_\lambda V^\alpha \Gamma^\lambda_{\nu \mu} - V^\sigma \Gamma^\alpha_{\sigma \lambda} \Gamma^\lambda_{\nu \mu}
+\]</div>
+<p>Phew! We’re almost there, just hang in there for the remaining derivation. Good news! Things are going to look simpler from this point on. We’ve already solved the left double covariant derivative, <span class="math notranslate nohighlight">\(\nabla_\mu \nabla_\nu V^\alpha\)</span>. The right double covariant derivative is just the left double covariant derivative with an index swap <span class="math notranslate nohighlight">\(\mu \leftrightarrow \nu\)</span> (that means every time we see a <span class="math notranslate nohighlight">\(\mu\)</span>, we replace it with a <span class="math notranslate nohighlight">\(\nu\)</span>, and every time we see a <span class="math notranslate nohighlight">\(\nu\)</span>, we replace it with a <span class="math notranslate nohighlight">\(\mu\)</span>). So it is:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\nu \nabla_\mu V^\alpha = 
+\partial_\nu \partial_\mu V^\alpha + \partial_\nu (V^\sigma \Gamma^\alpha_{\sigma \mu}) + \Gamma^\alpha_{\lambda \nu} \partial_\mu V^\lambda + V^\sigma \Gamma^\lambda_{\sigma \mu} \Gamma^\alpha_{\lambda \nu} - \partial_\lambda V^\alpha \Gamma^\lambda_{\mu \nu} - V^\sigma \Gamma^\alpha_{\sigma \lambda} \Gamma^\lambda_{\mu \nu}
+\]</div>
+<p>Now is the glorious part - when we subtract one from the other, the terms cancel each other out. Because second partial derivatives are equal no matter what order you take them, <span class="math notranslate nohighlight">\(\partial_\mu \partial_\nu = \partial_\nu \partial_\mu\)</span>, so those cancel. The last two terms are identical for both (given the symmetry of the Christoffel symbols, so they cancel as well. We’re left with:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu \nabla_\nu V^\alpha - \nabla_\nu \nabla_\mu V^\alpha = (\partial_\mu (V^\sigma \Gamma^\alpha_{\sigma \nu}) + \Gamma^\alpha_{\lambda \mu} \partial_\nu V^\lambda - V^\sigma \Gamma^\lambda_{\sigma \nu} \Gamma^\alpha_{\lambda \mu}) - (\partial_\nu (V^\sigma \Gamma^\alpha_{\sigma \mu}) + \Gamma^\alpha_{\lambda \nu} \partial_\mu V^\lambda - V^\sigma \Gamma^\lambda_{\sigma \mu} \Gamma^\alpha_{\lambda \nu})
+\]</div>
+<p>Notice a third less obvious cancellation where <span class="math notranslate nohighlight">\(\partial_\mu (V^\sigma \Gamma^\alpha_{\sigma \nu}) = \partial_\mu V^\sigma \Gamma^\alpha_{\sigma \nu} + \partial_\mu \Gamma^\alpha_{\sigma \nu} V^\sigma\)</span> which cancels out <span class="math notranslate nohighlight">\(\Gamma^\alpha_{\lambda \nu} \partial_\mu V^\lambda\)</span> on the right (because dummy indices don’t matter). This simplifies the expression to:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu \nabla_\nu V^\alpha - \nabla_\nu \nabla_\mu V^\alpha = \partial_\mu \Gamma^\alpha_{\sigma \nu} V^\sigma - \partial_\nu \Gamma^\alpha_{\sigma \mu} V^\sigma + V^\sigma \Gamma^\lambda_{\sigma \nu} \Gamma^\alpha_{\lambda \mu} - V^\sigma \Gamma^\lambda_{\sigma \mu} \Gamma^\alpha_{\lambda \nu}
+\]</div>
+<p>We can now finally (!!!) factor out the <span class="math notranslate nohighlight">\(V^\sigma\)</span> from the expression, to get:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla_\mu \nabla_\nu V^\alpha - \nabla_\nu \nabla_\mu V^\alpha = V^\sigma [\partial_\mu \Gamma^\alpha_{\sigma \nu} - \partial_\nu \Gamma^\alpha_{\sigma \mu} + \Gamma^\lambda_{\sigma \nu} \Gamma^\alpha_{\lambda \mu} -  \Gamma^\lambda_{\sigma \mu} \Gamma^\alpha_{\lambda \nu}]
+\]</div>
+<p>The term in the brackets can be written as a new tensor:</p>
+<div class="math notranslate nohighlight">
+\[
+R^\alpha_{\sigma \mu \nu} = \partial_\mu \Gamma^\alpha_{\sigma \nu} - \partial_\nu \Gamma^\alpha_{\sigma \mu} + \Gamma^\lambda_{\sigma \nu} \Gamma^\alpha_{\lambda \mu} - \Gamma^\lambda_{\sigma \mu} \Gamma^\alpha_{\lambda \nu}
+\]</div>
+<p>The is the <strong>Riemann curvature tensor</strong>, and it measures how vectors diverge due to the curvature of space. It is a monster tensor - it has 256 components in 4D space, making it a <span class="math notranslate nohighlight">\(4 \times 4 \times 4 \times 4\)</span> matrix.</p>
+<p>To make this tensor easier to work with, we often contract it by making the 1st and 3rd indices identical, creating the <strong>Ricci tensor</strong>, which is defined by:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{\sigma \nu} = R^\mu_{\sigma \mu \nu} = \partial_\mu \Gamma^\mu_{\sigma \nu} - \partial_\nu \Gamma^\mu_{\sigma \mu} + \Gamma^\lambda_{\sigma \nu} \Gamma^\mu_{\lambda \mu} - \Gamma^\lambda_{\sigma \mu} \Gamma^\mu_{\lambda \nu}
+\]</div>
+<p>We can further contract the Ricci tensor by multiplying it by the inverse metric, giving the <strong>Ricci scalar</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+R = g^{\mu \nu} R_{\mu \nu}
+\]</div>
+<p>We now have all the tensors we need to derive the ultimate equation - the <strong>Einstein Field Equations</strong>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./knowledge-library"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="general-relativity-1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">General Relativity, Part 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="general-relativity-3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">General Relativity, Part 3</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-covariant-derivative">The Covariant Derivative</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-riemann-tensor">The Riemann tensor</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Project Elära contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

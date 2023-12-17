@@ -1,0 +1,1316 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Algebra &#8212; The Elara Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'knowledge-library/algebra';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Monovariable Calculus" href="monovariable-calculus.html" />
+    <link rel="prev" title="Using the Handbook" href="../about/using-handbook.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/elara-logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/elara-logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Elara Handbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About Project Elara</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/open-philosophy.html">Open Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/guiding-principles.html">Guiding Principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/docs-organization.html">Docs layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/using-handbook.html">Using the Handbook</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Knowledge Library</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monovariable-calculus.html">Monovariable Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multivariable-calculus.html">Multivariable calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-equations.html">Differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-1.html">Classical mechanics, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-mechanics-2.html">Classical mechanics, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-geometry.html">Tensor Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special-relativity.html">Special Relativity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-1.html">General Relativity, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-2.html">General Relativity, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-relativity-3.html">General Relativity, Part 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alcubierre-metric-intro.html">The Alcubierre Metric</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex-analysis.html">Complex numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-mechanics.html">Quantum mechanics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../developer-hub/design-philosophy.html">Design Philosophy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ecosystem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/guide-to-governance.html">Guide to governance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/covenant.html">Covenant of Project Elara</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecosystem/community-vision.html">Vision of the community</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendix/acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/elaraproject/elara-handbook/issues/new?title=Issue%20on%20page%20%2Fknowledge-library/algebra.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/knowledge-library/algebra.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Algebra</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fundamentals-of-algebra">The fundamentals of algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rules-of-algebra">The rules of algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-algebraic-equations">Solving algebraic equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-and-coordinates">Graphs and coordinates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-functions">Polynomial functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-functions">Rational functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometry">Trigonometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angles">Angles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#right-angled-triangles">Right-angled triangles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-functions">Trigonometric functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radicals">Radicals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponentials-and-logarithms">Exponentials and Logarithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rules-of-exponents">The rules of exponents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-and-logarithmic-functions">Exponential and logarithmic functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorials">Factorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sums">Sums</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="algebra">
+<h1>Algebra<a class="headerlink" href="#algebra" title="Permalink to this heading">#</a></h1>
+<p>We will begin by going through a review of basic algebra. If seems too easy, feel free to skip to the next section; otherwise, continue here.</p>
+<p>We will assume you know what negative numbers and fractions are, and how to do basic arithmetic. If not, review at <a class="reference external" href="https://www.khanacademy.org/math/pre-algebra">https://www.khanacademy.org/math/pre-algebra</a>.</p>
+<section id="the-fundamentals-of-algebra">
+<h2>The fundamentals of algebra<a class="headerlink" href="#the-fundamentals-of-algebra" title="Permalink to this heading">#</a></h2>
+<p>Algebra is a system of mathematics where we do computations using symbols rather than numbers. Symbols are usually denoted with roman or greek letters.</p>
+<p>For instance, consider the following equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\Box - 3 = 5
+\]</div>
+<p>It’s clear that the “missing number” in the box has to be 8 for the equation to be true. We can now replace the box with a symbol called <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x - 3 = 5
+\]</div>
+<p>Where:</p>
+<div class="math notranslate nohighlight">
+\[
+x = 8
+\]</div>
+</section>
+<section id="the-rules-of-algebra">
+<h2>The rules of algebra<a class="headerlink" href="#the-rules-of-algebra" title="Permalink to this heading">#</a></h2>
+<p>Every unknown in algebra is denoted by a <strong>different symbol</strong> such as <span class="math notranslate nohighlight">\(x, y, z\)</span>, etc. For example, we could write:</p>
+<div class="math notranslate nohighlight">
+\[
+x + y = 3
+\]</div>
+<p>Which would be true if <span class="math notranslate nohighlight">\(x = 1\)</span> and <span class="math notranslate nohighlight">\(y = 2\)</span>.</p>
+<p>Multiplication in algebra is written like this:</p>
+<div class="math notranslate nohighlight">
+\[
+x \times 3 = 3x = x + x + x
+\]</div>
+<p>This means that:</p>
+<div class="math notranslate nohighlight">
+\[
+1x = x \times 1 = x
+\]</div>
+<p>And:</p>
+<div class="math notranslate nohighlight">
+\[
+0x = x \times 0 = 0
+\]</div>
+<p>Division in algebra is almost always written as a fraction:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{x}{4} = x \div 4
+\]</div>
+<p>We can move the <span class="math notranslate nohighlight">\(x\)</span> to the left of a fraction and it would be equivalent:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{4} x = \frac{x}{4}
+\]</div>
+<p>If we multiply a fraction by the same value as the bottom of the fraction, we get rid of the fraction:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{a}{b} \times b = a
+\]</div>
+<p>If we have the same thing on the top and on the bottom of the fraction, we can remove the same thing - this is called “cancelling”:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{ax}{ay} = \frac{x}{y}
+\]</div>
+<p>The fraction of anything over one is itself:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{a}{1} = a
+\]</div>
+<p>We can move the bottom part of a fraction out of the fraction to get rid of the fraction:</p>
+<div class="math notranslate nohighlight">
+\[
+x = \frac{a}{b} \Rightarrow xb = a
+\]</div>
+<p>We can have negative symbols as well as positive symbols:</p>
+<div class="math notranslate nohighlight">
+\[
+-x = -1 \times x
+\]</div>
+<p>A negative sign to the left of a fraction is equal to a negative numerator or a negative denominator:</p>
+<div class="math notranslate nohighlight">
+\[
+-\frac{2}{5} = \frac{-2}{5} = \frac{2}{-5}
+\]</div>
+<p>Algebraic expressions are collections of numbers and symbols:</p>
+<div class="math notranslate nohighlight">
+\[
+3x^2 + 5xy + 6
+\]</div>
+<p>Equations are expressions that are related by an equal sign:</p>
+<div class="math notranslate nohighlight">
+\[
+xyz = 5
+\]</div>
+<p>Parts of algebraic expressions and equations separated by operators (<span class="math notranslate nohighlight">\(+-\times \div\)</span>) or placed inside brackets are called <strong>terms</strong>. For example, <span class="math notranslate nohighlight">\(5x + 3y + 2z = 5\)</span> has the terms <span class="math notranslate nohighlight">\(5x\)</span>, <span class="math notranslate nohighlight">\(3y\)</span> and <span class="math notranslate nohighlight">\(2z\)</span>.</p>
+<p>If we change the order of an equation, the equation remains the same:</p>
+<div class="math notranslate nohighlight">
+\[
+x + 1 = 1 + x
+\]</div>
+<p>Brackets are equivalent to multiplication when a number or symbol is placed to the left of a bracket:</p>
+<div class="math notranslate nohighlight">
+\[
+3(x + 1) = 3 \times (x + 1)
+\]</div>
+<p>We can <strong>expand</strong> brackets by multiplying the number (or symbol) in front of the bracket by everything inside the bracket:</p>
+<div class="math notranslate nohighlight">
+\[
+3(x + 1) = 3 \times x + 3 \times 1 = 3x + 3
+\]</div>
+<p>And in the same way, we can <strong>factorize</strong> an expression into one that has brackets:</p>
+<div class="math notranslate nohighlight">
+\[
+ab + ac = a(b + c)
+\]</div>
+<p>For more complicated brackets expansions, we use this formula:</p>
+<div class="math notranslate nohighlight">
+\[
+(a + b)(c + d) = ac + ad + bc + bd
+\]</div>
+<p>To factorize this, we’ll need a tool called the quadratic formula, which we’ll explore later in this chapter.</p>
+<p>We can write powers like this:</p>
+<div class="math notranslate nohighlight">
+\[
+x^3 = x \times x \times x
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(x^3\)</span> is equal to <span class="math notranslate nohighlight">\(x\)</span> multiplied by <span class="math notranslate nohighlight">\(x\)</span> 3 times.</p>
+<p>Putting a negative sign in front of brackets is equal to multiplying everything inside the brackets by <span class="math notranslate nohighlight">\(-1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+-(a + b) = -a + -b
+\]</div>
+<p>A double negative is a positive:</p>
+<div class="math notranslate nohighlight">
+\[
+-(-a) = a
+\]</div>
+<p>Sometimes, we use symbols to represent a number rather than an unknown - these are called <strong>constants</strong>. To avoid confusing symbols that represent numbers and symbols that represent unknowns, we usually use special letters (especially greek letters) to denote constants, and we will always say beforehand that the expression or equation contains a constant. For example, a common constant is <span class="math notranslate nohighlight">\(\pi\)</span>, which is a number that starts with the digits <span class="math notranslate nohighlight">\(3.14159\)</span>. This means that:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi x = 3.14159 \times x
+\]</div>
+</section>
+<section id="solving-algebraic-equations">
+<h2>Solving algebraic equations<a class="headerlink" href="#solving-algebraic-equations" title="Permalink to this heading">#</a></h2>
+<p>To be able to solve algebraic equations, the key rule is that <strong>we do to the left-hand side of the equals sign as we do to the right</strong>.</p>
+<p>For example, take the example:</p>
+<div class="math notranslate nohighlight">
+\[
+x + 5 = 10 - x
+\]</div>
+<p>Here, we first need to add <span class="math notranslate nohighlight">\(x\)</span> to both sides of the equation, giving us:</p>
+<div class="math notranslate nohighlight">
+\[
+x + 5 (+ x) = 10 - x (+ x)
+\]</div>
+<p>This will become:</p>
+<div class="math notranslate nohighlight">
+\[
+x + x + 5 = 10
+\]</div>
+<p>Which simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[
+2x + 5 = 10
+\]</div>
+<p>We then subtract 5 from both sides of the equation:</p>
+<div class="math notranslate nohighlight">
+\[
+2x = 5
+\]</div>
+<p>And then divide both sides by 2 to get the answer:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2x}{2} = \frac{5}{2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{2}{2} x = \frac{5}{2}
+\]</div>
+<p>Because <span class="math notranslate nohighlight">\(\frac{2}{2} = 1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x = \frac{5}{2}
+\]</div>
+<p>Sometimes, we need to solve an equation that uses entirely symbols. Yes, that can seem scary, but going slowly, every step becomes easier. For example, presume we have the equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p (a + 2x)}{q^2} = b
+\]</div>
+<p>The first step is to multiply by <span class="math notranslate nohighlight">\(q^2\)</span> on both sides:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p (a + 2x)}{q^2} \times q^2 = b \times q^2
+\]</div>
+<p>Since we know that we can remove the <span class="math notranslate nohighlight">\(\times\)</span> sign and just write symbols next to each other to show multiplication, this becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(a + 2x)}{q^2} q^2 = bq^2
+\]</div>
+<p>We use one of the rules of algebra, which says that <span class="math notranslate nohighlight">\(\frac{a}{b} \times b = a\)</span>, to simplify:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(a + 2x)}{q^2} \times q^2 = p(a + 2x)
+\]</div>
+<p>This means our original equation becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+p(a + 2x) = bq^2
+\]</div>
+<p>Now, we need to divide <span class="math notranslate nohighlight">\(p\)</span> from both sides. Recall that we write divisions as fractions, so we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(a + 2x)}{p} = \frac{bq^2}{p}
+\]</div>
+<p>Using the rule that <span class="math notranslate nohighlight">\(\frac{px}{p} = x\)</span>, we can cancel the <span class="math notranslate nohighlight">\(p\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+(a + 2x) = \frac{bq^2}{p}
+\]</div>
+<p>Now, we can subtract <span class="math notranslate nohighlight">\(a\)</span> from both sides to get rid of it:</p>
+<div class="math notranslate nohighlight">
+\[
+(a + 2x) - a = \frac{bq^2}{p} - a
+\]</div>
+<p>Which gives:</p>
+<div class="math notranslate nohighlight">
+\[
+2x = \frac{bq^2}{p} - a
+\]</div>
+<p>We still unfortunately have the 2, which is more annoying to deal with. We have to divide the 2 from both sides:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{2x}{2} = \frac{\frac{bq^2}{p} - a}{2}
+\]</div>
+<p>Because <span class="math notranslate nohighlight">\(\frac{2x}{2} = x\)</span> (it makes sense; multiplying something by a number then diving by that same number should give you that original something), we can simplify to:</p>
+<div class="math notranslate nohighlight">
+\[
+x = \frac{\frac{bq^2}{p} - a}{2}
+\]</div>
+<p>Remember that anything multiplied by 1 is itself:</p>
+<div class="math notranslate nohighlight">
+\[
+x = \frac{1 \times \left(\frac{bq^2}{p} - a\right)}{2}
+\]</div>
+<p>And that we can move parts of a fraction off the fraction:</p>
+<div class="math notranslate nohighlight">
+\[
+x = \frac{1}{2} \left(\frac{bq^2}{p} - a \right)
+\]</div>
+<p>Congratulations, we’ve solved it!</p>
+</section>
+<section id="graphs-and-coordinates">
+<h2>Graphs and coordinates<a class="headerlink" href="#graphs-and-coordinates" title="Permalink to this heading">#</a></h2>
+<p>A graph is a visual way of representing data. To plot a graph, need two values: an <span class="math notranslate nohighlight">\(x\)</span> value, and a <span class="math notranslate nohighlight">\(y\)</span> value. We represent these values as <strong>ordered pairs</strong> like this:</p>
+<div class="math notranslate nohighlight">
+\[
+(x, y)
+\]</div>
+<p>For example, if we want to plot the value <span class="math notranslate nohighlight">\(x = 1, y = 3\)</span>, then <span class="math notranslate nohighlight">\((x, y) = (1, 3)\)</span>. We can plot this on a graph by traveling 1 unit to the right, then 3 units up, like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;ro&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;The point (1, 3)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7169932bf8bad10e6a88ae72d8f2e5342bb042791d4c270493671224075cf225.png" src="../_images/7169932bf8bad10e6a88ae72d8f2e5342bb042791d4c270493671224075cf225.png" />
+</div>
+</div>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<p>Functions take in a number and output another number. We denote a function with a symbol with the input as another symbol - for instance, a function <span class="math notranslate nohighlight">\(f\)</span> with the input <span class="math notranslate nohighlight">\(x\)</span> is written as <span class="math notranslate nohighlight">\(f(x)\)</span>. A simple function could be:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = 2x
+\]</div>
+<p>This means that any input <span class="math notranslate nohighlight">\(x\)</span> value would have an output value of twice that <span class="math notranslate nohighlight">\(x\)</span> value. We can make a table for values of this function:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x\)</span> (input)</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f(x)\)</span> (output)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>10</p></td>
+</tr>
+</tbody>
+</table>
+<p>We can visualize this table of values by plotting it as <span class="math notranslate nohighlight">\((x, y)\)</span> pairs, where <span class="math notranslate nohighlight">\(y = f(x)\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;f(x) = 2x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7fa976f493081ccd5a22f773b4999347477def8a66333c4ca362c5f1906db602.png" src="../_images/7fa976f493081ccd5a22f773b4999347477def8a66333c4ca362c5f1906db602.png" />
+</div>
+</div>
+<p>Since we plot the value of <span class="math notranslate nohighlight">\(f(x)\)</span> on the y-axis, we say that <span class="math notranslate nohighlight">\(y = f(x)\)</span>. This means we could’ve called the above function <span class="math notranslate nohighlight">\(f(x) = 2x\)</span>, or <span class="math notranslate nohighlight">\(y = 2x\)</span> - it doesn’t really matter.</p>
+<section id="polynomial-functions">
+<h3>Polynomial functions<a class="headerlink" href="#polynomial-functions" title="Permalink to this heading">#</a></h3>
+<p>Linear functions are in the form <span class="math notranslate nohighlight">\(f(x) = ax + b\)</span>, such as <span class="math notranslate nohighlight">\(f(x) = 5x\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> can be equal to zero. They are called linear because they are “line-like” - they are straight lines. We’ve already seen this.</p>
+<p>Quadratic functions are in the form <span class="math notranslate nohighlight">\(f(x) = ax^2 + bx + c\)</span>, such as <span class="math notranslate nohighlight">\(f(x) = x^2 + 2x + 3\)</span>, where <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span> can be equal to 0. They look like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$f(x) = x^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b27918cc607dab4f925219271544508bbe9d400637b5a66e9372e4807b8fbfe2.png" src="../_images/b27918cc607dab4f925219271544508bbe9d400637b5a66e9372e4807b8fbfe2.png" />
+</div>
+</div>
+<p>We can solve any quadratic function in the form <span class="math notranslate nohighlight">\(ax^2 + bx + c = 0\)</span> using the quadratic formula:</p>
+<div class="math notranslate nohighlight">
+\[
+x = \frac{-b + \sqrt{b^2 - 4ac}}{2a} \text{ and } x = \frac{b + \sqrt{b^2 - 4ac}}{2a}
+\]</div>
+<p>Cubic functions are similar, but they are just in the form <span class="math notranslate nohighlight">\(f(x) = ax^3 + bx^2 + cx + d\)</span>, such as <span class="math notranslate nohighlight">\(f(x) = 3x^3 + 5x^2 + 4x + 6\)</span>. They look like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$f(x) = x^3 + 3x^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6f608d19c384a7d453d1e63e703b20f1e325f8eb863e167745c6ef1d9fa1aff4.png" src="../_images/6f608d19c384a7d453d1e63e703b20f1e325f8eb863e167745c6ef1d9fa1aff4.png" />
+</div>
+</div>
+<p>The absolute value function <span class="math notranslate nohighlight">\(f(x) = |x|\)</span> takes in any negative or positive value and returns a positive value. It looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;f(x) = |x|&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/591ef3342c361a6b82b8b67606a3c5eb8a7b8fa88a3004acd44c20b68c1c6b30.png" src="../_images/591ef3342c361a6b82b8b67606a3c5eb8a7b8fa88a3004acd44c20b68c1c6b30.png" />
+</div>
+</div>
+</section>
+<section id="rational-functions">
+<h3>Rational functions<a class="headerlink" href="#rational-functions" title="Permalink to this heading">#</a></h3>
+<p>The rational function is in the form <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span>. It looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+<span class="n">fx_name</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;$f(x)=\frac</span><span class="si">{1}{x}</span><span class="s1">$&#39;</span>
+
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">fx_name</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/142166fd82268385c683d6ec87bdb7e95ccb47fbe16a0f7b524a3012be47dad3.png" src="../_images/142166fd82268385c683d6ec87bdb7e95ccb47fbe16a0f7b524a3012be47dad3.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="trigonometry">
+<h2>Trigonometry<a class="headerlink" href="#trigonometry" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="angles">
+<h2>Angles<a class="headerlink" href="#angles" title="Permalink to this heading">#</a></h2>
+<p>An <strong>angle</strong> is the space between two lines that meet. We often represent angles using the symbol <span class="math notranslate nohighlight">\(\theta\)</span>, pronounced “theta”.</p>
+<p>There are 2 main measurement systems we can use to define angles. The first measurement system is called degrees, denoted with the degree symbol <span class="math notranslate nohighlight">\(^\circ\)</span>, where you can think of <span class="math notranslate nohighlight">\(360^\circ\)</span> as one full circle. Thus, one angle of 1 degree is like slicing a circle into 360 pieces, and just taking one of those pieces.</p>
+<p>The second measurement system is called radians, where one full circle is <span class="math notranslate nohighlight">\(2\pi\)</span>. This is a bit more abstract to understand, but you can use the same way to imagine: imagine taking a circle and cutting it into <span class="math notranslate nohighlight">\(2\pi\)</span> (that’s around 6.283) pieces. What? Who would <em>ever</em> cut a circle into 6.283 pieces? Yes, it doesn’t make a lot of sense, but if you just think of one of those pieces, you would have an angle of 1 radian. We can convert between degrees and radians with:</p>
+<div class="math notranslate nohighlight">
+\[
+1 \mathrm{\ radian} = 1^\circ \cdot \left(\frac{\pi}{180}\right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+1^\circ = 1 \mathrm{\ radian} \cdot \left(\frac{\pi}{180}\right)
+\]</div>
+<section id="right-angled-triangles">
+<h3>Right-angled triangles<a class="headerlink" href="#right-angled-triangles" title="Permalink to this heading">#</a></h3>
+<p>Trigonometry is the study of <strong>right-angled triangles</strong> - triangles that have one right angle and one other angle <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>The longest side of a right-angled triangle is called the <strong>hypotenuse</strong>. The <strong>opposite</strong> side is the the side that, well, is <em>opposite</em> the angle <span class="math notranslate nohighlight">\(\theta\)</span>. Finally, the <strong>adjacent</strong> side is the side between the right angle and the angle <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p><img alt="Right angled triangles diagram" src="https://www.onlinemathlearning.com/image-files/trigonometry-hypotenuse-opposite-adjacent.png" /></p>
+<p>But wait, doesn’t a triangle have three angles? Yes, that is true, and so the choice of which angle you call <span class="math notranslate nohighlight">\(\theta\)</span> doesn’t matter. You can define either one of the two other angles (the non-right-angle angles) as your <span class="math notranslate nohighlight">\(\theta\)</span> angle, you just have to stick with one angle in your calculations.</p>
+<p>Every right-angled triangle obeys the rule that:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Adjacent}^2 + \text{Opposite}^2 = \text{Hypotenuse}^2
+\]</div>
+</section>
+<section id="trigonometric-functions">
+<h3>Trigonometric functions<a class="headerlink" href="#trigonometric-functions" title="Permalink to this heading">#</a></h3>
+<p>Trigonometric functions are oscillating functions that form a constant repeating pattern. The main, sine (<span class="math notranslate nohighlight">\(\sin\)</span>), cosine (<span class="math notranslate nohighlight">\(\cos\)</span>), and tangent (<span class="math notranslate nohighlight">\(\tan\)</span>), are defined by:</p>
+<div class="math notranslate nohighlight">
+\[
+\sin \theta = \frac{\mathrm{opposite}}{\mathrm{adjacent}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\cos \theta = \frac{\mathrm{adjacent}}{\mathrm{hypotenuse}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\tan \theta = \frac{\mathrm{opposite}}{\mathrm{hypotenuse}} = \frac{\sin \theta}{\cos \theta}
+\]</div>
+<p>The <em>reciprocal trigonometric functions</em> are the normal trig functions but “flipped over”, and they look like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\csc \theta = \frac{1}{\sin}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sec \theta = \frac{1}{\cos}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\cot \theta = \frac{1}{\tan}
+\]</div>
+<p>You can imagine taking a right-angled triangle and slowly making its angle <span class="math notranslate nohighlight">\(\theta\)</span> bigger and bigger and bigger. The ratio between the sides is the value of the trigonometric functions.</p>
+<p>The graph of <span class="math notranslate nohighlight">\(f(\theta) = \sin(\theta)\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> is in units of radians, looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">FuncFormatter</span><span class="p">,</span> <span class="n">MultipleLocator</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;f(x) = sin(x)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">FuncFormatter</span><span class="p">(</span>
+   <span class="k">lambda</span> <span class="n">val</span><span class="p">,</span><span class="n">pos</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.0g}</span><span class="s1">$\pi$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="k">if</span> <span class="n">val</span> <span class="o">!=</span><span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;0&#39;</span>
+<span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="n">base</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/36f166b33f4c2a426d9c7ffcf5c28b01b3d67d658e2ada6c61d9ae9faa17f72c.png" src="../_images/36f166b33f4c2a426d9c7ffcf5c28b01b3d67d658e2ada6c61d9ae9faa17f72c.png" />
+</div>
+</div>
+<p>The values of <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> can be deduced by reading off the graph:</p>
+<div class="math notranslate nohighlight">
+\[
+\sin(0) = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sin(\pi / 2) = \sin (3\pi / 2) = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sin(\pi) = \sin(2\pi) = 0
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\pi \approx 3.14159\)</span>.</p>
+<p>The graph of <span class="math notranslate nohighlight">\(f(x) = \cos x\)</span> looks like the a shifted sine graph:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;f(x) = cos(x)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">FuncFormatter</span><span class="p">(</span>
+   <span class="k">lambda</span> <span class="n">val</span><span class="p">,</span><span class="n">pos</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.0g}</span><span class="s1">$\pi$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="k">if</span> <span class="n">val</span> <span class="o">!=</span><span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;0&#39;</span>
+<span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="n">base</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5e77c578dae25b506dee151924e07d2fb2ff854f3f6e7df2c4d78d8777327c28.png" src="../_images/5e77c578dae25b506dee151924e07d2fb2ff854f3f6e7df2c4d78d8777327c28.png" />
+</div>
+</div>
+<p>Whereas the graph of <span class="math notranslate nohighlight">\(f(x) = \tan x\)</span> looks a little different:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f_tan</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">y</span><span class="p">[</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">y</span><span class="p">[</span><span class="n">y</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">tol</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;f(x) = tan(x)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">FuncFormatter</span><span class="p">(</span>
+   <span class="k">lambda</span> <span class="n">val</span><span class="p">,</span><span class="n">pos</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.0g}</span><span class="s1">$\pi$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="k">if</span> <span class="n">val</span> <span class="o">!=</span><span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;0&#39;</span>
+<span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="n">base</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/461dc39457d01ddf68d6db89bb2cedbfeabc79685d243bd8ec5c241684486c0c.png" src="../_images/461dc39457d01ddf68d6db89bb2cedbfeabc79685d243bd8ec5c241684486c0c.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="radicals">
+<h2>Radicals<a class="headerlink" href="#radicals" title="Permalink to this heading">#</a></h2>
+<p>If we know a number, say, 4, can we find two equal numbers that multiply to form that number? Actually, we can! In the case of 4, we know that:</p>
+<div class="math notranslate nohighlight">
+\[
+4 = 2 \times 2
+\]</div>
+<p>So we can say that the “square root” of 4 is 2, and we use the <span class="math notranslate nohighlight">\(\sqrt{}\)</span> symbol to show this:</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{4} = 2
+\]</div>
+<p>We can expand this idea. If we knew a number, say 8, can we find three equal numbers that multiply to form that number? Yes, we can! In the case of 8, we know that:</p>
+<div class="math notranslate nohighlight">
+\[
+8 = 2 \times 2 \times 2
+\]</div>
+<p>So we can say that the “cube root” of 8 is 2, and we use the <span class="math notranslate nohighlight">\(\sqrt[3]{}\)</span> symbol to show this:</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt[3]{8} = 2
+\]</div>
+<p>The same goes for 4 equal numbers that multiply to form a number, 5, 6, and so on. These roots, from the square root and cube root to that 4th and 5th and 6th root, are called <strong>radicals</strong>. Radicals follow these rules:</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{1} = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{0} = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{a} \times \sqrt{a} = a
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{ab} = \sqrt{a} \times \sqrt{b}
+\]</div>
+</section>
+<section id="exponentials-and-logarithms">
+<h2>Exponentials and Logarithms<a class="headerlink" href="#exponentials-and-logarithms" title="Permalink to this heading">#</a></h2>
+<section id="the-rules-of-exponents">
+<h3>The rules of exponents<a class="headerlink" href="#the-rules-of-exponents" title="Permalink to this heading">#</a></h3>
+<p>Exponents are every time we multiply one number by itself a certain number of times. For example, <span class="math notranslate nohighlight">\(2^2\)</span>, pronounced “2 squared” or “2 to the power of 2” is two multiplied by itself, two times - that is <span class="math notranslate nohighlight">\(2 \times 2\)</span>. <span class="math notranslate nohighlight">\(2^3\)</span>, pronounced “2 cubed” or “2 to the power of 3” is two multiplied by itself, three times - that is <span class="math notranslate nohighlight">\(2 \times 2 \times 2\)</span>. Exponents follow these rules:</p>
+<div class="math notranslate nohighlight">
+\[
+1^a = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+0^a = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+a^0 = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+a^1 = a
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+a^m + a^n = a^{(m + n)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+a^m \div a^n = a^{(m - n)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+(a^b)^c = a^{(b \times c)}
+\]</div>
+<p>Fractional exponents are the same as a radical:</p>
+<div class="math notranslate nohighlight">
+\[
+a^{\frac{1}{2}} = \sqrt{a}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+a^{\frac{1}{3}} = \sqrt[3]{a}
+\]</div>
+<p>Finally, negative exponents are equal to one over the positive exponent of that number:</p>
+<div class="math notranslate nohighlight">
+\[
+a^{-n} = \frac{1}{a^n}
+\]</div>
+</section>
+<section id="exponential-and-logarithmic-functions">
+<h3>Exponential and logarithmic functions<a class="headerlink" href="#exponential-and-logarithmic-functions" title="Permalink to this heading">#</a></h3>
+<p>All exponential functions are in the form <span class="math notranslate nohighlight">\(f(x) = b^x\)</span> where <span class="math notranslate nohighlight">\(b &gt; 0\)</span> and <span class="math notranslate nohighlight">\(b \neq 1\)</span>. Note that if <span class="math notranslate nohighlight">\(x\)</span> is negative, then <span class="math notranslate nohighlight">\(b^{-x} = \left(\frac{1}{b}\right)^x\)</span>. The most commonly-used exponential function is <span class="math notranslate nohighlight">\(f(x) = e^x\)</span>, also confusingly called “the exponential function”, where <span class="math notranslate nohighlight">\(e\)</span> is a special number that is around 2.718:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f(x) = e^x$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2534553047823fffbf0b380ad0707e2dfe337e2ee1164be2d73c155ac7a34674.png" src="../_images/2534553047823fffbf0b380ad0707e2dfe337e2ee1164be2d73c155ac7a34674.png" />
+</div>
+</div>
+<p>What if we want to “undo” the exponential function? We would need to find an <strong>inverse function</strong>, a function that does the opposite thing as another function. In the case of an exponential function, the inverse is called a <strong>logarithmic function</strong>. The basic logarithmic function is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+y = \log_b x
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(b^y = x\)</span>. To remember this mapping between exponential functions, you can remember that <span class="math notranslate nohighlight">\(b\)</span> is the “basement” (because of its subscript), and it’s raised to the “answer” of <span class="math notranslate nohighlight">\(y\)</span> to get <span class="math notranslate nohighlight">\(x\)</span>. Several common logarithmic functions have shorthand notations:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln x = \log_e x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\log x = \log_{10} x
+\]</div>
+<p>The <span class="math notranslate nohighlight">\(\ln\)</span> function is also called the “natural logarithm”, and it looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f(x) = \ln x$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a52ee71be35e4470f58c4c2bde567512695b782e13126f4605000fde55190293.png" src="../_images/a52ee71be35e4470f58c4c2bde567512695b782e13126f4605000fde55190293.png" />
+</div>
+</div>
+<p>Just as with exponents, logarithms follow certain rules:</p>
+<div class="math notranslate nohighlight">
+\[
+\log_b (xy) = \log_b x + \log_b y
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\log_b (x^n) = n \log_b x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\log_b \left(\frac{x}{y}\right) = \log_b x - \log_b y
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\log_b x = \frac{\ln x}{\ln b}
+\]</div>
+<p>Be careful! Note that <span class="math notranslate nohighlight">\((\log_b x)^r \neq r \log_b x\)</span>!!!</p>
+</section>
+</section>
+<section id="factorials">
+<h2>Factorials<a class="headerlink" href="#factorials" title="Permalink to this heading">#</a></h2>
+<p>A factorial is when you multiply a number by all whole numbers smaller than it, and is denoted with <span class="math notranslate nohighlight">\(!\)</span>. For example, <span class="math notranslate nohighlight">\(2! = 2 \times 1\)</span>, <span class="math notranslate nohighlight">\(3! = 3 \times 2 \times 1\)</span>, and <span class="math notranslate nohighlight">\(4! = 4 \times 3 \times 2 \times 1\)</span>.</p>
+</section>
+<section id="sums">
+<h2>Sums<a class="headerlink" href="#sums" title="Permalink to this heading">#</a></h2>
+<p>Sometimes, we want to add up a lot of numbers:</p>
+<div class="math notranslate nohighlight">
+\[
+1 + 2 + 3 + 4 + 5 + 6 + 7 + \dots
+\]</div>
+<p>How do we compactly write this out? One way is to assign each number a symbol, with its position in the list of numbers to add as an index on the bottom. So 1, which is the first number, would be <span class="math notranslate nohighlight">\(a_1\)</span>. This becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+a_1 + a_2 + a_3 + a_4 + a_5 + a_6 + a_7 + \dots
+\]</div>
+<p>A compact way of writing this out is with the <strong>summation symbol</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i = 1}^n a_i = a_1 + a_2 + a_3 + a_4 + a_5 + a_6 + a_7
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(i\)</span> is the index on the bottom, <span class="math notranslate nohighlight">\(i = 1\)</span> means the indices start from 1, and <span class="math notranslate nohighlight">\(n\)</span> means the indices end at <span class="math notranslate nohighlight">\(n\)</span>. <span class="math notranslate nohighlight">\(n\)</span> can be infinity sometimes:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i = 1}^\infty a_i = a_1 + a_2 + a_3 + a_4 + a_5 + a_6 + a_7 + \dots
+\]</div>
+<p>Summation is very useful for shortening long formulas. For example, the <strong>binomial expansion formula</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+(a + b)^n = \sum_{i = 0}^n = \frac{n!}{(n - i)! i!} a^{n - i} b^i
+\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./knowledge-library"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../about/using-handbook.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Using the Handbook</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="monovariable-calculus.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Monovariable Calculus</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fundamentals-of-algebra">The fundamentals of algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rules-of-algebra">The rules of algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-algebraic-equations">Solving algebraic equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs-and-coordinates">Graphs and coordinates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-functions">Polynomial functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-functions">Rational functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometry">Trigonometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angles">Angles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#right-angled-triangles">Right-angled triangles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-functions">Trigonometric functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radicals">Radicals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponentials-and-logarithms">Exponentials and Logarithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rules-of-exponents">The rules of exponents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-and-logarithmic-functions">Exponential and logarithmic functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorials">Factorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sums">Sums</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Project Elära contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
